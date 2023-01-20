@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+* {
+    border: none;
+}
+html {
+	font-size: 62.5%; /* 10/16 */
+}
+body {
+	margin: 0;
+	font: var(--fontSizeBase)/1.4 Helvetica, sans-serif;
+}
+h1, .h1 {
+	font-size: var(--fontSizeXLarge);
+}
+h2, caption, .h2 {
+	font-size: var(--fontSizeLarge);
+}
+h3, .h3 {
+	font-size: var(--fontSizeMedium);
+}
+h4, .h4 {
+	font-size: var(--fontSizeBase);
+}
+h5, .h5 {
+	font-size: var(--fontSizeBase);
+}
+h6, .h6 {
+	font-size: var(--fontSizeBase);
+}
+
+p, ul, ol, dl, blockquote, pre, fieldset, figure, address, table, details, iframe, video, audio,
+.p, .box, .table-responsive, .media-responsive, .mb, .mod-wrapper, .accordion, [data-oembed-url] {
+  margin: 0 0 var(--headingMarginLarge);
+}
+:where(p, ul, ol, dl, blockquote, pre, fieldset, figure, address, table, details, iframe, video, audio,
+.p, .box, .table-responsive, .media-responsive, .mb, .mod-wrapper, .accordion, [data-oembed-url]):has(+ *:not(h2, h3, h4, h5, h6)),
+:where(p, ul, ol, dl, blockquote, pre, fieldset, figure, address, table, details, iframe, video, audio,
+.p, .box, .table-responsive, .media-responsive, .mb, .mod-wrapper, .accordion, [data-oembed-url]):last-child {
+  margin-bottom: var(--baseMargin);
+}
+*:has(+ h2) {
+  margin-bottom: var(--headingMarginLevel2);
+}
+*:has(+ h3) {
+  margin-bottom: var(--headingMarginLevel3);
+}
+*:has(+ h4) {
+  margin-bottom: var(--headingMarginLevel4);
+}
+*:has(+ h5) {
+  margin-bottom: var(--headingMarginLevel5);
+}
+h1, h2, h3, h4, h5, h6, caption,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-weight: bold;
+	margin: 0 0 var(--headingMarginSmall);
+	background-color: lightblue;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+ol,
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* ––––––– =LINKS= –––––– */
+/* –––––––––––––––––––––– */
+a {
+	color: var(--primaryColor);
+}
+a:visited {
+	color: var(--primaryColorDark);
+}
+a:focus, a:hover, a:active {
+	color: var(--secondaryColor);
+}
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
+/* =helper/utility classes
+--------------------------------------------------------------- */
+[hidden],
+.none, .screenhidden, .printvisible {
+	display: none;
+}
+
+.visuallyhidden,
+.invis,
+.sr,
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	 -webkit-clip-path: inset(100%);
+	clip-path: inset(100%);
+	overflow: hidden;
+	background-color: transparent;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-title" content="backslash Framework">
+	<meta name="theme-color" content="#282828">
+	<title>backslash Framework</title>
+	<link href="css/screen.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="css/print.css" rel="stylesheet" type="text/css" media="print">
+	<link rel="icon" href="favicon.svg">
+	<link rel="apple-touch-icon" href="img/touch-icon.png">
+	<link rel="icon" sizes="192x192" href="img/touch-icon.png">
+	<script src="https://ext.cdn-backslash.ch/lib/jquery/jquery-3.6.1.min.js"></script>
+	<script src="https://comet07.backslash.ch/js/global/helper/helper.js"></script>
+	<script src="https://kit.fontawesome.com/3ab8d115ee.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="pageWrapper">
+		<header class="wrapper c-grid c-grid--hasGap c-grid--header">
+			<div class="c-grid__item c-grid__item--logo">
+				<div class="logo">
+					<a href="#" title="Homepage">
+						Logo
+					</a>
+				</div>
+			</div>
+			<div class="c-grid__item c-grid__item--metanav">
+				<nav class="c-metanav">
+					<ul class="c-list c-list--horizontal c-list--alignEnd c-list--hasGap">
+						<li><a href="">Sitemap</a></li>
+						<li><a href="">Kontakt</a></li>
+						<li><a href="">Newsletter</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="c-grid__item c-grid__item--search">
+				<div class="c-search">
+					<form class="c-search__form" id="c-search__form" role="search" method="post" action="#">
+						<label class="c-search__label visuallyhidden" for="c-search__input">Suche</label>
+						<input class="c-search__input" type="search" id="c-search__input" placeholder="Suchbegriff" required />
+						<button class="c-search__submit btn" type="submit">
+							<i class="fa-regular fa-magnifying-glass"></i>
+							<span class="visuallyhidden">suchen</span>
+						</button>
+					</form>
+				</div>
+			</div>
+			<div class="c-grid__item c-grid__item--nav">
+				<h2 class="visuallyhidden" id="###">Hauptnavigation</h2>
+				<nav class="c-mainnav">
+					<ul class="c-list c-list--horizontal c-list--alignCenter c-list--hasGap c-list--linkList level-1">
+						<li><a href="">Europa</a>
+							<ul class="level-2">
+								<li><a href="">Norwegen</a></li>
+								<li><a href="">Schweden</a></li>
+								<li><a href="">Finnland</a></li>
+								<li><a href="">Dänemark</a></li>
+								<li><a href="">Island</a></li>
+								<li><a href="">Färöer Inseln</a></li>
+							</ul>
+						</li>
+						<li><a href="">Asien</a></li>
+						<li><a href="">Afrika</a></li>
+						<li><a href="">Amerika</a></li>
+						<li><a href="">Ozeanien</a></li>
+					</ul>
+				</nav>
+				<div class="c-mobilenav">
+					<button type="button" class="c-hamburger js-hamburger" id="js-mobilnav-toggle" aria-controls="mobilenav" aria-expanded="false">
+						<span>Menü</span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</header>
+		<div class="headimage"></div>
+		<main class="main wrapper" id="main" aria-labelledby="main__title">
+			<h1 class="main__title content-maintitle" id="main__title">backslash Framework</h1>
+			<section class="mb">
+				<h2>Newsmodul</h2>
+				<div class="m-news">
+					<ul class="c-grid c-grid--hasGap c-grid--4col2umns">
+						<li class="c-grid__item">
+							<article class="c-card c-card--hasGap c-card--noLink c-card--hasImage">
+								<header class="c-card__header">
+									<h3 class="c-card__title">Titel</h3>
+								</header>
+								<figure class="c-card__fig">
+										<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+									</figure>
+								<div class="c-card__content">
+									
+									<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+								</div>
+								<footer>
+								</footer>
+							</article>
+						</li>
+						<li class="c-grid__item">
+							<article class="c-card c-card--hasGap c-card--hasLink c-card--linkExpanded c-card--hasImage">
+								<header class="c-card__header">
+									<h3 class="c-card__title">Titel</h3>
+								</header>
+								<figure class="c-card__fig">
+									<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+								</figure>
+								<div class="c-card__content">
+									<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+								</div>
+								<div class="c-card__link">
+									<a href="#">Mehr erfahren</a>
+								</div>
+								<footer>
+								</footer>
+							</article>
+						</li>
+						<li class="c-grid__item">
+							<article class="c-card c-card--noLink c-card--hasImage">
+								<header class="c-card__header">
+									<h3 class="c-card__title">Titel</h3>
+								</header>
+								<figure class="c-card__fig">
+									<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+								</figure>
+								<footer>
+								</footer>
+							</article>
+						</li>
+						<li class="c-grid__item">
+							<article class="c-card c-card--noLink">
+								<header class="c-card__header">
+									<h3 class="c-card__title">Titel</h3>
+								</header>
+								<div class="c-card__content">
+									<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+								</div>
+								<footer>
+								</footer>
+							</article>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="content none">
+				<h2>Musterinhalt</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+				<h2>Heading 2</h2>
+				<h3>Heading 3</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+				<h3>Heading 3</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+				<figure>
+					<img src="img/musterbild_16zu9.jpg" alt="">
+				</figure>
+				<h4>Heading 4</h4>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+				<h3>Heading 3</h3>
+				<h4>Heading 4</h4>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="wrapper wrapper--footer">
+				<div class="c-grid c-grid--hasGap c-grid--4columns">
+					<div class="c-grid__item">
+						<h2>Kontakt</h2>
+						<address>Address</address>
+					</div>
+					<div class="c-grid__item">
+						<h2>Kontakt</h2>
+						<address>Address</address>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+.wrapper {
+	width: 90%;
+	max-width: var(--pageMaxWidth);
+	margin: 0 auto;
+}
+
+
+
+
+/* –––––– HEADER –––––– */
+/* –––––––––––––––––––– */
+.c-grid--header {
+	grid-template-areas: 
+	"logo logo logo logo metanav metanav metanav metanav metanav metanav metanav metanav"
+	"logo logo logo logo . . search search search search nav nav";
+}
+@media screen and (min-width: 48em) {
+	.c-grid--header {
+		grid-template-areas: 
+		"logo logo logo logo . . metanav metanav metanav metanav metanav metanav"
+		"logo logo logo logo . . search search search search search search"
+		"nav nav nav nav nav nav nav nav nav nav nav nav";
+	}
+}
+.c-metanav {
+	font-size: var(--fontSizeSmall);
+}
+
+
+
+/* ––– NAVIGATIONEN ––– */
+/* –––––––––––––––––––– */
+.c-mainnav {
+	display: none;
+}
+:where(.c-mainnav) .level-2 {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: var(--primaryColorLight);
+} 
+:where(.c-mainnav .level-1>li):hover .level-2   {
+	display: block
+} 
+@media screen and (min-width: 48em) {
+	.c-mainnav {
+		display: block;
+	}
+	.c-mobilenav {
+		display: none;
+	}
+}
+
+
+/* ––––– =FOOTER= ––––– */
+/* –––––––––––––––––––– */
+.footer {
+	background-color: var(--primaryColorLight);
+}

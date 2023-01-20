@@ -1,0 +1,207 @@
+/* –––––– =GENERAL= ––––– */
+/* –––––––––––––––––––––– */
+
+:where([class*="--linkList"]) li {
+	position: relative;
+}
+:where([class*="--linkList"]) a {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+[class*="--linkExpanded"] {
+	position: relative;
+}
+[class*="--linkExpanded"] a::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+[class*="--alignEnd"] {
+	justify-content: flex-end;
+}
+[class*="--alignCenter"] {
+	justify-content: center;
+}
+[class*="--hasGap"] {
+	gap: var(--pageColumnGap);
+}
+
+
+/* ––––––– =GRID= ––––––– */
+/* –––––––––––––––––––––– */
+.c-grid {
+	display: grid;
+	grid-template-columns: repeat(var(--pageColumns), 1fr);
+	grid-template-rows: auto;
+  	container-type: inline-size;
+  	container-name: grid;
+}
+.c-grid__item {
+	grid-column: span 12;
+}
+@container grid (min-width: 48em) {
+	:where(.c-grid--4columns) .c-grid__item {
+		grid-column: span 6;
+	}
+}
+@container grid (min-width: 64em) {
+	:where(.c-grid--4columns) .c-grid__item {
+		grid-column: span 3;
+	}
+}
+
+
+.c-grid__item {
+	background: lig2htblue;
+}
+.c-grid__item--logo {
+	grid-area: logo;
+}
+.c-grid__item--nav {
+	grid-area: nav;
+}
+.c-grid__item--search {
+	grid-area: search;
+}
+.c-grid__item--metanav {
+	grid-area: metanav;
+}
+
+
+
+/* ––––––– =CARD= ––––––– */
+/* –––––––––––––––––––––– */
+
+.c-card {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	container-type: inline-size;
+	container-name: card;
+}
+.c-card>* {
+	grid-column: span 4;
+}
+:where(.c-card--hasImage) .c-card__fig {
+	grid-row: 1;
+}
+@container card (min-width: 48em) {
+	.c-card>* {
+		grid-column: span 3;
+	}
+	.c-card__fig {
+		grid-column: 1;
+		grid-row: 1 / -1;
+	}
+
+}
+
+
+
+
+/* ––––––– =LIST= ––––––– */
+/* –––––––––––––––––––––– */
+
+.c-list {
+	display: flex;
+	flex-direction: column;
+}
+.c-list--horizontal {
+	flex-direction: row;
+}
+
+/* ––––––– =FORM= ––––––– */
+/* –––––––––––––––––––––– */
+
+.btn {
+	padding: .2em 1em; 
+	background-color: var(--primaryColor);
+	color: var(--primaryContrastColor);
+}
+
+
+/* –––––– =SEARCH= –––––– */
+/* –––––––––––––––––––––– */
+.c-search {
+	height: 100%;
+	min-height: 44px;
+}
+.c-search__form {
+	display: flex;
+	height: 100%;
+	border: 1px solid var(--primaryColor);
+}
+.c-search__input {
+	flex: 1 1 auto;
+	min-width: 0;
+	padding: .2em 1em;
+}
+
+
+/* ––––– =HAMBURGER= ––––– */
+/* ––––––––––––––––––––––– */
+.c-hamburger {
+	display: block;
+	position: relative;
+	z-index: 4;
+	flex: 0 0 auto;
+	margin: 0;
+	width: clamp(44px, 100%, 55px);
+	height: 44px;
+	border: 0;
+	text-indent: -9999px;
+	cursor: pointer;
+	background-color: var(--primaryColor);
+	transition: background-color .5s;
+}
+.c-hamburger span {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 15%;
+	height: 2px;
+	width: 70%;
+	background-color: #fff;
+	border-radius: 1px;
+	opacity: 1;
+	transform: rotate(0deg);
+	transition: .25s ease-in-out;
+}
+.c-hamburger span:nth-child(1) {
+	top: 11px;
+}
+.c-hamburger span:nth-child(2),
+.c-hamburger span:nth-child(3) {
+	top: 21px;
+}
+.c-hamburger span:nth-child(4) {
+	top: 31px;
+}
+
+.c-hamburger--active {
+	background-color: #000;
+}
+.c-hamburger--active span:nth-child(1) {
+	top: 20px;
+	width: 0%;
+	left: 50%;
+}
+.c-hamburger--active span:nth-child(2) {
+	transform: rotate(45deg);
+}
+.c-hamburger--active span:nth-child(3) {
+	transform: rotate(-45deg);
+}
+.c-hamburger--active span:nth-child(4) {
+	top: 20px;
+	width: 0%;
+	left: 50%;
+}
+
+
+
+

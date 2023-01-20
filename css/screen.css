@@ -1,0 +1,13 @@
+/* ***********************************************************************************
+FileName	: screen.css
+Date		: 19.01.2023
+Author		: guggenbuehlk
+Purpose		: Framework-Entwicklung
+
+*********************************************************************************** */
+@import url(variables.css); 
+@import url(basics.css); 
+@import url(components.css);
+@import url(modules.css);
+@import url(layout.css);
+@import url(https://ext.cdn-backslash.ch/lib/font-awesome6/6.2.0/fontawesome-light.css);
