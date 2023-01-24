@@ -30,6 +30,18 @@
 [class*="--hasGap"] {
 	gap: var(--pageColumnGap);
 }
+[class*="--hashorizontalGap"] {
+	gap: 0 var(--pageColumnGap);
+}
+[class*="--hasverticalGap"] {
+	gap: var(--pageColumnGap) 0;
+}
+[class*="--hoverEffect"] li:hover,
+[class*="--hoverEffect"] .grid__item:hover,
+[class*="--hoverEffect"] .list__item:hover,
+[class*="--hoverEffect"] tbody tr:hover {
+	background-color: var(--hoverColor);
+}
 
 
 /* ––––––– =GRID= ––––––– */
@@ -40,43 +52,36 @@
 	grid-template-rows: auto;
   	container-type: inline-size;
   	container-name: grid;
+  	padding: 0;
+  	list-style: none;
 }
 .c-grid__item {
 	grid-column: span 12;
+	container-type: inline-size;
+  	container-name: grid__item;
 }
 @container grid (min-width: 48em) {
+	:where(.c-grid--2columns) .c-grid__item,
 	:where(.c-grid--4columns) .c-grid__item {
 		grid-column: span 6;
+	}
+	:where(.c-grid--3columns) .c-grid__item,
+	:where(.c-grid--6columns) .c-grid__item {
+		grid-column: span 4;
 	}
 }
 @container grid (min-width: 64em) {
 	:where(.c-grid--4columns) .c-grid__item {
 		grid-column: span 3;
 	}
+	:where(.c-grid--6columns) .c-grid__item {
+		grid-column: span 2;
+	}
 }
-
-
-.c-grid__item {
-	background: lig2htblue;
-}
-.c-grid__item--logo {
-	grid-area: logo;
-}
-.c-grid__item--nav {
-	grid-area: nav;
-}
-.c-grid__item--search {
-	grid-area: search;
-}
-.c-grid__item--metanav {
-	grid-area: metanav;
-}
-
 
 
 /* ––––––– =CARD= ––––––– */
 /* –––––––––––––––––––––– */
-
 .c-card {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -89,7 +94,7 @@
 :where(.c-card--hasImage) .c-card__fig {
 	grid-row: 1;
 }
-@container card (min-width: 48em) {
+@container grid__item (min-width: 48em) {
 	.c-card>* {
 		grid-column: span 3;
 	}
@@ -97,15 +102,23 @@
 		grid-column: 1;
 		grid-row: 1 / -1;
 	}
-
+	.c-card:has(:nth-child(3)) {
+		grid-template-rows: auto 1fr;
+	}
+	.c-card:has(:nth-child(4)) {
+		grid-template-rows: repeat(2, auto) 1fr;
+	}
+	.c-card:has(:nth-child(5)) {
+		grid-template-rows: repeat(3, auto) 1fr;
+	}
+	.c-card:has(:nth-child(6)) {
+		grid-template-rows: repeat(4, auto) 1fr;
+	}
 }
-
-
 
 
 /* ––––––– =LIST= ––––––– */
 /* –––––––––––––––––––––– */
-
 .c-list {
 	display: flex;
 	flex-direction: column;
@@ -113,10 +126,101 @@
 .c-list--horizontal {
 	flex-direction: row;
 }
+.c-list--reset,
+.c-list--reset {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* ––––––– =TABLE= –––––– */
+/* –––––––––––––––––––––– */
+table {
+	position: relative;
+    text-align: left;
+	width: fit-content;
+    border-collapse: collapse;
+    font-size: var(--fontSizeSmall);
+}
+caption {
+	text-align: left;
+}
+th {
+	font-weight: bold;
+}
+th,
+td {
+	vertical-align: top;
+    padding: 1em;
+}
+tr {
+    border-bottom: 1px solid var(--backgroundColor);
+}
+:where(thead) tr {
+	border-top: 2px solid var(--backgroundColor);
+}
+:where(tbody) tr:first-of-type {
+    border-top: 1px solid var(--backgroundColor);
+}
+:where(thead) tr,
+:where(tbody) tr:last-of-type {
+    border-bottom-width: 2px;
+}
+
+/* Table-Styling */
+:where(.c-table--zebraEffect) tr:nth-of-type(even) {
+    background-color: var(--backgroundColor);
+}
+:where(.c-table--zebraEffect) thead {
+    background-color: var(--primaryColor);
+	color: var(--primaryContrastColor);
+}
+:where(.c-table--zebraEffect thead) tr {
+    border: 0;
+}
+:where(.c-table--gridEffect) th,
+:where(.c-table--gridEffect) td {
+	border-right: 1px solid var(--backgroundColor);
+}
+:where(.c-table--gridEffect tbody) th:first-child,
+:where(.c-table--gridEffect) td:first-child {
+	border-left: 1px solid var(--backgroundColor);
+}
+:where(.c-table--gridEffect.c-table--zebraEffect tr:nth-of-type(even)) td:not(:last-child),
+:where(.c-table--gridEffect.c-table--zebraEffect tr:nth-of-type(even)) th:not(:last-child) {
+	border-right: 1px solid white;
+}
+
+
+/* Shadows - to be discussed and improved */
+.table-responsive-container {
+	overflow: hidden;
+}
+.shadowRight,
+.shadowLeft {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	width: 40px;
+	height: 100%;
+	opacity: 0;
+	transition: opacity .2s;
+}
+.shadowLeft {
+	left: -20px;
+	background: radial-gradient(closest-side,rgba(0,0,0,.2), rgba(0,0,0,0))
+}
+.shadowRight {
+	right: -20px;
+	background: radial-gradient(closest-side,rgba(0,0,0,.2), rgba(0,0,0,0))
+}
+.shadowRight--visible .shadowRight,
+.shadowLeft--visible .shadowLeft {
+	opacity: 1;
+}
+
 
 /* ––––––– =FORM= ––––––– */
 /* –––––––––––––––––––––– */
-
 .btn {
 	padding: .2em 1em; 
 	background-color: var(--primaryColor);

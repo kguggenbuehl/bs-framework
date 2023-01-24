@@ -5,8 +5,6 @@
  	--pageColumns: 12; /* 138px */
  	--pageColumnGap: clamp(12px, 1.25vw, 24px); /* 24/1920 */
 
- 	--breakpointSmall: 48em;
-
  	/* 	Fonts */
  	--fontSizeSmall: clamp(12px, 0.833333vw, 16px); /* meta: 16/1920 */
  	--fontSizeBase: clamp(14px, 1.041667vw, 20px); /* h4, p: 20/1920 */
@@ -28,6 +26,9 @@
 
 	--secondaryColor: hsl(var(--secondaryColorH) var(--primaryColorS) var(--primaryColorL));
 	--secondaryContrastColor: hsl(var(--secondaryColorH) var(--primaryColorS) 100%);
+
+	--hoverColor: hsl(var(--primaryColorH) calc(var(--primaryColorS) / 2 ) 80%);
+	--backgroundColor: hsl(var(--primaryColorH) calc(var(--primaryColorS) / 2 ) 90%);
 
 	/* Margins */
 	--baseMargin: 1.5em;

@@ -51,9 +51,9 @@
 			<div class="c-grid__item c-grid__item--nav">
 				<h2 class="visuallyhidden" id="###">Hauptnavigation</h2>
 				<nav class="c-mainnav">
-					<ul class="c-list c-list--horizontal c-list--alignCenter c-list--hasGap c-list--linkList level-1">
+					<ul class="c-list c-list--reset c-list--horizontal c-list--alignCenter c-list--hasGap c-list--linkList level-1">
 						<li><a href="">Europa</a>
-							<ul class="level-2">
+							<ul class="c-list--reset level-2">
 								<li><a href="">Norwegen</a></li>
 								<li><a href="">Schweden</a></li>
 								<li><a href="">Finnland</a></li>
@@ -81,32 +81,36 @@
 		<div class="headimage"></div>
 		<main class="main wrapper" id="main" aria-labelledby="main__title">
 			<h1 class="main__title content-maintitle" id="main__title">backslash Framework</h1>
-			<section class="mb">
+			<section class="mb non2e">
 				<h2>Newsmodul</h2>
 				<div class="m-news">
-					<ul class="c-grid c-grid--hasGap c-grid--4col2umns">
+					<ul class="c-grid c-grid--hasGap c-grid--4columns">
 						<li class="c-grid__item">
-							<article class="c-card c-card--hasGap c-card--noLink c-card--hasImage">
+							<article class="c-card c-card--hashorizontalGap c-card--noLink c-card--hasImage c-card--hasContent">
 								<header class="c-card__header">
 									<h3 class="c-card__title">Titel</h3>
+									<div class="c-card__meta">
+										<p>
+											<span class="event-time-from">
+												<time datetime="2023-01-25" class="dtstart">25. Januar 2023</time>
+											</span><span class="event-time-to"></span>
+										</p>
+									</div>
 								</header>
-								<figure class="c-card__fig">
-										<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
-									</figure>
+								<figure class="c-card__fig nmb">
+									<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+								</figure>
 								<div class="c-card__content">
-									
 									<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
 								</div>
-								<footer>
-								</footer>
 							</article>
 						</li>
 						<li class="c-grid__item">
-							<article class="c-card c-card--hasGap c-card--hasLink c-card--linkExpanded c-card--hasImage">
+							<article class="c-card c-card--hashorizontalGap c-card--linkExpanded c-card--hasImage c-card--hasContent c-card--hasLink">
 								<header class="c-card__header">
 									<h3 class="c-card__title">Titel</h3>
 								</header>
-								<figure class="c-card__fig">
+								<figure class="c-card__fig nmb">
 									<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
 								</figure>
 								<div class="c-card__content">
@@ -115,43 +119,99 @@
 								<div class="c-card__link">
 									<a href="#">Mehr erfahren</a>
 								</div>
-								<footer>
-								</footer>
 							</article>
 						</li>
 						<li class="c-grid__item">
-							<article class="c-card c-card--noLink c-card--hasImage">
+							<article class="c-card c-card--noLink c-card--hasImage c-card--hashorizontalGap">
 								<header class="c-card__header">
 									<h3 class="c-card__title">Titel</h3>
 								</header>
-								<figure class="c-card__fig">
+								<figure class="c-card__fig nmb">
 									<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
 								</figure>
-								<footer>
-								</footer>
 							</article>
 						</li>
 						<li class="c-grid__item">
-							<article class="c-card c-card--noLink">
+							<article class="c-card c-card--noLink c-card--hasContent">
 								<header class="c-card__header">
 									<h3 class="c-card__title">Titel</h3>
 								</header>
 								<div class="c-card__content">
 									<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
 								</div>
-								<footer>
-								</footer>
 							</article>
 						</li>
 					</ul>
 				</div>
 			</section>
-			<section class="content none">
+			<section class="content no2ne">
 				<h2>Musterinhalt</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+				<ul>
+					<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nulla saepe quas.</li>
+					<li>Neque culpa nihil quam ad, optio incidunt. Praesentium et, dolores animi soluta.</li>
+					<li>Provident, explicabo. Voluptates impedit quisquam temporibus neque. Cumque rem placeat id nemo.</li>
+					<li>Assumenda animi odit dicta deleniti ex fugiat accusantium voluptas impedit blanditiis, delectus.</li>
+					<li>Fugiat est aliquam in sit, nam harum ad? Perferendis, possimus omnis deserunt?</li>
+					<li>Incidunt et quia itaque aliquid dignissimos assumenda dolor! Itaque, veniam asperiores delectus.</li>
+					<li>Exercitationem impedit illum voluptates rem animi magnam fugit libero illo voluptate inventore.</li>
+					<li>Recusandae repudiandae dolorem itaque minima suscipit vel sit enim repellat, soluta eius?</li>
+				</ul>
 				<h2>Heading 2</h2>
 				<h3>Heading 3</h3>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+				<div class="table-responsive-container">
+					<div class="table-responsive nmb" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
+						<table class="c-table--hoverEf2fect c-table--zebraEf2fect c-table--gridEf2fect">
+							<caption>Different continents</caption>
+							<thead>
+								<tr>
+									<th>Continent</th>
+									<th>Countries</th>
+									<th>Highest Point</th>
+									<th>Population</th>
+									<th>Area</th>
+									<th>Comment</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>Europe</th>
+									<td>50</td>
+									<td>4800&nbsp;m.ü.M</td>
+									<td>800'000'000</td>
+									<td>1'200'000&nbsp;km<sup>2</sup></td>
+									<td>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Molestiae enim iure provident distinctio unde tempora, quae ab ut id numquam.</td>
+								</tr>
+								<tr>
+									<th>Asia</th>
+									<td>40</td>
+									<td>8848&nbsp;m.ü.M</td>
+									<td>3'800'000'000</td>
+									<td>1'200'000&nbsp;km<sup>2</sup></td>
+									<td>–</td>
+								</tr>
+								<tr>
+									<th>Africa</th>
+									<td>55</td>
+									<td>5900&nbsp;m.ü.M</td>
+									<td>800'000'000</td>
+									<td>1'200'000&nbsp;km<sup>2</sup></td>
+									<td>–</td>
+								</tr>
+								<tr>
+									<th>North America</th>
+									<td>50</td>
+									<td>5600&nbsp;m.ü.M</td>
+									<td>1'200'000'000</td>
+									<td>1'200'000&nbsp;km<sup>2</sup></td>
+									<td>–</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="shadowContainer"><div class="shadowRight"></div><div class="shadowLeft"></div></div>
+				</div>
 				<h3>Heading 3</h3>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
@@ -180,6 +240,7 @@
 			</div>
 		</footer>
 	</div>
+	<script src="js/custom.js"></script>
 </body>
 
 </html>

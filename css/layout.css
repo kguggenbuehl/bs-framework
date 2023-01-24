@@ -4,11 +4,20 @@
 	margin: 0 auto;
 }
 
-
-
-
 /* –––––– HEADER –––––– */
 /* –––––––––––––––––––– */
+.c-grid__item--logo {
+	grid-area: logo;
+}
+.c-grid__item--nav {
+	grid-area: nav;
+}
+.c-grid__item--search {
+	grid-area: search;
+}
+.c-grid__item--metanav {
+	grid-area: metanav;
+}
 .c-grid--header {
 	grid-template-areas: 
 	"logo logo logo logo metanav metanav metanav metanav metanav metanav metanav metanav"
