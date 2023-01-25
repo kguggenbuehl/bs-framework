@@ -28,7 +28,10 @@
 	--secondaryContrastColor: hsl(var(--secondaryColorH) var(--primaryColorS) 100%);
 
 	--hoverColor: hsl(var(--primaryColorH) calc(var(--primaryColorS) / 2 ) 80%);
-	--backgroundColor: hsl(var(--primaryColorH) calc(var(--primaryColorS) / 2 ) 90%);
+	--tableBorderColor: hsl(var(--primaryColorH) calc(var(--primaryColorS) / 2 ) 90%);
+	--tableZebraColor: var(--tableBorderColor);
+
+	--backgroundColor: white;
 
 	/* Margins */
 	--baseMargin: 1.5em;

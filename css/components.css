@@ -42,6 +42,15 @@
 [class*="--hoverEffect"] tbody tr:hover {
 	background-color: var(--hoverColor);
 }
+[class*="--imgCover"] {
+	overflow: hidden;
+}
+[class*="--imgCover"] * {
+	height:100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
 
 
 /* ––––––– =GRID= ––––––– */
@@ -126,6 +135,9 @@
 .c-list--horizontal {
 	flex-direction: row;
 }
+.c-list--wrap {
+	flex-wrap: wrap;
+}
 .c-list--reset,
 .c-list--reset {
     list-style: none;
@@ -153,13 +165,13 @@ td {
     padding: 1em;
 }
 tr {
-    border-bottom: 1px solid var(--backgroundColor);
+    border-bottom: 1px solid var(--tableBorderColor);
 }
 :where(thead) tr {
-	border-top: 2px solid var(--backgroundColor);
+	border-top: 2px solid var(--tableBorderColor);
 }
 :where(tbody) tr:first-of-type {
-    border-top: 1px solid var(--backgroundColor);
+    border-top: 1px solid var(--tableBorderColor);
 }
 :where(thead) tr,
 :where(tbody) tr:last-of-type {
@@ -168,7 +180,7 @@ tr {
 
 /* Table-Styling */
 :where(.c-table--zebraEffect) tr:nth-of-type(even) {
-    background-color: var(--backgroundColor);
+    background-color: var(--tableZebraColor);
 }
 :where(.c-table--zebraEffect) thead {
     background-color: var(--primaryColor);
@@ -179,11 +191,11 @@ tr {
 }
 :where(.c-table--gridEffect) th,
 :where(.c-table--gridEffect) td {
-	border-right: 1px solid var(--backgroundColor);
+	border-right: 1px solid var(--tableBorderColor);
 }
 :where(.c-table--gridEffect tbody) th:first-child,
 :where(.c-table--gridEffect) td:first-child {
-	border-left: 1px solid var(--backgroundColor);
+	border-left: 1px solid var(--tableBorderColor);
 }
 :where(.c-table--gridEffect.c-table--zebraEffect tr:nth-of-type(even)) td:not(:last-child),
 :where(.c-table--gridEffect.c-table--zebraEffect tr:nth-of-type(even)) th:not(:last-child) {
@@ -192,31 +204,59 @@ tr {
 
 
 /* Shadows - to be discussed and improved */
-.table-responsive-container {
-	overflow: hidden;
+.horizontalScroll__container {
+	position: relative;
 }
-.shadowRight,
-.shadowLeft {
+.horizontalScroll__container::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	bottom: 0;
+	left: -1px;
+	right: -1px;
+	pointer-events: none;
+	transition: background .5s;
+}
+.horizontalScroll__container.shadowRight--visible::after {
+	background: linear-gradient(to right, transparent calc(100% - 20px),var(--backgroundColor) 100%);
+}
+.horizontalScroll__container.shadowLeft--visible::after {
+	background: linear-gradient(to right, var(--backgroundColor) 0%,transparent 20px);
+}
+.horizontalScroll__container.shadowRight--visible.shadowLeft--visible::after {
+	background: linear-gradient(to right, var(--backgroundColor) 0%,transparent 20px,transparent calc(100% - 20px),var(--backgroundColor) 100%);
+}
+ .horizontalScroll__area {
+	overflow: auto;
+}
+/*.horizontalScroll__shadowRight,
+.horizontalScroll__shadowLeft {
 	position: absolute;
 	z-index: 2;
 	top: 0;
-	width: 40px;
+	width: 20px;
 	height: 100%;
 	opacity: 0;
 	transition: opacity .2s;
 }
-.shadowLeft {
-	left: -20px;
-	background: radial-gradient(closest-side,rgba(0,0,0,.2), rgba(0,0,0,0))
+.horizontalScroll__shadowLeft {
+	left: -1px;
+	background: radial-gradient(closest-side,hsla(180,50%,50%,50%), hsla(180,50%,50%,0));
+	background: linear-gradient(to right,  hsla(180,50%,100%,100%), hsla(180,50%,50%,0));
+	background: linear-gradient(to right, var(--backgroundColor), var(--backgroundColorTranparent));
 }
-.shadowRight {
-	right: -20px;
-	background: radial-gradient(closest-side,rgba(0,0,0,.2), rgba(0,0,0,0))
+.horizontalScroll__shadowRight {
+	right: -1px;
+	background: radial-gradient(closest-side, hsla(180,50%,100%,100%), hsla(180,50%,50%,0));
+	background: linear-gradient(to right, hsla(180,50%,50%,0), hsla(180,50%,100%,100%));
+	background: linear-gradient(to right, var(--backgroundColorTranparent), var(--backgroundColor));
+	
 }
-.shadowRight--visible .shadowRight,
-.shadowLeft--visible .shadowLeft {
+.shadowRight--visible .horizontalScroll__shadowRight,
+.shadowLeft--visible .horizontalScroll__shadowLeft {
 	opacity: 1;
-}
+} */
 
 
 /* ––––––– =FORM= ––––––– */

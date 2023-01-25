@@ -19,66 +19,93 @@
 
 <body>
 	<div class="pageWrapper">
-		<header class="wrapper c-grid c-grid--hasGap c-grid--header">
-			<div class="c-grid__item c-grid__item--logo">
-				<div class="logo">
-					<a href="#" title="Homepage">
-						Logo
-					</a>
-				</div>
-			</div>
-			<div class="c-grid__item c-grid__item--metanav">
-				<nav class="c-metanav">
-					<ul class="c-list c-list--horizontal c-list--alignEnd c-list--hasGap">
-						<li><a href="">Sitemap</a></li>
-						<li><a href="">Kontakt</a></li>
-						<li><a href="">Newsletter</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="c-grid__item c-grid__item--search">
-				<div class="c-search">
-					<form class="c-search__form" id="c-search__form" role="search" method="post" action="#">
-						<label class="c-search__label visuallyhidden" for="c-search__input">Suche</label>
-						<input class="c-search__input" type="search" id="c-search__input" placeholder="Suchbegriff" required />
-						<button class="c-search__submit btn" type="submit">
-							<i class="fa-regular fa-magnifying-glass"></i>
-							<span class="visuallyhidden">suchen</span>
-						</button>
-					</form>
-				</div>
-			</div>
-			<div class="c-grid__item c-grid__item--nav">
-				<h2 class="visuallyhidden" id="###">Hauptnavigation</h2>
-				<nav class="c-mainnav">
-					<ul class="c-list c-list--reset c-list--horizontal c-list--alignCenter c-list--hasGap c-list--linkList level-1">
-						<li><a href="">Europa</a>
-							<ul class="c-list--reset level-2">
-								<li><a href="">Norwegen</a></li>
-								<li><a href="">Schweden</a></li>
-								<li><a href="">Finnland</a></li>
-								<li><a href="">Dänemark</a></li>
-								<li><a href="">Island</a></li>
-								<li><a href="">Färöer Inseln</a></li>
+		<header class="header ">
+			<div class="wrapper pageWrapper__inner">
+				<div class="c-grid c-grid--hasGap c-grid--header ">
+					<div class="c-grid__item c-grid__item--logo">
+						<div class="logo">
+							<a href="#" title="Homepage">
+								Logo
+							</a>
+						</div>
+					</div>
+					<div class="c-grid__item c-grid__item--metanav">
+						<nav class="c-metanav">
+							<ul class="c-list c-list--horizontal c-list--alignEnd c-list--hasGap c-list--reset">
+								<li><a href="">Sitemap</a></li>
+								<li><a href="">Kontakt</a></li>
+								<li><a href="">Newsletter</a></li>
 							</ul>
-						</li>
-						<li><a href="">Asien</a></li>
-						<li><a href="">Afrika</a></li>
-						<li><a href="">Amerika</a></li>
-						<li><a href="">Ozeanien</a></li>
-					</ul>
-				</nav>
-				<div class="c-mobilenav">
-					<button type="button" class="c-hamburger js-hamburger" id="js-mobilnav-toggle" aria-controls="mobilenav" aria-expanded="false">
-						<span>Menü</span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</button>
+						</nav>
+					</div>
+					<div class="c-grid__item c-grid__item--search">
+						<div class="c-search">
+							<form class="c-search__form" id="c-search__form" role="search" method="post" action="#">
+								<label class="c-search__label visuallyhidden" for="c-search__input">Suche</label>
+								<input class="c-search__input" type="search" id="c-search__input" placeholder="Suchbegriff" required />
+								<button class="c-search__submit btn" type="submit">
+									<i class="fa-regular fa-magnifying-glass"></i>
+									<span class="visuallyhidden">suchen</span>
+								</button>
+							</form>
+						</div>
+					</div>
+					<div class="c-grid__item c-grid__item--nav">
+						<h2 class="visuallyhidden" id="###">Hauptnavigation</h2>
+						<nav class="c-mainnav">
+							<ul class="c-list c-list--reset c-list--horizontal c-list--alignCenter c-list--hasGap c-list--linkList level-1">
+								<li><a href="">Europa</a>
+									<ul class="c-list--reset level-2">
+										<li><a href="">Norwegen</a></li>
+										<li><a href="">Schweden</a></li>
+										<li><a href="">Finnland</a></li>
+										<li><a href="">Dänemark</a></li>
+										<li><a href="">Island</a></li>
+										<li><a href="">Färöer Inseln</a></li>
+									</ul>
+								</li>
+								<li><a href="">Asien</a></li>
+								<li><a href="">Afrika</a></li>
+								<li><a href="">Amerika</a></li>
+								<li><a href="">Ozeanien</a></li>
+							</ul>
+						</nav>
+						<div class="c-mobilenav">
+							<button type="button" class="c-hamburger js-hamburger" id="js-mobilnav-toggle" aria-controls="mobilenav" aria-expanded="false">
+								<span>Menü</span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</header>
-		<div class="headimage"></div>
+		<div class="c-headimage c-headimage--imgCover">
+			<figure class="c-headimage__fig nmb">
+				<img class="c-headimage__img nmb" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+			</figure>
+		</div>
+		<nav class="m-breadcrumb wrapper horizontalScroll__container" aria-labelledby="m-breadcrumb__title">
+			<h2 class="m-breadcrumb__title visuallyhidden" id="m-breadcrumb__title">Breadcrumb</h2>
+			<ul class="c-list c-list--horizontal c-list--hasGap c-list--reset horizontalScroll__area" id="horizontalScroll__area">
+				<li class="c-list__item">
+					<a class="m-breadcrumb__link" href="/">
+						<i class="fa-regular fa-house fa-fw"></i><span class="visuallyhidden">Home</span></a>
+				</li>
+				<li class="c-list__item">
+					<a class="breadcrumb__link" href="/"><span>Verwaltung</span></a>
+				</li>
+				<li class="c-list__item">
+					<a class="breadcrumb__link" href="/"><span>Kommissionen</span></a>
+				</li>
+				<li class="c-list__item">
+					<a class="breadcrumb__link" href="/"><span>Rechnungsprüfungskommission</span></a>
+				</li>
+				<li class="c-list__item"><span>Zuständigkeiten</span></li>
+			</ul>
+		</nav>
 		<main class="main wrapper" id="main" aria-labelledby="main__title">
 			<h1 class="main__title content-maintitle" id="main__title">backslash Framework</h1>
 			<section class="mb non2e">
@@ -160,9 +187,9 @@
 				<h2>Heading 2</h2>
 				<h3>Heading 3</h3>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-				<div class="table-responsive-container">
-					<div class="table-responsive nmb" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
-						<table class="c-table--hoverEf2fect c-table--zebraEf2fect c-table--gridEf2fect">
+				<div class="horizontalScroll__container">
+					<div class="table-responsive nmb horizontalScroll__area" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
+						<table class="c-table--hoverEf2fect c-table--zebraEffect c-table--gridEf2fect">
 							<caption>Different continents</caption>
 							<thead>
 								<tr>
@@ -210,7 +237,6 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="shadowContainer"><div class="shadowRight"></div><div class="shadowLeft"></div></div>
 				</div>
 				<h3>Heading 3</h3>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>

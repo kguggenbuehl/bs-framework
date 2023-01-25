@@ -1,0 +1,6 @@
+/* –––– =BREADCRUMB= –––– */
+/* –––––––––––––––––––––– */
+.m-breadcrumb li {
+	display: block;
+	padding: 0.5em;
+}

@@ -1,44 +1,44 @@
 $(document).ready(function() {
 	console.log('ready');
 
-	function checkArrow(tableContainer){
-		const table = $(tableContainer).find('table');
-		const tableWidth = table.width();
-		const tablePosition = table.position().left;
+	function checkShadow(scrollContainer){
+		const scrollArea = $(scrollContainer).find('.horizontalScroll__area');
+		const scrollAreaContentWidth = scrollArea[0].scrollWidth;
+		const scrollPosition = scrollArea.scrollLeft();
 
-		if (tablePosition < 0) {
-			tableContainer.addClass('shadowLeft--visible');
+		
+		if (scrollPosition > 5) {
+			scrollContainer.addClass('shadowLeft--visible');
 		} else {
-			tableContainer.removeClass('shadowLeft--visible');
+			scrollContainer.removeClass('shadowLeft--visible');
 		}
-
-		if (tableWidth + tablePosition - 10 <= tableContainer.width()) {
-			tableContainer.removeClass('shadowRight--visible');
+		if (scrollAreaContentWidth - scrollPosition - 5 > scrollContainer.width()) {
+			scrollContainer.addClass('shadowRight--visible');
 		} else {
-			tableContainer.addClass('shadowRight--visible');
+			scrollContainer.removeClass('shadowRight--visible');
 		}
 	}
 
 	const improveResponsiveTables = function() {
 		
-		tableContainer.each(function(i) {
+		scrollContainer.each(function(i) {
 
-			checkArrow($(this));
+			checkShadow($(this));
 
-			tableContainer.find('.table-responsive').scroll(function(event) {
-				const parent = $(event.target).parent();
-				checkArrow(parent);
+			scrollContainer.find('.horizontalScroll__area').scroll(function(event) {
+				const parent = $(event.target).closest('.horizontalScroll__container');
+				checkShadow(parent);
 			});
 		});
 	};
 
 
 
-	const tableContainer = $('.table-responsive-container');
+	const scrollContainer = $('.horizontalScroll__container');
 
 	$(window).resize(function(event) {
-		tableContainer.each(function(index) {
-			checkArrow($(this));
+		scrollContainer.each(function(index) {
+			checkShadow($(this));
 		});
 	});
 
