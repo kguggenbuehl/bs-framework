@@ -12,46 +12,59 @@
 [class*="--linkExpanded"] {
 	position: relative;
 }
-[class*="--linkExpanded"] a::after {
+:where([class*="--linkExpanded"]) a::after {
 	content: "";
 	position: absolute;
 	z-index: 1;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	inset: 0;
+}
+[class*="--reset"]{
+    list-style: none;
+    padding: 0;
 }
 [class*="--alignEnd"] {
-	justify-content: flex-end;
+	justify-content: end;
 }
 [class*="--alignCenter"] {
 	justify-content: center;
 }
-[class*="--hasGap"] {
+[class*="--gap"] {
 	gap: var(--pageColumnGap);
 }
-[class*="--hashorizontalGap"] {
+[class*="--horizontalGap"] {
 	gap: 0 var(--pageColumnGap);
 }
-[class*="--hasverticalGap"] {
+[class*="--verticalGap"] {
 	gap: var(--pageColumnGap) 0;
 }
-[class*="--hoverEffect"] li:hover,
-[class*="--hoverEffect"] .grid__item:hover,
-[class*="--hoverEffect"] .list__item:hover,
-[class*="--hoverEffect"] tbody tr:hover {
+:where([class*="--hoverEffect"]) li:hover,
+:where([class*="--hoverEffect"]) .grid__item:hover,
+:where([class*="--hoverEffect"]) .list__item:hover,
+:where([class*="--hoverEffect"] tbody) tr:hover {
 	background-color: var(--hoverColor);
 }
-[class*="--imgCover"] {
+[class*="--cover"] {
 	overflow: hidden;
 }
-[class*="--imgCover"] * {
+[class*="--cover"] * {
 	height:100%;
 	width: 100%;
 	object-fit: cover;
 	object-position: center center;
 }
 
+/* ––––––– =LIST= ––––––– */
+/* –––––––––––––––––––––– */
+.c-list {
+	display: flex;
+	flex-direction: column;
+}
+.c-list--horizontal {
+	flex-direction: row;
+}
+.c-list--wrap {
+	flex-wrap: wrap;
+}
 
 /* ––––––– =GRID= ––––––– */
 /* –––––––––––––––––––––– */
@@ -60,32 +73,26 @@
 	grid-template-columns: repeat(var(--pageColumns), 1fr);
 	grid-template-rows: auto;
   	container-type: inline-size;
-  	container-name: grid;
-  	padding: 0;
+  	container-name: c-grid;
   	list-style: none;
 }
 .c-grid__item {
 	grid-column: span 12;
 	container-type: inline-size;
-  	container-name: grid__item;
+  	container-name: c-grid__item;
 }
-@container grid (min-width: 48em) {
-	:where(.c-grid--2columns) .c-grid__item,
-	:where(.c-grid--4columns) .c-grid__item {
-		grid-column: span 6;
-	}
-	:where(.c-grid--3columns) .c-grid__item,
-	:where(.c-grid--6columns) .c-grid__item {
-		grid-column: span 4;
-	}
+
+/* ––––––– =FLEX= ––––––– */
+/* –––––––––––––––––––––– */
+.c-flex {
+	display: flex;
+	container-type: inline-size;
+  	container-name: c-flex;
 }
-@container grid (min-width: 64em) {
-	:where(.c-grid--4columns) .c-grid__item {
-		grid-column: span 3;
-	}
-	:where(.c-grid--6columns) .c-grid__item {
-		grid-column: span 2;
-	}
+.c-flex__item {
+	flex: 1 0 auto;
+	container-type: inline-size;
+  	container-name: c-flex__item;
 }
 
 
@@ -103,46 +110,11 @@
 :where(.c-card--hasImage) .c-card__fig {
 	grid-row: 1;
 }
-@container grid__item (min-width: 48em) {
-	.c-card>* {
-		grid-column: span 3;
-	}
-	.c-card__fig {
-		grid-column: 1;
-		grid-row: 1 / -1;
-	}
-	.c-card:has(:nth-child(3)) {
-		grid-template-rows: auto 1fr;
-	}
-	.c-card:has(:nth-child(4)) {
-		grid-template-rows: repeat(2, auto) 1fr;
-	}
-	.c-card:has(:nth-child(5)) {
-		grid-template-rows: repeat(3, auto) 1fr;
-	}
-	.c-card:has(:nth-child(6)) {
-		grid-template-rows: repeat(4, auto) 1fr;
-	}
-}
 
 
-/* ––––––– =LIST= ––––––– */
-/* –––––––––––––––––––––– */
-.c-list {
-	display: flex;
-	flex-direction: column;
-}
-.c-list--horizontal {
-	flex-direction: row;
-}
-.c-list--wrap {
-	flex-wrap: wrap;
-}
-.c-list--reset,
-.c-list--reset {
-    list-style: none;
-    padding-left: 0;
-}
+
+
+
 
 /* ––––––– =TABLE= –––––– */
 /* –––––––––––––––––––––– */
@@ -203,65 +175,59 @@ tr {
 }
 
 
-/* Shadows - to be discussed and improved */
-.horizontalScroll__container {
-	position: relative;
-}
-.horizontalScroll__container::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	z-index: 2;
-	bottom: 0;
-	left: -1px;
-	right: -1px;
-	pointer-events: none;
-	transition: background .5s;
-}
-.horizontalScroll__container.shadowRight--visible::after {
-	background: linear-gradient(to right, transparent calc(100% - 20px),var(--backgroundColor) 100%);
-}
-.horizontalScroll__container.shadowLeft--visible::after {
-	background: linear-gradient(to right, var(--backgroundColor) 0%,transparent 20px);
-}
-.horizontalScroll__container.shadowRight--visible.shadowLeft--visible::after {
-	background: linear-gradient(to right, var(--backgroundColor) 0%,transparent 20px,transparent calc(100% - 20px),var(--backgroundColor) 100%);
-}
- .horizontalScroll__area {
-	overflow: auto;
-}
-/*.horizontalScroll__shadowRight,
-.horizontalScroll__shadowLeft {
-	position: absolute;
-	z-index: 2;
-	top: 0;
-	width: 20px;
-	height: 100%;
-	opacity: 0;
-	transition: opacity .2s;
-}
-.horizontalScroll__shadowLeft {
-	left: -1px;
-	background: radial-gradient(closest-side,hsla(180,50%,50%,50%), hsla(180,50%,50%,0));
-	background: linear-gradient(to right,  hsla(180,50%,100%,100%), hsla(180,50%,50%,0));
-	background: linear-gradient(to right, var(--backgroundColor), var(--backgroundColorTranparent));
-}
-.horizontalScroll__shadowRight {
-	right: -1px;
-	background: radial-gradient(closest-side, hsla(180,50%,100%,100%), hsla(180,50%,50%,0));
-	background: linear-gradient(to right, hsla(180,50%,50%,0), hsla(180,50%,100%,100%));
-	background: linear-gradient(to right, var(--backgroundColorTranparent), var(--backgroundColor));
-	
-}
-.shadowRight--visible .horizontalScroll__shadowRight,
-.shadowLeft--visible .horizontalScroll__shadowLeft {
-	opacity: 1;
-} */
-
-
 /* ––––––– =FORM= ––––––– */
 /* –––––––––––––––––––––– */
-.btn {
+.c-form__fieldset {
+	padding: 1.5em;
+    background: #fbfbfb;
+}
+.c-form__section {
+	margin: 0 0 calc(var(--baseMargin) * 0.75) 0;
+}
+.c-form__labelContainer {
+	margin: 0 0 calc(var(--baseMargin) / 6) 0;
+}
+.c-form__inputContainer {
+	position: relative;
+}
+.c-form__input,
+.c-form__textarea {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	padding: .5em 1em;
+	border: 1px solid var(--primaryColor);
+	font-size: var(--fontSizeForms);
+}
+:where(.c-form__inputContainer:has(.c-form__error)) .c-form__input {
+	border-color: var(--errorColor);
+}
+.c-form__input:focus,
+.c-form__textarea:focus {
+	outline: 0;
+	box-shadow: 0 0 0 3px var(--primaryColor);
+}
+:where(.c-form__inputContainer:has(.c-form__error)) .c-form__input:focus {
+	border-color: var(--primaryColor);
+}
+.c-form__error,
+.c-form__hint {
+	display: inline-block;
+    padding: 0.45em 0.6em 0.3em;
+	font-size: var(--fontSizeSmall);
+}
+.c-form__error {
+	background: var(--errorColor);
+    color: white;
+}
+.c-flex__item:has(.c-form__input--sm) {
+	flex: 0 0 max(6em, 20%);
+}
+
+
+
+
+.c-form__btn {
 	padding: .2em 1em; 
 	background-color: var(--primaryColor);
 	color: var(--primaryContrastColor);
@@ -272,23 +238,21 @@ tr {
 /* –––––––––––––––––––––– */
 .c-search {
 	height: 100%;
-	min-height: 44px;
 }
 .c-search__form {
 	display: flex;
 	height: 100%;
-	border: 1px solid var(--primaryColor);
 }
 .c-search__input {
 	flex: 1 1 auto;
 	min-width: 0;
-	padding: .2em 1em;
+	font-size: var(--fontSizeForms);
 }
 
 
 /* ––––– =HAMBURGER= ––––– */
 /* ––––––––––––––––––––––– */
-.c-hamburger {
+.c-hamburger__button {
 	display: block;
 	position: relative;
 	z-index: 4;
@@ -302,7 +266,7 @@ tr {
 	background-color: var(--primaryColor);
 	transition: background-color .5s;
 }
-.c-hamburger span {
+.c-hamburger__bar {
 	content: '';
 	display: block;
 	position: absolute;
@@ -315,32 +279,31 @@ tr {
 	transform: rotate(0deg);
 	transition: .25s ease-in-out;
 }
-.c-hamburger span:nth-child(1) {
+.c-hamburger__bar:nth-child(1) {
 	top: 11px;
 }
-.c-hamburger span:nth-child(2),
-.c-hamburger span:nth-child(3) {
+.c-hamburger__bar:nth-child(2),
+.c-hamburger__bar:nth-child(3) {
 	top: 21px;
 }
-.c-hamburger span:nth-child(4) {
+.c-hamburger__bar:nth-child(4) {
 	top: 31px;
 }
-
-.c-hamburger--active {
+.c-hamburger__button--active {
 	background-color: #000;
 }
-.c-hamburger--active span:nth-child(1) {
+:where(.c-hamburger__button--active) .c-hamburger__bar:nth-child(1) {
 	top: 20px;
 	width: 0%;
 	left: 50%;
 }
-.c-hamburger--active span:nth-child(2) {
+:where(.c-hamburger__button--active) .c-hamburger__bar:nth-child(2) {
 	transform: rotate(45deg);
 }
-.c-hamburger--active span:nth-child(3) {
+:where(.c-hamburger__button--active) .c-hamburger__bar:nth-child(3) {
 	transform: rotate(-45deg);
 }
-.c-hamburger--active span:nth-child(4) {
+:where(.c-hamburger__button--active) .c-hamburger__bar:nth-child(4) {
 	top: 20px;
 	width: 0%;
 	left: 50%;
@@ -348,4 +311,34 @@ tr {
 
 
 
+/* – =HORIZONZAL SCROLL= – */
+/* ––––––––––––––––––––––– */
+.c-horizontalScroll {
+	position: relative;
+}
+.c-horizontalScroll__scrollArea {
+	overflow-y: hidden;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.c-horizontalScroll::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	bottom: 0;
+	left: -1px;
+	right: -1px;
+	pointer-events: none;
+	transition: background .5s;
+}
+.c-horizontalScroll--shadowRightVisible::after {
+	background: linear-gradient(to right, transparent calc(100% - 20px),var(--backgroundColor) 100%);
+}
+.c-horizontalScroll--shadowLeftVisible::after {
+	background: linear-gradient(to right, var(--backgroundColor) 0%,transparent 20px);
+}
+.c-horizontalScroll--shadowLeftVisible.c-horizontalScroll--shadowRightVisible::after {
+	background: linear-gradient(to right, var(--backgroundColor) 0%,transparent 20px,transparent calc(100% - 20px),var(--backgroundColor) 100%);
+}
 

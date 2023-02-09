@@ -12,7 +12,8 @@ html {
 body {
 	margin: 0;
 	font: var(--fontSizeBase)/1.4 Helvetica, sans-serif;
-	background-color: var(--backgroundColor);
+	accent-color: var(--primaryColor);
+	/* background-color: var(--backgroundColor); */
 }
 h1, .h1 {
 	font-size: var(--fontSizeXLarge);
@@ -64,6 +65,12 @@ h1, h2, h3, h4, h5, h6, caption,
 img, embed, object, video {
 	display: block;
 	max-width: 100%;
+}
+.fig--alignright {
+	float: right;
+	width: calc(3 * var(--pageColumnWidth) + 2 * var(--pageColumnGap));
+	width: 24.0625%; /* 462/1920 */
+	margin: 0 0 var(--baseMargin) var(--pageColumnGap);
 }
 
 

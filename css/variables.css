@@ -1,9 +1,12 @@
 :root {
 
 	/* 	Layout */
-	--pageMaxWidth: 1920px;
+	--pageWidth: 0.9;
+	--pageMaxWidth: 1920;
  	--pageColumns: 12; /* 138px */
- 	--pageColumnGap: clamp(12px, 1.25vw, 24px); /* 24/1920 */
+ 	--pageColumnGap: clamp(12px, 1.125176vw, 24px); /* 24/2133 */
+ 	/* --pageColumnGap: clamp(12px, calc(24 / (var(--pageMaxWidth) / var(--pageWidth) ) * 100vw), 24px); */ /* 24/1920*0.9 */
+ 	/* --pageColumnWidth: min(calc(138 / (var(--pageMaxWidth) / var(--pageWidth) ) * 100vw), 138px); */ /* 138/2133 */
 
  	/* 	Fonts */
  	--fontSizeSmall: clamp(12px, 0.833333vw, 16px); /* meta: 16/1920 */
@@ -11,6 +14,8 @@
  	--fontSizeMedium: clamp(16px, 1.25vw, 24px); /* h3: 24/1920 */
  	--fontSizeLarge: clamp(19px, 1.5625vw, 30px); /* h2: 30/1920 */
  	--fontSizeXLarge: clamp(28px, 2.5vw, 48px); /* h1: 48/1920 */
+
+ 	--fontSizeForms: clamp(16px, 0.9375vw, 18px); /* forms: 18/1920, mind. 16px */
 
 	/* 	Colors */
 	--primaryColorH: 195;
@@ -31,7 +36,8 @@
 	--tableBorderColor: hsl(var(--primaryColorH) calc(var(--primaryColorS) / 2 ) 90%);
 	--tableZebraColor: var(--tableBorderColor);
 
-	--backgroundColor: white;
+	--backgroundColor: lightblue;
+	--errorColor:  hsl(0,100%,42%);
 
 	/* Margins */
 	--baseMargin: 1.5em;

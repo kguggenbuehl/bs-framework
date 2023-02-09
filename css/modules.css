@@ -1,6 +1,14 @@
 /* –––– =BREADCRUMB= –––– */
 /* –––––––––––––––––––––– */
-.m-breadcrumb li {
-	display: block;
-	padding: 0.5em;
+.m-breadcrumb__item {
+	display: flex;
+	padding: 0.5em 0;
+	white-space: nowrap;
+}
+.m-breadcrumb__item:not(:first-child)::before {
+	content: "\f105";
+	position: static;
+	display: inline-block;
+	margin: 0 .4em;
+	font-family: FontAwesome;
 }

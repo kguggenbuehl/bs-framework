@@ -21,7 +21,7 @@
 	<div class="pageWrapper">
 		<header class="header ">
 			<div class="wrapper pageWrapper__inner">
-				<div class="c-grid c-grid--hasGap c-grid--header ">
+				<div class="c-grid c-grid--gap c-grid--header ">
 					<div class="c-grid__item c-grid__item--logo">
 						<div class="logo">
 							<a href="#" title="Homepage">
@@ -31,7 +31,7 @@
 					</div>
 					<div class="c-grid__item c-grid__item--metanav">
 						<nav class="c-metanav">
-							<ul class="c-list c-list--horizontal c-list--alignEnd c-list--hasGap c-list--reset">
+							<ul class="c-list c-list--horizontal c-list--alignEnd c-list--gap c-list--reset nmb">
 								<li><a href="">Sitemap</a></li>
 								<li><a href="">Kontakt</a></li>
 								<li><a href="">Newsletter</a></li>
@@ -53,7 +53,7 @@
 					<div class="c-grid__item c-grid__item--nav">
 						<h2 class="visuallyhidden" id="###">Hauptnavigation</h2>
 						<nav class="c-mainnav">
-							<ul class="c-list c-list--reset c-list--horizontal c-list--alignCenter c-list--hasGap c-list--linkList level-1">
+							<ul class="c-list c-list--reset c-list--horizontal c-list--alignCenter c-list--linkList level-1 nmb">
 								<li><a href="">Europa</a>
 									<ul class="c-list--reset level-2">
 										<li><a href="">Norwegen</a></li>
@@ -71,49 +71,51 @@
 							</ul>
 						</nav>
 						<div class="c-mobilenav">
-							<button type="button" class="c-hamburger js-hamburger" id="js-mobilnav-toggle" aria-controls="mobilenav" aria-expanded="false">
-								<span>Menü</span>
-								<span></span>
-								<span></span>
-								<span></span>
-							</button>
+							<div class="c-hamburger">
+								<button type="button" class="c-hamburger__button js-hamburger" id="js-mobilnav-toggle" aria-controls="mobilenav" aria-expanded="false">
+									<span class="c-hamburger__bar">Menü</span>
+									<span class="c-hamburger__bar"></span>
+									<span class="c-hamburger__bar"></span>
+									<span class="c-hamburger__bar"></span>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</header>
-		<div class="c-headimage c-headimage--imgCover">
+		<div class="c-headimage c-headimage--cover">
 			<figure class="c-headimage__fig nmb">
 				<img class="c-headimage__img nmb" src="img/musterbild_16zu9.jpg" alt="Musterbild">
 			</figure>
 		</div>
-		<nav class="m-breadcrumb wrapper horizontalScroll__container" aria-labelledby="m-breadcrumb__title">
+		<nav class="m-breadcrumb wrapper c-horizontalScroll" aria-labelledby="m-breadcrumb__title">
 			<h2 class="m-breadcrumb__title visuallyhidden" id="m-breadcrumb__title">Breadcrumb</h2>
-			<ul class="c-list c-list--horizontal c-list--hasGap c-list--reset horizontalScroll__area" id="horizontalScroll__area">
-				<li class="c-list__item">
+			<ol class="c-list c-list--horizontal c-list--reset c-horizontalScroll__scrollArea">
+				<li class="c-list__item m-breadcrumb__item">
 					<a class="m-breadcrumb__link" href="/">
 						<i class="fa-regular fa-house fa-fw"></i><span class="visuallyhidden">Home</span></a>
 				</li>
-				<li class="c-list__item">
-					<a class="breadcrumb__link" href="/"><span>Verwaltung</span></a>
+				<li class="c-list__item m-breadcrumb__item">
+					<a class="m-breadcrumb__link" href="/"><span>Verwaltung</span></a>
 				</li>
-				<li class="c-list__item">
-					<a class="breadcrumb__link" href="/"><span>Kommissionen</span></a>
+				<li class="c-list__item m-breadcrumb__item">
+					<a class="m-breadcrumb__link" href="/"><span>Kommissionen</span></a>
 				</li>
-				<li class="c-list__item">
-					<a class="breadcrumb__link" href="/"><span>Rechnungsprüfungskommission</span></a>
+				<li class="c-list__item m-breadcrumb__item">
+					<a class="m-breadcrumb__link" href="/"><span>Rechnungsprüfungskommission</span></a>
 				</li>
-				<li class="c-list__item"><span>Zuständigkeiten</span></li>
-			</ul>
+				<li class="c-list__item m-breadcrumb__item"><span>Zuständigkeiten</span></li>
+			</ol>
 		</nav>
 		<main class="main wrapper" id="main" aria-labelledby="main__title">
 			<h1 class="main__title content-maintitle" id="main__title">backslash Framework</h1>
-			<section class="mb non2e">
+			<section class="mb no2ne">
 				<h2>Newsmodul</h2>
 				<div class="m-news">
-					<ul class="c-grid c-grid--hasGap c-grid--4columns">
+					<ul class="c-grid c-grid--gap c-grid--4columns">
 						<li class="c-grid__item">
-							<article class="c-card c-card--hashorizontalGap c-card--noLink c-card--hasImage c-card--hasContent">
+							<article class="c-card c-card--horizontalGap c-card--noLink c-card--hasImage c-card--hasContent">
 								<header class="c-card__header">
 									<h3 class="c-card__title">Titel</h3>
 									<div class="c-card__meta">
@@ -133,7 +135,7 @@
 							</article>
 						</li>
 						<li class="c-grid__item">
-							<article class="c-card c-card--hashorizontalGap c-card--linkExpanded c-card--hasImage c-card--hasContent c-card--hasLink">
+							<article class="c-card c-card--horizontalGap c-card--linkExpanded c-card--hasImage c-card--hasContent c-card--hasLink">
 								<header class="c-card__header">
 									<h3 class="c-card__title">Titel</h3>
 								</header>
@@ -149,7 +151,7 @@
 							</article>
 						</li>
 						<li class="c-grid__item">
-							<article class="c-card c-card--noLink c-card--hasImage c-card--hashorizontalGap">
+							<article class="c-card c-card--noLink c-card--hasImage c-card--horizontalGap">
 								<header class="c-card__header">
 									<h3 class="c-card__title">Titel</h3>
 								</header>
@@ -173,8 +175,9 @@
 			</section>
 			<section class="content no2ne">
 				<h2>Musterinhalt</h2>
+				<figure class="fig--alignright"><img src="img/musterbild_16zu9.jpg" alt=""></figure>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-				<ul>
+				<ul class="c-list">
 					<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nulla saepe quas.</li>
 					<li>Neque culpa nihil quam ad, optio incidunt. Praesentium et, dolores animi soluta.</li>
 					<li>Provident, explicabo. Voluptates impedit quisquam temporibus neque. Cumque rem placeat id nemo.</li>
@@ -187,8 +190,8 @@
 				<h2>Heading 2</h2>
 				<h3>Heading 3</h3>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-				<div class="horizontalScroll__container">
-					<div class="table-responsive nmb horizontalScroll__area" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
+				<div class="c-horizontalScroll">
+					<div class="table-responsive nmb c-horizontalScroll__scrollArea" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
 						<table class="c-table--hoverEf2fect c-table--zebraEffect c-table--gridEf2fect">
 							<caption>Different continents</caption>
 							<thead>
@@ -250,10 +253,186 @@
 				<h4>Heading 4</h4>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
 			</section>
+			<section class="form">
+				<h2 class="">Formular</h2>
+				<form action="#" class="c-form">
+					<fieldset class="c-form__fieldset">
+						<legend class="c-form__legend">Legende</legend>
+						<div class="c-form__section">
+							<div class="c-form__labelContainer">
+								<label class="c-form__label" for="f1">Name und Vorname<em aria-hidden="true" title="Pflichtfeld" class="form-required-hint">*</em></label>
+							</div>
+							<div class="c-form__inputContainer">
+								<input class="c-form__input" type="text" id="f1" required placeholder="Name Vorname" />
+								<span class="c-form__error" for="f1">«Name» ist ein Pflichtfeld.</span>
+							</div>
+						</div>
+						<div class="c-form__section">
+							<div class="c-form__labelContainer">
+								<label class="c-form__label" for="f1-1">E-Mail</label>
+							</div>
+							<div class="c-form__inputContainer">
+								<input class="c-form__input" type="email" id="f1-1" placeholder="E-Mail" />
+							</div>
+						</div>
+						<div class="c-form__section">
+							<div class="c-form__labelContainer">
+								<label class="c-form__label" for="f1-2">Telefon</label>
+							</div>
+							<div class="c-form__inputContainer">
+								<input class="c-form__input" type="tel" id="f1-2" placeholder="000 000 00 00" />
+							</div>
+						</div>
+						<div class="c-form__section">
+							<div class="c-form__labelContainer">
+								<label class="c-form__label" for="f1-3">Web</label>
+							</div>
+							<div class="c-form__inputContainer">
+								<input class="c-form__input" type="url" id="f1-3" placeholder="https://" />
+							</div>
+						</div>
+						<div class="c-form__section">
+							<div class="c-flex c-flex--gap c-flex--horizontal c-flex--reset">
+								<div class="c-flex__item">
+									<div class="c-form__labelContainer">
+										<label class="c-form__label" for="f1-8">Strasse<em aria-hidden="true" title="Pflichtfeld" >*</em></label>
+									</div>
+									<div class="c-form__inputContainer">
+										<input class="c-form__input" id="f1-8" type="text" value="" name="zip" required="">
+										<span class="c-form__error">«Strasse» ist ein Pflichtfeld.</span>
+									</div>
+								</div>
+								<div class="c-flex__item">
+									<div class="c-form__labelContainer">
+										<label class="c-form__label" for="f1-9">Nummer<em aria-hidden="true" title="Pflichtfeld" >*</em></label>
+									</div>
+									<div class="c-form__inputContainer">
+										<input class="c-form__input  c-form__input--sm" id="f1-9" type="text" value="" name="town" required="">
+										<span class="c-form__error">«Nummer» ist ein Pflichtfeld.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="c-form__section">
+							<div class="c-flex c-flex--gap c-flex--horizontal c-flex--reset">
+								<div class="c-flex__item">
+									<div class="c-form__labelContainer">
+										<label class="c-form__label" for="f1-6">PLZ<em aria-hidden="true" title="Pflichtfeld" >*</em></label>
+									</div>
+									<div class="c-form__inputContainer">
+										<input class="c-form__input c-form__input--sm" id="f1-6" type="text" value="" name="zip" required="">
+										<span class="c-form__error">«PLZ» ist ein Pflichtfeld.</span>
+									</div>
+								</div>
+								<div class="c-flex__item">
+									<div class="c-form__labelContainer">
+										<label class="c-form__label" for="f1-7">Ort<em aria-hidden="true" title="Pflichtfeld" >*</em></label>
+									</div>
+									<div class="c-form__inputContainer">
+										<input class="c-form__input" id="f1-7" type="text" value="" name="town" required="">
+										<span class="c-form__error">«Ort» ist ein Pflichtfeld.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="c-form__section">
+							<div class="c-form__labelContainer">
+								<label class="c-form__label" for="f1-4">Zahl</label>
+							</div>
+							<div class="c-form__inputContainer">
+								<input class="c-form__input" type="number" id="f1-4" min="1" max="100" value="" />
+								<span class="c-form__error" for="f1">«Zahl» ist ein Pflichtfeld.</span>
+								<span class="c-form__hint">Muss zwischen 1 und 100 liegen.</span>
+							</div>
+						</div>
+						<div class="c-form__section">
+							<div class="c-form__labelContainer">
+								<label class="c-form__label" for="f1-5">Inaktiv</label>
+							</div>
+							<div class="c-form__inputContainer">
+								<input class="c-form__input" type="text" id="f1-5" value="nicht verf&uuml;gbar" disabled />
+							</div>
+						</div>
+						<div class="c-form__section">
+							<p class="c-form__section-title nmb">Radio input</p>
+							<div class="form-option-lst">
+								<ul class="c-list c-list--reset">
+									<li>
+										<label class="c-form__label" for="radio-01"><input class="c-form__radio" type="radio" name="radiogroup" id="radio-01" checked /> Ja</label>
+									</li>
+									<li>
+										<label class="c-form__label" for="radio-02"><input class="c-form__radio" type="radio" name="radiogroup" id="radio-02" /> Nein</label>
+									</li>
+									<li>
+										<label class="c-form__label" for="radio-03"><input class="c-form__radio" type="radio" name="radiogroup" id="radio-03" disabled /> Vielleicht</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="c-form__section">
+							<p class="c-form__section-title nmb">Checkbox input</p>
+							<div class="form-option-lst">
+								<ul class="c-list c-list--reset">
+									<li>
+										<label class="c-form__label" for="checkbox-01"><input class="c-form__checkbox"  type="checkbox" name="checkbox-01" id="checkbox-01" checked /> per E-Mail</label>
+									</li>
+									<li>
+										<label class="c-form__label" for="checkbox-02"><input class="c-form__checkbox" type="checkbox" name="checkbox-02" id="checkbox-02" /> per Telefon</label>
+									</li>
+									<li>
+										<label class="c-form__label" for="checkbox-03"><input class="c-form__checkbox" type="checkbox" name="checkbox-03" id="checkbox-03" disabled /> per Fax</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="c-form__section">
+							<div class="c-form__labelContainer">
+								<label class="c-form__label" for="f5">Select field</label>
+							</div>
+							<div class="c-form__inputContainer">
+								<select class="c-form__select" id="f5">
+									<option class="c-form__select-option">Option 01</option>
+									<option class="c-form__select-option">Option 02</option>
+								</select>
+							</div>
+						</div>
+						<div class="c-form__section">
+							<div class="c-form__labelContainer">
+								<label class="c-form__label" for="f1-range">Bewertung</label>
+							</div>
+							<div class="c-form__inputContainer">
+								<input class="c-form__range" type="range" id="f1-range" min="1" max="10" />
+							</div>
+						</div>
+						<div class="c-form__section">
+							<div class="c-form__labelContainer">
+								<label class="c-form__label" for="f6">Textarea</label>
+							</div>
+							<div class="c-form__inputContainer">
+								<textarea class="c-form__textarea" id="f6" cols="30" rows="5"></textarea>
+							</div>							
+						</div>
+						<div class="c-form__section">
+							<div class="c-form__labelContainer">
+								<label class="c-form__label" for="feactivate2fa">Toggle-Swich-Button</label>
+							</div>
+							<div class="c-form__inputContainer">
+								<input class="c-form__toggle" type="checkbox" id="feactivate2fa" name="feactivate2fa" value="1">
+								<span class="c-form__toggle" aria-hidden="true"></span>
+							</div>	
+						</div>
+						<div class="c-form__section">
+							<div class="c-form__buttonContainer">
+								<button class="c-form__btn" type="submit" name="submit">abschicken</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="wrapper wrapper--footer">
-				<div class="c-grid c-grid--hasGap c-grid--4columns">
+				<div class="c-grid c-grid--gap c-grid--4columns">
 					<div class="c-grid__item">
 						<h2>Kontakt</h2>
 						<address>Address</address>
