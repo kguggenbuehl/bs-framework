@@ -4,9 +4,7 @@
 	--pageWidth: 0.9;
 	--pageMaxWidth: 1920;
  	--pageColumns: 12; /* 138px */
- 	--pageColumnGap: clamp(12px, 1.125176vw, 24px); /* 24/2133 */
- 	/* --pageColumnGap: clamp(12px, calc(24 / (var(--pageMaxWidth) / var(--pageWidth) ) * 100vw), 24px); */ /* 24/1920*0.9 */
- 	/* --pageColumnWidth: min(calc(138 / (var(--pageMaxWidth) / var(--pageWidth) ) * 100vw), 138px); */ /* 138/2133 */
+ 	--pageColumnGap: clamp(12px, 1.125176vw, 24px); /* 24 / ( 1920 * 0.9) */
 
  	/* 	Fonts */
  	--fontSizeSmall: clamp(12px, 0.833333vw, 16px); /* meta: 16/1920 */
@@ -36,7 +34,7 @@
 	--tableBorderColor: hsl(var(--primaryColorH) calc(var(--primaryColorS) / 2 ) 90%);
 	--tableZebraColor: var(--tableBorderColor);
 
-	--backgroundColor: lightblue;
+	--backgroundColor: #fff;
 	--errorColor:  hsl(0,100%,42%);
 
 	/* Margins */

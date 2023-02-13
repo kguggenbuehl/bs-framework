@@ -18,10 +18,10 @@
 </head>
 
 <body>
-	<div class="pageWrapper">
-		<header class="header ">
-			<div class="wrapper pageWrapper__inner">
-				<div class="c-grid c-grid--gap c-grid--header ">
+	<div class="page">
+		<header class="header">
+			<div class="wrapper wrapper--header">
+				<div class="c-grid c-grid--gap c-grid--header">
 					<div class="c-grid__item c-grid__item--logo">
 						<div class="logo">
 							<a href="#" title="Homepage">
@@ -51,11 +51,11 @@
 						</div>
 					</div>
 					<div class="c-grid__item c-grid__item--nav">
-						<h2 class="visuallyhidden" id="###">Hauptnavigation</h2>
-						<nav class="c-mainnav">
-							<ul class="c-list c-list--reset c-list--horizontal c-list--alignCenter c-list--linkList level-1 nmb">
+						<nav class="c-mainnav" id="c-mainnav" aria-labelledby="c-mainnav__title">
+							<h2 class="c-mainnav__title visuallyhidden" id="c-mainnav__title">Hauptnavigation</h2>
+							<ul class="c-mainnav__list c-mainnav__list--level-1 c-list c-list--reset c-list--horizontal c-list--alignCenter c-list--linkList nmb">
 								<li><a href="">Europa</a>
-									<ul class="c-list--reset level-2">
+									<ul class="c-mainnav__list c-mainnav__list--level-2 c-list--reset">
 										<li><a href="">Norwegen</a></li>
 										<li><a href="">Schweden</a></li>
 										<li><a href="">Finnland</a></li>
@@ -89,357 +89,455 @@
 				<img class="c-headimage__img nmb" src="img/musterbild_16zu9.jpg" alt="Musterbild">
 			</figure>
 		</div>
-		<nav class="m-breadcrumb wrapper c-horizontalScroll" aria-labelledby="m-breadcrumb__title">
-			<h2 class="m-breadcrumb__title visuallyhidden" id="m-breadcrumb__title">Breadcrumb</h2>
-			<ol class="c-list c-list--horizontal c-list--reset c-horizontalScroll__scrollArea">
-				<li class="c-list__item m-breadcrumb__item">
-					<a class="m-breadcrumb__link" href="/">
-						<i class="fa-regular fa-house fa-fw"></i><span class="visuallyhidden">Home</span></a>
-				</li>
-				<li class="c-list__item m-breadcrumb__item">
-					<a class="m-breadcrumb__link" href="/"><span>Verwaltung</span></a>
-				</li>
-				<li class="c-list__item m-breadcrumb__item">
-					<a class="m-breadcrumb__link" href="/"><span>Kommissionen</span></a>
-				</li>
-				<li class="c-list__item m-breadcrumb__item">
-					<a class="m-breadcrumb__link" href="/"><span>Rechnungsprüfungskommission</span></a>
-				</li>
-				<li class="c-list__item m-breadcrumb__item"><span>Zuständigkeiten</span></li>
-			</ol>
-		</nav>
-		<main class="main wrapper" id="main" aria-labelledby="main__title">
-			<h1 class="main__title content-maintitle" id="main__title">backslash Framework</h1>
-			<section class="mb no2ne">
-				<h2>Newsmodul</h2>
-				<div class="m-news">
-					<ul class="c-grid c-grid--gap c-grid--4columns">
-						<li class="c-grid__item">
-							<article class="c-card c-card--horizontalGap c-card--noLink c-card--hasImage c-card--hasContent">
-								<header class="c-card__header">
-									<h3 class="c-card__title">Titel</h3>
-									<div class="c-card__meta">
-										<p>
-											<span class="event-time-from">
-												<time datetime="2023-01-25" class="dtstart">25. Januar 2023</time>
-											</span><span class="event-time-to"></span>
-										</p>
-									</div>
-								</header>
-								<figure class="c-card__fig nmb">
-									<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
-								</figure>
-								<div class="c-card__content">
-									<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
-								</div>
-							</article>
-						</li>
-						<li class="c-grid__item">
-							<article class="c-card c-card--horizontalGap c-card--linkExpanded c-card--hasImage c-card--hasContent c-card--hasLink">
-								<header class="c-card__header">
-									<h3 class="c-card__title">Titel</h3>
-								</header>
-								<figure class="c-card__fig nmb">
-									<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
-								</figure>
-								<div class="c-card__content">
-									<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
-								</div>
-								<div class="c-card__link">
-									<a href="#">Mehr erfahren</a>
-								</div>
-							</article>
-						</li>
-						<li class="c-grid__item">
-							<article class="c-card c-card--noLink c-card--hasImage c-card--horizontalGap">
-								<header class="c-card__header">
-									<h3 class="c-card__title">Titel</h3>
-								</header>
-								<figure class="c-card__fig nmb">
-									<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
-								</figure>
-							</article>
-						</li>
-						<li class="c-grid__item">
-							<article class="c-card c-card--noLink c-card--hasContent">
-								<header class="c-card__header">
-									<h3 class="c-card__title">Titel</h3>
-								</header>
-								<div class="c-card__content">
-									<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
-								</div>
-							</article>
-						</li>
-					</ul>
-				</div>
-			</section>
-			<section class="content no2ne">
-				<h2>Musterinhalt</h2>
-				<figure class="fig--alignright"><img src="img/musterbild_16zu9.jpg" alt=""></figure>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-				<ul class="c-list">
-					<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nulla saepe quas.</li>
-					<li>Neque culpa nihil quam ad, optio incidunt. Praesentium et, dolores animi soluta.</li>
-					<li>Provident, explicabo. Voluptates impedit quisquam temporibus neque. Cumque rem placeat id nemo.</li>
-					<li>Assumenda animi odit dicta deleniti ex fugiat accusantium voluptas impedit blanditiis, delectus.</li>
-					<li>Fugiat est aliquam in sit, nam harum ad? Perferendis, possimus omnis deserunt?</li>
-					<li>Incidunt et quia itaque aliquid dignissimos assumenda dolor! Itaque, veniam asperiores delectus.</li>
-					<li>Exercitationem impedit illum voluptates rem animi magnam fugit libero illo voluptate inventore.</li>
-					<li>Recusandae repudiandae dolorem itaque minima suscipit vel sit enim repellat, soluta eius?</li>
-				</ul>
-				<h2>Heading 2</h2>
-				<h3>Heading 3</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-				<div class="c-horizontalScroll">
-					<div class="table-responsive nmb c-horizontalScroll__scrollArea" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
-						<table class="c-table--hoverEf2fect c-table--zebraEffect c-table--gridEf2fect">
-							<caption>Different continents</caption>
-							<thead>
-								<tr>
-									<th>Continent</th>
-									<th>Countries</th>
-									<th>Highest Point</th>
-									<th>Population</th>
-									<th>Area</th>
-									<th>Comment</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th>Europe</th>
-									<td>50</td>
-									<td>4800&nbsp;m.ü.M</td>
-									<td>800'000'000</td>
-									<td>1'200'000&nbsp;km<sup>2</sup></td>
-									<td>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Molestiae enim iure provident distinctio unde tempora, quae ab ut id numquam.</td>
-								</tr>
-								<tr>
-									<th>Asia</th>
-									<td>40</td>
-									<td>8848&nbsp;m.ü.M</td>
-									<td>3'800'000'000</td>
-									<td>1'200'000&nbsp;km<sup>2</sup></td>
-									<td>–</td>
-								</tr>
-								<tr>
-									<th>Africa</th>
-									<td>55</td>
-									<td>5900&nbsp;m.ü.M</td>
-									<td>800'000'000</td>
-									<td>1'200'000&nbsp;km<sup>2</sup></td>
-									<td>–</td>
-								</tr>
-								<tr>
-									<th>North America</th>
-									<td>50</td>
-									<td>5600&nbsp;m.ü.M</td>
-									<td>1'200'000'000</td>
-									<td>1'200'000&nbsp;km<sup>2</sup></td>
-									<td>–</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<h3>Heading 3</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-				<figure>
-					<img src="img/musterbild_16zu9.jpg" alt="">
-				</figure>
-				<h4>Heading 4</h4>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-				<h3>Heading 3</h3>
-				<h4>Heading 4</h4>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-			</section>
-			<section class="form">
-				<h2 class="">Formular</h2>
-				<form action="#" class="c-form">
-					<fieldset class="c-form__fieldset">
-						<legend class="c-form__legend">Legende</legend>
-						<div class="c-form__section">
-							<div class="c-form__labelContainer">
-								<label class="c-form__label" for="f1">Name und Vorname<em aria-hidden="true" title="Pflichtfeld" class="form-required-hint">*</em></label>
-							</div>
-							<div class="c-form__inputContainer">
-								<input class="c-form__input" type="text" id="f1" required placeholder="Name Vorname" />
-								<span class="c-form__error" for="f1">«Name» ist ein Pflichtfeld.</span>
-							</div>
-						</div>
-						<div class="c-form__section">
-							<div class="c-form__labelContainer">
-								<label class="c-form__label" for="f1-1">E-Mail</label>
-							</div>
-							<div class="c-form__inputContainer">
-								<input class="c-form__input" type="email" id="f1-1" placeholder="E-Mail" />
-							</div>
-						</div>
-						<div class="c-form__section">
-							<div class="c-form__labelContainer">
-								<label class="c-form__label" for="f1-2">Telefon</label>
-							</div>
-							<div class="c-form__inputContainer">
-								<input class="c-form__input" type="tel" id="f1-2" placeholder="000 000 00 00" />
-							</div>
-						</div>
-						<div class="c-form__section">
-							<div class="c-form__labelContainer">
-								<label class="c-form__label" for="f1-3">Web</label>
-							</div>
-							<div class="c-form__inputContainer">
-								<input class="c-form__input" type="url" id="f1-3" placeholder="https://" />
-							</div>
-						</div>
-						<div class="c-form__section">
-							<div class="c-flex c-flex--gap c-flex--horizontal c-flex--reset">
-								<div class="c-flex__item">
-									<div class="c-form__labelContainer">
-										<label class="c-form__label" for="f1-8">Strasse<em aria-hidden="true" title="Pflichtfeld" >*</em></label>
-									</div>
-									<div class="c-form__inputContainer">
-										<input class="c-form__input" id="f1-8" type="text" value="" name="zip" required="">
-										<span class="c-form__error">«Strasse» ist ein Pflichtfeld.</span>
-									</div>
-								</div>
-								<div class="c-flex__item">
-									<div class="c-form__labelContainer">
-										<label class="c-form__label" for="f1-9">Nummer<em aria-hidden="true" title="Pflichtfeld" >*</em></label>
-									</div>
-									<div class="c-form__inputContainer">
-										<input class="c-form__input  c-form__input--sm" id="f1-9" type="text" value="" name="town" required="">
-										<span class="c-form__error">«Nummer» ist ein Pflichtfeld.</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="c-form__section">
-							<div class="c-flex c-flex--gap c-flex--horizontal c-flex--reset">
-								<div class="c-flex__item">
-									<div class="c-form__labelContainer">
-										<label class="c-form__label" for="f1-6">PLZ<em aria-hidden="true" title="Pflichtfeld" >*</em></label>
-									</div>
-									<div class="c-form__inputContainer">
-										<input class="c-form__input c-form__input--sm" id="f1-6" type="text" value="" name="zip" required="">
-										<span class="c-form__error">«PLZ» ist ein Pflichtfeld.</span>
-									</div>
-								</div>
-								<div class="c-flex__item">
-									<div class="c-form__labelContainer">
-										<label class="c-form__label" for="f1-7">Ort<em aria-hidden="true" title="Pflichtfeld" >*</em></label>
-									</div>
-									<div class="c-form__inputContainer">
-										<input class="c-form__input" id="f1-7" type="text" value="" name="town" required="">
-										<span class="c-form__error">«Ort» ist ein Pflichtfeld.</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="c-form__section">
-							<div class="c-form__labelContainer">
-								<label class="c-form__label" for="f1-4">Zahl</label>
-							</div>
-							<div class="c-form__inputContainer">
-								<input class="c-form__input" type="number" id="f1-4" min="1" max="100" value="" />
-								<span class="c-form__error" for="f1">«Zahl» ist ein Pflichtfeld.</span>
-								<span class="c-form__hint">Muss zwischen 1 und 100 liegen.</span>
-							</div>
-						</div>
-						<div class="c-form__section">
-							<div class="c-form__labelContainer">
-								<label class="c-form__label" for="f1-5">Inaktiv</label>
-							</div>
-							<div class="c-form__inputContainer">
-								<input class="c-form__input" type="text" id="f1-5" value="nicht verf&uuml;gbar" disabled />
-							</div>
-						</div>
-						<div class="c-form__section">
-							<p class="c-form__section-title nmb">Radio input</p>
-							<div class="form-option-lst">
-								<ul class="c-list c-list--reset">
-									<li>
-										<label class="c-form__label" for="radio-01"><input class="c-form__radio" type="radio" name="radiogroup" id="radio-01" checked /> Ja</label>
+		<div class="content">
+			<div class="wrapper wrapper--content">
+				<div class="c-grid c-grid--gap c-grid--content">
+					<nav class="m-breadcrumb c-grid__item--breadcrumb c-horizontalScroll" aria-labelledby="m-breadcrumb__title">
+						<h2 class="m-breadcrumb__title visuallyhidden" id="m-breadcrumb__title">Breadcrumb</h2>
+						<ol class="c-list c-list--horizontal c-list--reset c-horizontalScroll__scrollArea">
+							<li class="c-list__item m-breadcrumb__item">
+								<a class="m-breadcrumb__link" href="/">
+									<i class="fa-regular fa-house fa-fw"></i><span class="visuallyhidden">Home</span></a>
+							</li>
+							<li class="c-list__item m-breadcrumb__item">
+								<a class="m-breadcrumb__link" href="/"><span>Verwaltung</span></a>
+							</li>
+							<li class="c-list__item m-breadcrumb__item">
+								<a class="m-breadcrumb__link" href="/"><span>Kommissionen</span></a>
+							</li>
+							<li class="c-list__item m-breadcrumb__item">
+								<a class="m-breadcrumb__link" href="/"><span>Rechnungsprüfungskommission</span></a>
+							</li>
+							<li class="c-list__item m-breadcrumb__item"><span>Zuständigkeiten</span></li>
+						</ol>
+					</nav>
+					<nav class="c-subnav c-grid__item--nav" id="c-subnav" aria-labelledby="c-subnav__title">
+						<h2 class="c-subnav__title visuallyhidden" id="c-subnav__title">Hauptnavigation</h2>
+						<ul class="c-subnav__list c-subnav__list--level-1 c-list c-list--resetc-list--linkList nmb">
+							<li><a href="">Europa</a>
+								<ul class="c-subnav__list c-subnav__list--level-2 c-list--reset">
+									<li><a href="">Norwegen</a></li>
+									<li><a href="">Schweden</a></li>
+									<li><a href="">Finnland</a></li>
+									<li><a href="">Dänemark</a></li>
+									<li><a href="">Island</a></li>
+									<li><a href="">Färöer Inseln</a></li>
+								</ul>
+							</li>
+							<li><a href="">Asien</a></li>
+							<li><a href="">Afrika</a></li>
+							<li><a href="">Amerika</a></li>
+							<li><a href="">Ozeanien</a></li>
+						</ul>
+					</nav>
+					<main class="main c-grid__item--main" id="main" aria-labelledby="main__title">
+						<h1 class="main__title content-maintitle" id="main__title">backslash Framework</h1>
+						<section class="mb none">
+							<h2>Newsmodul</h2>
+							<div class="m-news">
+								<ul class="c-grid c-grid--gap c-grid--4columns c-grid--reset">
+									<li class="c-grid__item">
+										<article class="c-card c-card--horizontalGap c-card--noLink c-card--hasImage c-card--hasContent">
+											<header class="c-card__header">
+												<h3 class="c-card__title">Titel</h3>
+												<div class="c-card__meta">
+													<p>
+														<span class="event-time-from">
+															<time datetime="2023-01-25" class="dtstart">25. Januar 2023</time>
+														</span><span class="event-time-to"></span>
+													</p>
+												</div>
+											</header>
+											<figure class="c-card__fig nmb">
+												<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+											</figure>
+											<div class="c-card__content">
+												<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+											</div>
+										</article>
 									</li>
-									<li>
-										<label class="c-form__label" for="radio-02"><input class="c-form__radio" type="radio" name="radiogroup" id="radio-02" /> Nein</label>
+									<li class="c-grid__item">
+										<article class="c-card c-card--horizontalGap c-card--linkExpanded c-card--hasImage c-card--hasContent c-card--hasLink">
+											<header class="c-card__header">
+												<h3 class="c-card__title">Titel</h3>
+											</header>
+											<figure class="c-card__fig nmb">
+												<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+											</figure>
+											<div class="c-card__content">
+												<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+											</div>
+											<div class="c-card__link">
+												<a href="#">Mehr erfahren</a>
+											</div>
+										</article>
 									</li>
-									<li>
-										<label class="c-form__label" for="radio-03"><input class="c-form__radio" type="radio" name="radiogroup" id="radio-03" disabled /> Vielleicht</label>
+									<li class="c-grid__item">
+										<article class="c-card c-card--noLink c-card--hasImage c-card--horizontalGap">
+											<header class="c-card__header">
+												<h3 class="c-card__title">Titel</h3>
+											</header>
+											<figure class="c-card__fig nmb">
+												<img class="c-card__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+											</figure>
+										</article>
+									</li>
+									<li class="c-grid__item">
+										<article class="c-card c-card--noLink c-card--hasContent">
+											<header class="c-card__header">
+												<h3 class="c-card__title">Titel</h3>
+											</header>
+											<div class="c-card__content">
+												<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+											</div>
+										</article>
 									</li>
 								</ul>
 							</div>
-						</div>
-						<div class="c-form__section">
-							<p class="c-form__section-title nmb">Checkbox input</p>
-							<div class="form-option-lst">
-								<ul class="c-list c-list--reset">
-									<li>
-										<label class="c-form__label" for="checkbox-01"><input class="c-form__checkbox"  type="checkbox" name="checkbox-01" id="checkbox-01" checked /> per E-Mail</label>
-									</li>
-									<li>
-										<label class="c-form__label" for="checkbox-02"><input class="c-form__checkbox" type="checkbox" name="checkbox-02" id="checkbox-02" /> per Telefon</label>
-									</li>
-									<li>
-										<label class="c-form__label" for="checkbox-03"><input class="c-form__checkbox" type="checkbox" name="checkbox-03" id="checkbox-03" disabled /> per Fax</label>
-									</li>
-								</ul>
+						</section>
+						<section class="content no2ne">
+							<h2>Musterinhalt</h2>
+							<figure class="fig--alignright"><img src="img/musterbild_16zu9.jpg" alt=""></figure>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+							<div class="c-grid c-grid--gap c-grid--columnTest c-grid--color">
+								<div class="c-grid__item c-grid__item--xxl" style="grid-column: span 12"></div>
+								<div class="c-grid__item c-grid__item--xl" style="grid-column: span 6"></div>
+								<div class="c-grid__item c-grid__item--xl" style="grid-column: span 6"></div>
+								<div class="c-grid__item c-grid__item--lg" style="grid-column: span 4"></div>
+								<div class="c-grid__item c-grid__item--lg" style="grid-column: span 4"></div>
+								<div class="c-grid__item c-grid__item--lg" style="grid-column: span 4"></div>
+								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3"></div>
+								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3"></div>
+								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3"></div>
+								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
 							</div>
-						</div>
-						<div class="c-form__section">
-							<div class="c-form__labelContainer">
-								<label class="c-form__label" for="f5">Select field</label>
+							<p><button id="showDialog">Dialogfeld anzeigen</button></p>
+							<dialog class="c-dialog" id="favDialog">
+								<div class="c-dialog__content">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi impedit vitae quisquam? Aspernatur, alias laboriosam. Perspiciatis eveniet perferendis sunt.</p>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi impedit vitae quisquam? Aspernatur, alias laboriosam. Perspiciatis eveniet perferendis sunt.</p>
+								</div>
+								<div class="c-dialog__controls">
+									<button id="hideDialog" value="cancel">Close</button>
+								</div>
+							</dialog>
+							<script>
+								const showButton = document.getElementById('showDialog');
+								const closeButton = document.getElementById('hideDialog');
+								const favDialog = document.getElementById('favDialog');
+
+								// "Update details" button opens the <dialog> modally
+								showButton.addEventListener('click', () => {
+								    favDialog.showModal();
+								});
+								closeButton.addEventListener('click', () => {
+								    favDialog.close();
+								});
+							</script>
+							<ul class="c-list">
+								<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nulla saepe quas.</li>
+								<li>Neque culpa nihil quam ad, optio incidunt. Praesentium et, dolores animi soluta.</li>
+								<li>Provident, explicabo. Voluptates impedit quisquam temporibus neque. Cumque rem placeat id nemo.</li>
+								<li>Assumenda animi odit dicta deleniti ex fugiat accusantium voluptas impedit blanditiis, delectus.</li>
+								<li>Fugiat est aliquam in sit, nam harum ad? Perferendis, possimus omnis deserunt?</li>
+								<li>Incidunt et quia itaque aliquid dignissimos assumenda dolor! Itaque, veniam asperiores delectus.</li>
+								<li>Exercitationem impedit illum voluptates rem animi magnam fugit libero illo voluptate inventore.</li>
+								<li>Recusandae repudiandae dolorem itaque minima suscipit vel sit enim repellat, soluta eius?</li>
+							</ul>
+							<h2>Heading 2</h2>
+							<h3>Heading 3</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+							<div class="c-horizontalScroll">
+								<div class="table-responsive nmb c-horizontalScroll__scrollArea" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
+									<table class="c-table--hoverEf2fect c-table--zebraEffect c-table--gridEf2fect">
+										<caption>Different continents</caption>
+										<thead>
+											<tr>
+												<th>Continent</th>
+												<th>Countries</th>
+												<th>Highest Point</th>
+												<th>Population</th>
+												<th>Area</th>
+												<th>Comment</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>Europe</th>
+												<td>50</td>
+												<td>4800&nbsp;m.ü.M</td>
+												<td>800'000'000</td>
+												<td>1'200'000&nbsp;km<sup>2</sup></td>
+												<td>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Molestiae enim iure provident distinctio unde tempora, quae ab ut id numquam.</td>
+											</tr>
+											<tr>
+												<th>Asia</th>
+												<td>40</td>
+												<td>8848&nbsp;m.ü.M</td>
+												<td>3'800'000'000</td>
+												<td>1'200'000&nbsp;km<sup>2</sup></td>
+												<td>–</td>
+											</tr>
+											<tr>
+												<th>Africa</th>
+												<td>55</td>
+												<td>5900&nbsp;m.ü.M</td>
+												<td>800'000'000</td>
+												<td>1'200'000&nbsp;km<sup>2</sup></td>
+												<td>–</td>
+											</tr>
+											<tr>
+												<th>North America</th>
+												<td>50</td>
+												<td>5600&nbsp;m.ü.M</td>
+												<td>1'200'000'000</td>
+												<td>1'200'000&nbsp;km<sup>2</sup></td>
+												<td>–</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 							</div>
-							<div class="c-form__inputContainer">
-								<select class="c-form__select" id="f5">
-									<option class="c-form__select-option">Option 01</option>
-									<option class="c-form__select-option">Option 02</option>
-								</select>
-							</div>
-						</div>
-						<div class="c-form__section">
-							<div class="c-form__labelContainer">
-								<label class="c-form__label" for="f1-range">Bewertung</label>
-							</div>
-							<div class="c-form__inputContainer">
-								<input class="c-form__range" type="range" id="f1-range" min="1" max="10" />
-							</div>
-						</div>
-						<div class="c-form__section">
-							<div class="c-form__labelContainer">
-								<label class="c-form__label" for="f6">Textarea</label>
-							</div>
-							<div class="c-form__inputContainer">
-								<textarea class="c-form__textarea" id="f6" cols="30" rows="5"></textarea>
-							</div>							
-						</div>
-						<div class="c-form__section">
-							<div class="c-form__labelContainer">
-								<label class="c-form__label" for="feactivate2fa">Toggle-Swich-Button</label>
-							</div>
-							<div class="c-form__inputContainer">
-								<input class="c-form__toggle" type="checkbox" id="feactivate2fa" name="feactivate2fa" value="1">
-								<span class="c-form__toggle" aria-hidden="true"></span>
-							</div>	
-						</div>
-						<div class="c-form__section">
-							<div class="c-form__buttonContainer">
-								<button class="c-form__btn" type="submit" name="submit">abschicken</button>
-							</div>
-						</div>
-					</fieldset>
-				</form>
-			</section>
-		</main>
-		<footer class="footer">
+							<h3>Heading 3</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+							<figure>
+								<img src="img/musterbild_16zu9.jpg" alt="">
+							</figure>
+							<h4>Heading 4</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+							<h3>Heading 3</h3>
+							<h4>Heading 4</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+						</section>
+						<section class="form none">
+							<h2 class="">Formular</h2>
+							<form action="#" class="c-form">
+								<fieldset class="c-form__fieldset">
+									<legend class="c-form__legend">Legende</legend>
+									<div class="c-form__section">
+										<div class="c-form__labelContainer">
+											<label class="c-form__label" for="f1">Name und Vorname<em aria-hidden="true" title="Pflichtfeld" class="form-required-hint">*</em></label>
+										</div>
+										<div class="c-form__inputContainer">
+											<input class="c-form__input" type="text" id="f1" required placeholder="Name Vorname" />
+											<span class="c-form__error" for="f1">«Name» ist ein Pflichtfeld.</span>
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-form__labelContainer">
+											<label class="c-form__label" for="f1-1">E-Mail</label>
+										</div>
+										<div class="c-form__inputContainer">
+											<input class="c-form__input" type="email" id="f1-1" placeholder="E-Mail" />
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-form__labelContainer">
+											<label class="c-form__label" for="f1-2">Telefon</label>
+										</div>
+										<div class="c-form__inputContainer">
+											<input class="c-form__input" type="tel" id="f1-2" placeholder="000 000 00 00" />
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-form__labelContainer">
+											<label class="c-form__label" for="f1-3">Web</label>
+										</div>
+										<div class="c-form__inputContainer">
+											<input class="c-form__input" type="url" id="f1-3" placeholder="https://" />
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-flex c-flex--gap c-flex--horizontal c-flex--reset">
+											<div class="c-flex__item">
+												<div class="c-form__labelContainer">
+													<label class="c-form__label" for="f1-8">Strasse<em aria-hidden="true" title="Pflichtfeld">*</em></label>
+												</div>
+												<div class="c-form__inputContainer">
+													<input class="c-form__input" id="f1-8" type="text" value="" name="zip" required="">
+													<span class="c-form__error">«Strasse» ist ein Pflichtfeld.</span>
+												</div>
+											</div>
+											<div class="c-flex__item">
+												<div class="c-form__labelContainer">
+													<label class="c-form__label" for="f1-9">Nummer<em aria-hidden="true" title="Pflichtfeld">*</em></label>
+												</div>
+												<div class="c-form__inputContainer">
+													<input class="c-form__input  c-form__input--sm" id="f1-9" type="text" value="" name="town" required="">
+													<span class="c-form__error">«Nummer» ist ein Pflichtfeld.</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-flex c-flex--gap c-flex--horizontal c-flex--reset">
+											<div class="c-flex__item">
+												<div class="c-form__labelContainer">
+													<label class="c-form__label" for="f1-6">PLZ<em aria-hidden="true" title="Pflichtfeld">*</em></label>
+												</div>
+												<div class="c-form__inputContainer">
+													<input class="c-form__input c-form__input--sm" id="f1-6" type="text" value="" name="zip" required="">
+													<span class="c-form__error">«PLZ» ist ein Pflichtfeld.</span>
+												</div>
+											</div>
+											<div class="c-flex__item">
+												<div class="c-form__labelContainer">
+													<label class="c-form__label" for="f1-7">Ort<em aria-hidden="true" title="Pflichtfeld">*</em></label>
+												</div>
+												<div class="c-form__inputContainer">
+													<input class="c-form__input" id="f1-7" type="text" value="" name="town" required="">
+													<span class="c-form__error">«Ort» ist ein Pflichtfeld.</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-form__labelContainer">
+											<label class="c-form__label" for="f1-4">Zahl</label>
+										</div>
+										<div class="c-form__inputContainer">
+											<input class="c-form__input" type="number" id="f1-4" min="1" max="100" value="" />
+											<span class="c-form__error" for="f1">«Zahl» ist ein Pflichtfeld.</span>
+											<span class="c-form__hint">Muss zwischen 1 und 100 liegen.</span>
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-form__labelContainer">
+											<label class="c-form__label" for="f1-5">Inaktiv</label>
+										</div>
+										<div class="c-form__inputContainer">
+											<input class="c-form__input" type="text" id="f1-5" value="nicht verf&uuml;gbar" disabled />
+										</div>
+									</div>
+									<div class="c-form__section">
+										<p class="c-form__section-title nmb">Radio input</p>
+										<div class="form-option-lst">
+											<ul class="c-list c-list--reset">
+												<li>
+													<label class="c-form__label" for="radio-01"><input class="c-form__radio" type="radio" name="radiogroup" id="radio-01" checked /> Ja</label>
+												</li>
+												<li>
+													<label class="c-form__label" for="radio-02"><input class="c-form__radio" type="radio" name="radiogroup" id="radio-02" /> Nein</label>
+												</li>
+												<li>
+													<label class="c-form__label" for="radio-03"><input class="c-form__radio" type="radio" name="radiogroup" id="radio-03" disabled /> Vielleicht</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="c-form__section">
+										<p class="c-form__section-title nmb">Checkbox input</p>
+										<div class="form-option-lst">
+											<ul class="c-list c-list--reset">
+												<li>
+													<label class="c-form__label" for="checkbox-01"><input class="c-form__checkbox" type="checkbox" name="checkbox-01" id="checkbox-01" checked /> per E-Mail</label>
+												</li>
+												<li>
+													<label class="c-form__label" for="checkbox-02"><input class="c-form__checkbox" type="checkbox" name="checkbox-02" id="checkbox-02" /> per Telefon</label>
+												</li>
+												<li>
+													<label class="c-form__label" for="checkbox-03"><input class="c-form__checkbox" type="checkbox" name="checkbox-03" id="checkbox-03" disabled /> per Fax</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-form__labelContainer">
+											<label class="c-form__label" for="f5">Select field</label>
+										</div>
+										<div class="c-form__inputContainer">
+											<select class="c-form__select" id="f5">
+												<option class="c-form__select-option">Option 01</option>
+												<option class="c-form__select-option">Option 02</option>
+											</select>
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-form__labelContainer">
+											<label class="c-form__label" for="f1-range">Bewertung</label>
+										</div>
+										<div class="c-form__inputContainer">
+											<input class="c-form__range" type="range" id="f1-range" min="1" max="10" />
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-form__labelContainer">
+											<label class="c-form__label" for="f6">Textarea</label>
+										</div>
+										<div class="c-form__inputContainer">
+											<textarea class="c-form__textarea" id="f6" cols="30" rows="5"></textarea>
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-form__labelContainer">
+											<label class="c-form__label" for="feactivate2fa">Toggle-Swich-Button</label>
+										</div>
+										<div class="c-form__inputContainer">
+											<input class="c-form__toggle" type="checkbox" id="feactivate2fa" name="feactivate2fa" value="1">
+											<span class="c-form__toggle" aria-hidden="true"></span>
+										</div>
+									</div>
+									<div class="c-form__section">
+										<div class="c-form__buttonContainer">
+											<button class="c-form__btn" type="submit" name="submit">abschicken</button>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</section>
+					</main>
+				</div>
+			</div>
+		</div>
+		<footer class="footer" aria-labelledby="footer__title">
+			<h1 class="footer__title visuallyhidden" id="footer__title">Footer</h1>
 			<div class="wrapper wrapper--footer">
-				<div class="c-grid c-grid--gap c-grid--4columns">
-					<div class="c-grid__item">
+				<div class="c-grid c-grid--gap c-grid--footer">
+					<div class="c-grid__item c-grid__item--first">
 						<h2>Kontakt</h2>
-						<address>Address</address>
+						<address>
+							<p>backslash AG<br>Zürcherstrasse 300<br>8500 Frauenfeld</p>
+							<p>
+								<a href="tel:+41527235840" title="Hauptnummer backslash AG anrufen">
+									+41&nbsp;52&nbsp;723&nbsp;58&nbsp;40</a><br>
+								<a href="mailto:info@backslash.ch">info@backslash.ch</a>
+							</p>
+						</address>
 					</div>
-					<div class="c-grid__item">
-						<h2>Kontakt</h2>
-						<address>Address</address>
+					<div class="c-grid__item c-grid__item--second">
+						<h2>Titel</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quis voluptatum sit dicta dolorum tempore fugit aperiam numquam incidunt fuga?</p>
+					</div>
+					<div class="c-grid__item c-grid__item--third">
+						<h2>Titel</h2>
+						<ul class="c-list c-list--reset">
+							<li><a href="">Lorem, ipsum.</a></li>
+							<li><a href="">Nam, fugit?</a></li>
+							<li><a href="">Assumenda, ipsa.</a></li>
+							<li><a href="">Voluptatem, corrupti.</a></li>
+						</ul>
+						<p class="c-created">
+							<a class="c-created__link c-created__link--govis" href="https://www.govis.ch" title="GOViS &ndash; The Swiss eGovernment Content Management System" target="_blank">GOViS</a> by <a class="c-created__link c-created__link--backslash" title="Internetagentur backslash AG" href="https://www.backslash.ch" target="_blank">backslash</a>
+						</p>
 					</div>
 				</div>
 			</div>

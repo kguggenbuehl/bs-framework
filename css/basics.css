@@ -13,7 +13,7 @@ body {
 	margin: 0;
 	font: var(--fontSizeBase)/1.4 Helvetica, sans-serif;
 	accent-color: var(--primaryColor);
-	/* background-color: var(--backgroundColor); */
+	background-color: var(--backgroundColor);
 }
 h1, .h1 {
 	font-size: var(--fontSizeXLarge);

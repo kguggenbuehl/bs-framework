@@ -81,6 +81,37 @@
 	container-type: inline-size;
   	container-name: c-grid__item;
 }
+.c-grid--color > * {
+	background-color: lightblue;
+	height: 20px;
+}
+.c-grid__item--logo {
+	grid-area: logo;
+}
+.c-grid__item--nav {
+	grid-area: nav;
+}
+.c-grid__item--search {
+	grid-area: search;
+}
+.c-grid__item--metanav {
+	grid-area: metanav;
+}
+.c-grid__item--breadcrumb {
+	grid-area: breadcrumb;
+}
+.c-grid__item--main {
+	grid-area: main;
+}
+.c-grid__item--first {
+	grid-area: first;
+}
+.c-grid__item--second {
+	grid-area: second;
+}
+.c-grid__item--third {
+	grid-area: third;
+}
 
 /* ––––––– =FLEX= ––––––– */
 /* –––––––––––––––––––––– */
@@ -247,6 +278,16 @@ tr {
 	flex: 1 1 auto;
 	min-width: 0;
 	font-size: var(--fontSizeForms);
+}
+
+
+/* –––––– =DIALOG= –––––– */
+/* –––––––––––––––––––––– */
+.c-dialog {
+	max-width: 600px;
+}
+.c-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
