@@ -8,12 +8,13 @@
 ## 1. Grundsätze
 * Farben werden als HSL (Hue, Saturation, Lightness) angegeben
 * Womöglich Grid oder Flex verwenden
+ * Grid-Areas für Layout
 * Spezifität möglichst tief halten (0 1 0). Dazu kann z.B. `:where()` verwendet werden
 * (Modifier werden mit camelCase geschrieben)
 * Klassen werden mit einem Prefix ausgestattet: `c-` für Komponenten, `m-` für Module, `js-` für im JS benötigte Klassen
 
 ## 2. CSS-Files-Struktur
-1. variables.css - für alle Variablen, lokal, Editor
+1. settings.css - für alle Variablen, lokal, Editor
 2. basics.css - helper, Fonts, lokal, Editor
 3. components.css - für Komponenten, vom Master geladen
 4. modules.css - GOViS-Modul-Anpassungen, vom Master geladen
@@ -63,3 +64,4 @@ Im `module.css` werden GOViS-spezifische Gestaltunganpassungen für GOViS-Module
 
 ### Modulliste
 * Breadcrumb: `m-breadcrumb`
+* 

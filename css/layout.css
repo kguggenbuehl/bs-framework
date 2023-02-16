@@ -1,73 +1,19 @@
 .wrapper {
-	width: calc( var(--pageWidth) * 100%);
-	max-width: calc( var(--pageMaxWidth) * 1px);
+	width: var(--pageWidth);
+	max-width: var(--pageMaxWidth);
 	margin: 0 auto;
 }
 
-/* @container c-grid (min-width: 48em) {
-	:where(.c-grid--2columns) .c-grid__item,
-	:where(.c-grid--4columns) .c-grid__item {
+@container c-grid (min-width: 48em) {
+	:where([class*="--md6"]) > .c-grid__item {
 		grid-column: span 6;
 	}
-	:where(.c-grid--3columns) .c-grid__item,
-	:where(.c-grid--6columns) .c-grid__item {
-		grid-column: span 4;
-	}
 }
-@container c-grid (min-width: 64em) {
-	:where(.c-grid--4columns) .c-grid__item {
+@container c-grid (min-width: 60em) {
+	:where([class*="--lg3"]) > .c-grid__item {
 		grid-column: span 3;
 	}
-	:where(.c-grid--6columns) .c-grid__item {
-		grid-column: span 2;
-	}
-} */
-
-/* .c-grid__item--sm {
-	grid-column: span 6;
-}
-.c-grid__item--xs {
-	grid-column: span 3;
-}
-
-@media screen and (min-width: 600px) {
-	.c-grid__item--md {
-		grid-column: span 6;
-	}
-	.c-grid__item--sm {
-		grid-column: span 4;
-	}
-	.c-grid__item--xs {
-		grid-column: span 2;
-	}
-	[class*="*md*"] {
-		grid-column: span 4;
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	.c-grid__item--xl {
-		grid-column: span 6;
-	}
-	.c-grid__item--lg {
-		grid-column: span 4;
-	}
-	.c-grid__item--md {
-		grid-column: span 3;
-	}
-	.c-grid__item--sm {
-		grid-column: span 2;
-	}
-	.c-grid__item--xs {
-		grid-column: span 1;
-	}
-	[class*="*xs"] {
-		grid-column: span 1;
-	}
-} */
-
-
-
+} 
 
 @container c-grid__item (min-width: 48em) {
 	.c-card>* {
@@ -93,26 +39,42 @@
 
 /* –––––– HEADER –––––– */
 /* –––––––––––––––––––– */
+.c-grid__item--logo {
+	grid-area: logo;
+}
+.c-grid__item--nav {
+	grid-area: nav;
+}
+.c-grid__item--search {
+	grid-area: search;
+}
+.c-grid__item--metanav {
+	grid-area: metanav;
+}
 .c-grid--header {
-	grid-template-areas: 
-	"logo logo logo logo metanav metanav metanav metanav metanav metanav metanav metanav"
-	"logo logo logo logo search search search search search search nav nav";
+	grid-template-columns: 32.5% 1fr 55px;
+    grid-template-areas:
+        "logo metanav metanav"
+        "logo search nav";
+}
+.header {
+	padding: 1em 0;
 }
 @media screen and (min-width: 48em) {
 	.c-grid--header {
+		grid-template-columns: inherit;
 		grid-template-areas: 
 		"logo logo logo logo . . metanav metanav metanav metanav metanav metanav"
 		"logo logo logo logo . . . . search search search search"
 		"nav nav nav nav nav nav nav nav nav nav nav nav";
 	}
-}
-.header {
-	padding: 1em 0;
-	background-color: var(--primaryColorLight);
+	.header {
+		padding-bottom: 0;
+	}
 }
 
 /* Metavav */
-.c-metanav {
+.metanav {
 	font-size: var(--fontSizeSmall);
 }
 
@@ -121,7 +83,7 @@
 	min-height: 44px;
 }
 .c-search__form {
-	border: 1px solid var(--primaryColor);
+	border: 1px solid var(--colorPrimary);
 }
 .c-search__input {
 	padding: .2em 1em;
@@ -137,18 +99,18 @@
 /* –––––––––––––––––––– */
 .c-mainnav {
 	display: none;
+	border-top: 1px solid var(--colorPrimary);
 }
 .c-mainnav__list--level-1>li>a {
-	padding: 0.25em 1em;
-	font-size: var(--fontSizeLarge);
-	font-weight: bold;
+	padding: 0.75em 1em;
+	font-size: var(--fontSizeMedium);
 } 
 .c-mainnav__list--level-2 {
 	display: none;
 	position: absolute;
 	top: 100%;
 	left: 0;
-	background-color: var(--primaryColorLight);
+	background-color: var(--colorPrimary50);
 } 
 .c-mainnav__list--level-1>li:hover .c-mainnav__list--level-2   {
 	display: block
@@ -164,6 +126,12 @@
 .c-subnav {
 	display: none;
 }
+.c-subnav__list--level-1>li {
+	border-top: 1px solid var(--colorSecondary);
+}
+.c-subnav__list--level-1>li>a {
+	padding: 0.25em 0;
+}
 @media screen and (min-width: 48em) {
 	.c-subnav {
 		display: block;
@@ -173,6 +141,12 @@
 
 /* ––––– =CONTENT= ––––– */
 /* –––––––––––––––––––– */
+.c-grid__item--breadcrumb {
+	grid-area: breadcrumb;
+}
+.c-grid__item--main {
+	grid-area: main;
+}
 .c-grid--content {
 	grid-template-areas: 
 	"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb"
@@ -192,18 +166,35 @@
 /* –––––––––––––––––––– */
 .footer {
 	padding: 1em 0;
-	background-color: var(--primaryColorLight);
+	background-color: var(--colorPrimary30);
+}
+.c-grid__item--one {
+	grid-area: one;
+}
+.c-grid__item--two {
+	grid-area: two;
+}
+.c-grid__item--three {
+	grid-area: three;
+}
+.c-grid__item--four {
+	grid-area: four;
 }
 .c-grid--footer {
+	grid-template-columns: 100%;
 	grid-template-areas: 
-	"first first first first first first first first first first first first "
-	"second second second second second second second second second second second second "
-	"third third third third third third third third third third third third ";
+	"one"
+	"two"
+	"three"
+	"four";
 }
 @media screen and (min-width: 48em) {
+
 	.c-grid--footer {
+		grid-template-columns: repeat(3, 1fr);
 		grid-template-areas: 
-		"first first first first second second second second third third third third";
+		"one two three"
+		". . four";
 	}
 }
 .c-created__link {

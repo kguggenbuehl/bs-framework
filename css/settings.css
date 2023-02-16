@@ -1,0 +1,173 @@
+:root {
+
+	/* ––––––– =PAGE= ––––––– */
+	/* –––––––––––––––––––––– */
+	--pageWidth: 90%;
+	--pageMaxWidth: 1920px;
+ 	--pageColumns: 12; /* 12 x 138px */
+ 	--pageColumnGap: clamp(12px, 1.125176vw, 24px); /* 24 / ( 1920 * 90%) */
+
+
+ 	/* ––––––– =FONT= ––––––– */
+	/* –––––––––––––––––––––– */
+ 	--fontFamily: 'Noto Sans', sans-serif;
+
+ 	--fontSizeSmall: clamp(12px, 0.833333vw, 16px); /* meta: 16/1920 */
+ 	--fontSizeBase: clamp(14px, 1.041667vw, 20px); /* h4, p: 20/1920 */
+ 	--fontSizeMedium: clamp(16px, 1.25vw, 24px); /* h3: 24/1920 */
+ 	--fontSizeLarge: clamp(19px, 1.5625vw, 30px); /* h2: 30/1920 */
+ 	--fontSizeXLarge: clamp(28px, 2.5vw, 48px); /* h1: 48/1920 */
+ 	--fontSizeForms: clamp(16px, 0.9375vw, 18px); /* forms: 18/1920, mind. 16px */
+
+ 	--fontLineHeight: 1.4;
+
+
+	/* –––––– =COLORS= –––––– */
+	/* –––––––––––––––––––––– */
+	--colorPrimaryH: 195;
+	--colorPrimaryS: 95%;
+	--colorPrimaryL: 30%;
+
+	--colorSecondaryH: 316;
+	--colorSecondaryS: 95%;
+	--colorSecondaryL: 30%;
+
+	--colorBackground: hsl(0, 0%, 100%);
+	--colorForeground: hsl(0, 0%, 25%);
+	--colorPrimary: hsl(var(--colorPrimaryH), var(--colorPrimaryS), var(--colorPrimaryL));
+	--colorSecondary: hsl(var(--colorSecondaryH), var(--colorSecondaryS), var(--colorSecondaryL));
+	--colorLink: var(--colorPrimary);
+	--colorLinkVisited: var(--colorPrimary80);
+	--colorLinkHover: var(--colorPrimary150);
+	--colorNeutral: hsl(0, 0%, 50%);
+	--colorWarning: hsl(30, 90%, 50%);
+	--colorSuccess: hsl(150, 70%, 50%);
+	--colorError: hsl(0, 80%, 50%);
+
+	--colorPrimary10: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 90%);
+	--colorPrimary20: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 80%);
+	--colorPrimary30: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 70%);
+	--colorPrimary40: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 60%);
+	--colorPrimary50: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 50%);
+	--colorPrimary60: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 40%);
+	--colorPrimary70: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 30%);
+	--colorPrimary80: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 20%);
+	--colorPrimary90: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 10%);
+
+	--colorSecondary10: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 90%);
+	--colorSecondary20: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 80%);
+	--colorSecondary30: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 70%);
+	--colorSecondary40: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 60%);
+	--colorSecondary50: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 50%);
+	--colorSecondary60: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 40%);
+	--colorSecondary70: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 30%);
+	--colorSecondary80: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 20%);
+	--colorSecondary90: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 10%);
+
+	/* If color-mix already is a thing */
+	--colorPrimary10: color-mix(in oklab, var(--colorPrimary) 10%, var(--colorBackground));
+	--colorPrimary20: color-mix(in oklab, var(--colorPrimary) 20%, var(--colorBackground));
+	--colorPrimary30: color-mix(in oklab, var(--colorPrimary) 30%, var(--colorBackground));
+	--colorPrimary40: color-mix(in oklab, var(--colorPrimary) 40%, var(--colorBackground));
+	--colorPrimary50: color-mix(in oklab, var(--colorPrimary) 50%, var(--colorBackground));
+	--colorPrimary60: color-mix(in oklab, var(--colorPrimary) 60%, var(--colorBackground));
+	--colorPrimary70: color-mix(in oklab, var(--colorPrimary) 70%, var(--colorBackground));
+	--colorPrimary80: color-mix(in oklab, var(--colorPrimary) 80%, var(--colorBackground));
+	--colorPrimary90: color-mix(in oklab, var(--colorPrimary) 90%, var(--colorBackground));
+
+	--colorPrimary110: color-mix(in oklab, var(--colorPrimary) 90%, var(--colorForeground));
+	--colorPrimary120: color-mix(in oklab, var(--colorPrimary) 80%, var(--colorForeground));
+	--colorPrimary130: color-mix(in oklab, var(--colorPrimary) 70%, var(--colorForeground));
+	--colorPrimary140: color-mix(in oklab, var(--colorPrimary) 60%, var(--colorForeground));
+	--colorPrimary150: color-mix(in oklab, var(--colorPrimary) 50%, var(--colorForeground));
+	--colorPrimary160: color-mix(in oklab, var(--colorPrimary) 40%, var(--colorForeground));
+	--colorPrimary170: color-mix(in oklab, var(--colorPrimary) 30%, var(--colorForeground));
+	--colorPrimary180: color-mix(in oklab, var(--colorPrimary) 20%, var(--colorForeground));
+	--colorPrimary190: color-mix(in oklab, var(--colorPrimary) 10%, var(--colorForeground));
+
+	--colorSecondary10: color-mix(in oklab, var(--colorSecondary) 10%, var(--colorBackground));
+	--colorSecondary20: color-mix(in oklab, var(--colorSecondary) 20%, var(--colorBackground));
+	--colorSecondary30: color-mix(in oklab, var(--colorSecondary) 30%, var(--colorBackground));
+	--colorSecondary40: color-mix(in oklab, var(--colorSecondary) 40%, var(--colorBackground));
+	--colorSecondary50: color-mix(in oklab, var(--colorSecondary) 50%, var(--colorBackground));
+	--colorSecondary60: color-mix(in oklab, var(--colorSecondary) 60%, var(--colorBackground));
+	--colorSecondary70: color-mix(in oklab, var(--colorSecondary) 70%, var(--colorBackground));
+	--colorSecondary80: color-mix(in oklab, var(--colorSecondary) 80%, var(--colorBackground));
+	--colorSecondary90: color-mix(in oklab, var(--colorSecondary) 90%, var(--colorBackground));
+
+	--colorSecondary110: color-mix(in oklab, var(--colorSecondary) 90%, var(--colorForeground));
+	--colorSecondary120: color-mix(in oklab, var(--colorSecondary) 80%, var(--colorForeground));
+	--colorSecondary130: color-mix(in oklab, var(--colorSecondary) 70%, var(--colorForeground));
+	--colorSecondary140: color-mix(in oklab, var(--colorSecondary) 60%, var(--colorForeground));
+	--colorSecondary150: color-mix(in oklab, var(--colorSecondary) 50%, var(--colorForeground));
+	--colorSecondary160: color-mix(in oklab, var(--colorSecondary) 40%, var(--colorForeground));
+	--colorSecondary170: color-mix(in oklab, var(--colorSecondary) 30%, var(--colorForeground));
+	--colorSecondary180: color-mix(in oklab, var(--colorSecondary) 20%, var(--colorForeground));
+	--colorSecondary190: color-mix(in oklab, var(--colorSecondary) 10%, var(--colorForeground));
+
+
+	/* –––––– =SHADOW= –––––– */
+	/* –––––––––––––––––––––– */
+	--shadowXSmall: 0 0.1px 0.3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+	--shadowSmall: 0 0.3px 0.4px rgba(0, 0, 0, 0.025), 0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
+	--shadowMedium: 0 0.9px 1.5px rgba(0, 0, 0, 0.03), 0 3.1px 5.5px rgba(0, 0, 0, 0.08), 0 14px 25px rgba(0, 0, 0, 0.12);
+	--shadowLarge: 0 1.2px 1.9px -1px rgba(0, 0, 0, 0.014), 0 3.3px 5.3px -1px rgba(0, 0, 0, 0.038), 0 8.5px 12.7px -1px rgba(0, 0, 0, 0.085), 0 30px 42px -1px rgba(0, 0, 0, 0.15);
+	--shadowXLarge: 0 1.5px 2.1px -6px rgba(0, 0, 0, 0.012), 0 3.6px 5.2px -6px rgba(0, 0, 0, 0.035), 0 7.3px 10.6px -6px rgba(0, 0, 0, 0.07), 0 16.2px 21.9px -6px rgba(0, 0, 0, 0.117), 0 46px 60px -6px rgba(0, 0, 0, 0.2);
+
+
+	/* –––––– =MARGIN= –––––– */
+	/* –––––––––––––––––––––– */
+	--marginBase: 1.5em;
+	--marginHeadingSmall: calc(var(--marginBase) / 3);
+	--marginHeadingLarge: calc(var(--marginBase) * 3);
+	--marginHeadingLevel2: calc(var(--marginBase) * 3);
+	--marginHeadingLevel3: calc(var(--marginBase) * 2.4);
+	--marginHeadingLevel4: calc(var(--marginBase) * 1.8);
+	--marginHeadingLevel5: calc(var(--marginBase) * 1.2);
+	--marginHeadingLevel6: calc(var(--marginBase) * 0.6);
+
+
+	/* –––– =ANIMATION= ––––– */
+	/* –––––––––––––––––––––– */
+	--animationDuration: .2s;
+
+
+	/* –––––– =CUSTOM= –––––– */
+	/* –––––––––––––––––––––– */
+	--borderRadius: 0;
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+	:root {
+
+		/* –––––– =COLOR= ––––––– */
+		/* –––––––––––––––––––––– */
+		--colorBackground: hsl(0, 0%, 20%);
+		--colorForeground: hsl(0, 0%, 95%);
+		--colorLink: var(--colorPrimary120);
+		--colorLinkVisited: var(--colorPrimary);
+		--colorLinkHover: var(--colorPrimary160);
+
+		/* --colorPrimary10: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 10%);
+		--colorPrimary20: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 20%);
+		--colorPrimary30: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 30%);
+		--colorPrimary40: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 40%);
+		--colorPrimary50: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 50%);
+		--colorPrimary60: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 60%);
+		--colorPrimary70: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 30%);
+		--colorPrimary80: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 80%);
+		--colorPrimary90: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 90%);
+
+		--colorSecondary10: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 10%);
+		--colorSecondary20: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 20%);
+		--colorSecondary30: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 30%);
+		--colorSecondary40: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 40%);
+		--colorSecondary50: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 50%);
+		--colorSecondary60: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 60%);
+		--colorSecondary70: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 70%);
+		--colorSecondary80: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 80%);
+		--colorSecondary90: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 90%); */
+	}
+}

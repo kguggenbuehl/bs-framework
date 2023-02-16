@@ -1,5 +1,8 @@
 /* –––– =BREADCRUMB= –––– */
 /* –––––––––––––––––––––– */
+.m-breadcrumb__list {
+	padding: 0.5em 0;
+}
 .m-breadcrumb__item {
 	display: flex;
 	padding: 0.5em 0;

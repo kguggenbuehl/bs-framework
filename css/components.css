@@ -1,6 +1,5 @@
 /* –––––– =GENERAL= ––––– */
 /* –––––––––––––––––––––– */
-
 :where([class*="--linkList"]) li {
 	position: relative;
 }
@@ -22,6 +21,9 @@
     list-style: none;
     padding: 0;
 }
+:where([class*="--reset"]) li {
+    margin-left: 0;
+}
 [class*="--alignEnd"] {
 	justify-content: end;
 }
@@ -41,7 +43,7 @@
 :where([class*="--hoverEffect"]) .grid__item:hover,
 :where([class*="--hoverEffect"]) .list__item:hover,
 :where([class*="--hoverEffect"] tbody) tr:hover {
-	background-color: var(--hoverColor);
+	background-color: var(--colorPrimary20);
 }
 [class*="--cover"] {
 	overflow: hidden;
@@ -56,10 +58,11 @@
 /* ––––––– =LIST= ––––––– */
 /* –––––––––––––––––––––– */
 .c-list {
-	display: flex;
-	flex-direction: column;
+	container-type: inline-size;
+  	container-name: c-list;
 }
 .c-list--horizontal {
+	display: flex;
 	flex-direction: row;
 }
 .c-list--wrap {
@@ -74,44 +77,12 @@
 	grid-template-rows: auto;
   	container-type: inline-size;
   	container-name: c-grid;
-  	list-style: none;
 }
 .c-grid__item {
-	grid-column: span 12;
 	container-type: inline-size;
   	container-name: c-grid__item;
 }
-.c-grid--color > * {
-	background-color: lightblue;
-	height: 20px;
-}
-.c-grid__item--logo {
-	grid-area: logo;
-}
-.c-grid__item--nav {
-	grid-area: nav;
-}
-.c-grid__item--search {
-	grid-area: search;
-}
-.c-grid__item--metanav {
-	grid-area: metanav;
-}
-.c-grid__item--breadcrumb {
-	grid-area: breadcrumb;
-}
-.c-grid__item--main {
-	grid-area: main;
-}
-.c-grid__item--first {
-	grid-area: first;
-}
-.c-grid__item--second {
-	grid-area: second;
-}
-.c-grid__item--third {
-	grid-area: third;
-}
+
 
 /* ––––––– =FLEX= ––––––– */
 /* –––––––––––––––––––––– */
@@ -125,7 +96,6 @@
 	container-type: inline-size;
   	container-name: c-flex__item;
 }
-
 
 /* ––––––– =CARD= ––––––– */
 /* –––––––––––––––––––––– */
@@ -168,13 +138,13 @@ td {
     padding: 1em;
 }
 tr {
-    border-bottom: 1px solid var(--tableBorderColor);
+    border-bottom: 1px solid var(--colorPrimary);
 }
 :where(thead) tr {
-	border-top: 2px solid var(--tableBorderColor);
+	border-top: 2px solid var(--colorPrimary);
 }
 :where(tbody) tr:first-of-type {
-    border-top: 1px solid var(--tableBorderColor);
+    border-top: 1px solid var(--colorPrimary);
 }
 :where(thead) tr,
 :where(tbody) tr:last-of-type {
@@ -183,28 +153,27 @@ tr {
 
 /* Table-Styling */
 :where(.c-table--zebraEffect) tr:nth-of-type(even) {
-    background-color: var(--tableZebraColor);
+    background-color: var(--colorPrimary10);
 }
 :where(.c-table--zebraEffect) thead {
-    background-color: var(--primaryColor);
-	color: var(--primaryContrastColor);
+	color: var(--colorPrimary20);
+    background-color: var(--colorPrimary120);
 }
 :where(.c-table--zebraEffect thead) tr {
     border: 0;
 }
 :where(.c-table--gridEffect) th,
 :where(.c-table--gridEffect) td {
-	border-right: 1px solid var(--tableBorderColor);
+	border-right: 1px solid var(--colorPrimary);
 }
 :where(.c-table--gridEffect tbody) th:first-child,
 :where(.c-table--gridEffect) td:first-child {
-	border-left: 1px solid var(--tableBorderColor);
+	border-left: 1px solid var(--colorPrimary);
 }
 :where(.c-table--gridEffect.c-table--zebraEffect tr:nth-of-type(even)) td:not(:last-child),
 :where(.c-table--gridEffect.c-table--zebraEffect tr:nth-of-type(even)) th:not(:last-child) {
 	border-right: 1px solid white;
 }
-
 
 /* ––––––– =FORM= ––––––– */
 /* –––––––––––––––––––––– */
@@ -213,10 +182,10 @@ tr {
     background: #fbfbfb;
 }
 .c-form__section {
-	margin: 0 0 calc(var(--baseMargin) * 0.75) 0;
+	margin: 0 0 calc(var(--marginBase) * 0.75) 0;
 }
 .c-form__labelContainer {
-	margin: 0 0 calc(var(--baseMargin) / 6) 0;
+	margin: 0 0 calc(var(--marginBase) / 6) 0;
 }
 .c-form__inputContainer {
 	position: relative;
@@ -227,7 +196,7 @@ tr {
 	z-index: 2;
 	width: 100%;
 	padding: .5em 1em;
-	border: 1px solid var(--primaryColor);
+	border: 1px solid var(--colorPrimary);
 	font-size: var(--fontSizeForms);
 }
 :where(.c-form__inputContainer:has(.c-form__error)) .c-form__input {
@@ -236,7 +205,7 @@ tr {
 .c-form__input:focus,
 .c-form__textarea:focus {
 	outline: 0;
-	box-shadow: 0 0 0 3px var(--primaryColor);
+	box-shadow: 0 0 0 3px var(--colorPrimary);
 }
 :where(.c-form__inputContainer:has(.c-form__error)) .c-form__input:focus {
 	border-color: var(--primaryColor);
@@ -248,7 +217,7 @@ tr {
 	font-size: var(--fontSizeSmall);
 }
 .c-form__error {
-	background: var(--errorColor);
+	background: var(--colorError);
     color: white;
 }
 .c-flex__item:has(.c-form__input--sm) {
@@ -258,11 +227,7 @@ tr {
 
 
 
-.c-form__btn {
-	padding: .2em 1em; 
-	background-color: var(--primaryColor);
-	color: var(--primaryContrastColor);
-}
+
 
 
 /* –––––– =SEARCH= –––––– */
@@ -304,7 +269,7 @@ tr {
 	border: 0;
 	text-indent: -9999px;
 	cursor: pointer;
-	background-color: var(--primaryColor);
+	background-color: var(--colorLink);
 	transition: background-color .5s;
 }
 .c-hamburger__bar {
@@ -314,7 +279,7 @@ tr {
 	left: 15%;
 	height: 2px;
 	width: 70%;
-	background-color: #fff;
+	background-color: var(--colorBackground);
 	border-radius: 1px;
 	opacity: 1;
 	transform: rotate(0deg);
@@ -331,7 +296,7 @@ tr {
 	top: 31px;
 }
 .c-hamburger__button--active {
-	background-color: #000;
+	background-color: var(--colorLinkHover);
 }
 :where(.c-hamburger__button--active) .c-hamburger__bar:nth-child(1) {
 	top: 20px;
@@ -374,12 +339,12 @@ tr {
 	transition: background .5s;
 }
 .c-horizontalScroll--shadowRightVisible::after {
-	background: linear-gradient(to right, transparent calc(100% - 20px),var(--backgroundColor) 100%);
+	background: linear-gradient(to right, transparent calc(100% - 20px),var(--colorBackground) 100%);
 }
 .c-horizontalScroll--shadowLeftVisible::after {
-	background: linear-gradient(to right, var(--backgroundColor) 0%,transparent 20px);
+	background: linear-gradient(to right, var(--colorBackground) 0%,transparent 20px);
 }
 .c-horizontalScroll--shadowLeftVisible.c-horizontalScroll--shadowRightVisible::after {
-	background: linear-gradient(to right, var(--backgroundColor) 0%,transparent 20px,transparent calc(100% - 20px),var(--backgroundColor) 100%);
+	background: linear-gradient(to right, var(--colorBackground) 0%,transparent 20px,transparent calc(100% - 20px),var(--backgroundColor) 100%);
 }
 

@@ -15,6 +15,7 @@
 	<script src="https://ext.cdn-backslash.ch/lib/jquery/jquery-3.6.1.min.js"></script>
 	<script src="https://comet07.backslash.ch/js/global/helper/helper.js"></script>
 	<script src="https://kit.fontawesome.com/3ab8d115ee.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,14 +24,14 @@
 			<div class="wrapper wrapper--header">
 				<div class="c-grid c-grid--gap c-grid--header">
 					<div class="c-grid__item c-grid__item--logo">
-						<div class="logo">
-							<a href="#" title="Homepage">
-								Logo
+						<div class="logo h1">
+							<a href="#" title="Homepage" style="display:block;text-decoration: none; color: inherit; line-height: 1">
+								next<br>Gen
 							</a>
 						</div>
 					</div>
 					<div class="c-grid__item c-grid__item--metanav">
-						<nav class="c-metanav">
+						<nav class="metanav">
 							<ul class="c-list c-list--horizontal c-list--alignEnd c-list--gap c-list--reset nmb">
 								<li><a href="">Sitemap</a></li>
 								<li><a href="">Kontakt</a></li>
@@ -43,7 +44,7 @@
 							<form class="c-search__form" id="c-search__form" role="search" method="post" action="#">
 								<label class="c-search__label visuallyhidden" for="c-search__input">Suche</label>
 								<input class="c-search__input" type="search" id="c-search__input" placeholder="Suchbegriff" required />
-								<button class="c-search__submit btn" type="submit">
+								<button class="c-search__submit c-search__btn" type="submit">
 									<i class="fa-regular fa-magnifying-glass"></i>
 									<span class="visuallyhidden">suchen</span>
 								</button>
@@ -86,7 +87,7 @@
 		</header>
 		<div class="c-headimage c-headimage--cover">
 			<figure class="c-headimage__fig nmb">
-				<img class="c-headimage__img nmb" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+				<img class="c-headimage__img nmb" src="img/musterbild_16zu9_2.jpg" alt="Musterbild">
 			</figure>
 		</div>
 		<div class="content">
@@ -94,7 +95,7 @@
 				<div class="c-grid c-grid--gap c-grid--content">
 					<nav class="m-breadcrumb c-grid__item--breadcrumb c-horizontalScroll" aria-labelledby="m-breadcrumb__title">
 						<h2 class="m-breadcrumb__title visuallyhidden" id="m-breadcrumb__title">Breadcrumb</h2>
-						<ol class="c-list c-list--horizontal c-list--reset c-horizontalScroll__scrollArea">
+						<ol class="m-breadcrumb__list c-list c-list--horizontal c-list--reset c-horizontalScroll__scrollArea">
 							<li class="c-list__item m-breadcrumb__item">
 								<a class="m-breadcrumb__link" href="/">
 									<i class="fa-regular fa-house fa-fw"></i><span class="visuallyhidden">Home</span></a>
@@ -112,30 +113,228 @@
 						</ol>
 					</nav>
 					<nav class="c-subnav c-grid__item--nav" id="c-subnav" aria-labelledby="c-subnav__title">
-						<h2 class="c-subnav__title visuallyhidden" id="c-subnav__title">Hauptnavigation</h2>
+						<h2 class="c-subnav__title visuallyhidden" id="c-subnav__title">Subnavigation</h2>
 						<ul class="c-subnav__list c-subnav__list--level-1 c-list c-list--resetc-list--linkList nmb">
-							<li><a href="">Europa</a>
-								<ul class="c-subnav__list c-subnav__list--level-2 c-list--reset">
-									<li><a href="">Norwegen</a></li>
-									<li><a href="">Schweden</a></li>
-									<li><a href="">Finnland</a></li>
-									<li><a href="">Dänemark</a></li>
-									<li><a href="">Island</a></li>
-									<li><a href="">Färöer Inseln</a></li>
-								</ul>
-							</li>
-							<li><a href="">Asien</a></li>
-							<li><a href="">Afrika</a></li>
-							<li><a href="">Amerika</a></li>
-							<li><a href="">Ozeanien</a></li>
+							<li><a href="#Farben">Farben</a></li>
+							<li><a href="#Schriften">Schriften</a></li>
+							<li><a href="#Listen">Listen</a></li>
+							<li><a href="#Bilder">Bilder</a></li>
+							<li><a href="#Grid">Grid</a></li>
+							<li><a href="#Dialogfeld">Dialogfeld</a></li>
+							<li><a href="#Tabelle">Tabelle</a></li>
 						</ul>
 					</nav>
 					<main class="main c-grid__item--main" id="main" aria-labelledby="main__title">
-						<h1 class="main__title content-maintitle" id="main__title">backslash Framework</h1>
-						<section class="mb none">
+						<h1 class="main__title content-maintitle" id="main__title">backslash Framework NextGen</h1>
+						<section class="content no2ne">
+							<h2><a id="Farben"></a>Farben</h2>
+							<div class="c-grid c-grid--gap">
+								<div class="c-grid__item" style="height: 1em; grid-column: span 12; background: var(--colorForeground)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 6; background: var(--colorPrimary)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 6; background: var(--colorSecondary)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorPrimary)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary10)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary20)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary30)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary40)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary50)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary60)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary70)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary80)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary90)"></div>
+
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorPrimary)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary110)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary120)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary130)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary140)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary150)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary160)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary170)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary180)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorPrimary190)"></div>
+
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorSecondary)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary10)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary20)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary30)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary40)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary50)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary60)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary70)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary80)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary90)"></div>
+
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorSecondary)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary110)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary120)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary130)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary140)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary150)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary160)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary170)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary180)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 1; background: var(--colorSecondary190)"></div>
+
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorNeutral)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorWarning)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorSuccess)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorError)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorLink)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorLinkVisited)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorLinkHover)"></div>
+								<div class="c-grid__item" style="height: 1em; grid-column: span 3; background: var(--colorBackground)"></div>
+							</div>
+							<h2><a id="Schriften"></a>Schriften</h2>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate possimus non, consequuntur, explicabo quos minus qui necessitatibus reiciendis sed officiis laudantium officia nobis illo esse, ullam architecto eum porro pariatur.</p>
+							<h3>Überschrift 3</h3>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate possimus non, consequuntur, explicabo quos minus qui necessitatibus reiciendis sed officiis laudantium officia nobis illo esse, ullam architecto eum porro pariatur.</p>
+							<h4>Überschrift 4</h4>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate possimus non, consequuntur, explicabo quos minus qui necessitatibus reiciendis sed officiis laudantium officia nobis illo esse, ullam architecto eum porro pariatur.</p>
+							<h5>Überschrift 5</h5>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate possimus non, consequuntur, explicabo quos minus qui necessitatibus reiciendis sed officiis laudantium officia nobis illo esse, ullam architecto eum porro pariatur.</p>
+							<h6>Überschrift 6</h6>
+							<p class="--gap" style="column-count: 2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate possimus non, consequuntur, explicabo quos minus qui necessitatibus reiciendis sed officiis laudantium officia nobis illo esse, ullam architecto eum porro pariatur.</p>
+							<h2>Listen</h2>
+							<ul>
+								<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nulla saepe quas.</li>
+								<li>Neque culpa nihil quam ad, optio incidunt. Praesentium et, dolores animi soluta.</li>
+								<li>Provident, explicabo. Voluptates impedit quisquam temporibus neque. Cumque rem placeat id nemo.</li>
+								<li>Assumenda animi odit dicta deleniti ex fugiat accusantium voluptas impedit blanditiis, delectus.</li>
+								<li>Fugiat est aliquam in sit, nam harum ad? Perferendis, possimus omnis deserunt?</li>
+								<li>Incidunt et quia itaque aliquid dignissimos assumenda dolor! Itaque, veniam asperiores delectus.</li>
+								<li>Exercitationem impedit illum voluptates rem animi magnam fugit libero illo voluptate inventore.</li>
+								<li>Recusandae repudiandae dolorem itaque minima suscipit vel sit enim repellat, soluta eius?</li>
+							</ul>
+							<h2><a id="Farben"></a>Bilder</h2>
+							<figure>
+								<img src="img/musterbild_16zu9.jpg" alt="">
+							</figure>
+							<figure class="fig--alignright"><img src="img/musterbild_16zu9.jpg" alt=""></figure>
+							<p>Lorem ipsum dolor sit amet <a href="#">consectetur</a> adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+							<h2><a id="Buttons"></a>Buttons</h2>
+							<p>
+								<button class="c-btn">Standard</button>
+								<button class="c-btn c-btn--small">--small</button>
+								<button class="c-btn c-btn--secondary">--secondary</button>
+								<button class="c-btn c-btn--neutral">--neutral</button>
+								<button class="c-btn c-btn--invis">--invis</button>
+								<button class="c-btn c-btn--ghost">--ghost</button>
+								<button class="c-btn c-btn--reject">--reject</button>
+								<button class="c-btn c-btn--accept">--accept</button>
+							</p>
+							<h2><a id="Grid"></a>Grid</h2>
+							<div class="c-grid c-grid--gap c-grid--columnTest c-grid--color">
+								<div class="c-grid__item c-grid__item--xxl" style="grid-column: span 12;height: 1em;background: var(--colorPrimary50)"></div>
+								<div class="c-grid__item c-grid__item--xl" style="grid-column: span 6;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xl" style="grid-column: span 6;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--lg" style="grid-column: span 4;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--lg" style="grid-column: span 4;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--lg" style="grid-column: span 4;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+							</div>
+							<h2><a id="Dialogfeld"></a>Dialogfeld</h2>
+							<p><button class="c-btn" id="showDialog">Dialogfeld anzeigen</button></p>
+							<dialog class="c-dialog" id="favDialog">
+								<div class="c-dialog__content">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi impedit vitae quisquam? Aspernatur, alias laboriosam. Perspiciatis eveniet perferendis sunt.</p>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi impedit vitae quisquam? Aspernatur, alias laboriosam. Perspiciatis eveniet perferendis sunt.</p>
+								</div>
+								<div class="c-dialog__controls">
+									<button class="c-btn c-btn--small" id="hideDialog" value="cancel">Close</button>
+								</div>
+							</dialog>
+							<script>
+								const showButton = document.getElementById('showDialog');
+								const closeButton = document.getElementById('hideDialog');
+								const favDialog = document.getElementById('favDialog');
+
+								// "Update details" button opens the <dialog> modally
+								showButton.addEventListener('click', () => {
+								    favDialog.showModal();
+								});
+								closeButton.addEventListener('click', () => {
+								    favDialog.close();
+								});
+							</script>
+							<h2><a id="Tabelle"></a>Tabelle</h2>
+							<div class="c-horizontalScroll">
+								<div class="table-responsive nmb c-horizontalScroll__scrollArea" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
+									<table class="c-table--hoverEf2fect c-table--zebraEffect c-table--gridEf2fect">
+										<caption>Different continents</caption>
+										<thead>
+											<tr>
+												<th>Continent</th>
+												<th>Countries</th>
+												<th>Highest Point</th>
+												<th>Population</th>
+												<th>Area</th>
+												<th>Comment</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>Europe</th>
+												<td>50</td>
+												<td>4800&nbsp;m.ü.M</td>
+												<td>800'000'000</td>
+												<td>1'200'000&nbsp;km<sup>2</sup></td>
+												<td>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Molestiae enim iure provident distinctio unde tempora, quae ab ut id numquam.</td>
+											</tr>
+											<tr>
+												<th>Asia</th>
+												<td>40</td>
+												<td>8848&nbsp;m.ü.M</td>
+												<td>3'800'000'000</td>
+												<td>1'200'000&nbsp;km<sup>2</sup></td>
+												<td>–</td>
+											</tr>
+											<tr>
+												<th>Africa</th>
+												<td>55</td>
+												<td>5900&nbsp;m.ü.M</td>
+												<td>800'000'000</td>
+												<td>1'200'000&nbsp;km<sup>2</sup></td>
+												<td>–</td>
+											</tr>
+											<tr>
+												<th>North America</th>
+												<td>50</td>
+												<td>5600&nbsp;m.ü.M</td>
+												<td>1'200'000'000</td>
+												<td>1'200'000&nbsp;km<sup>2</sup></td>
+												<td>–</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</section>
+						<section class="mb no2ne">
 							<h2>Newsmodul</h2>
 							<div class="m-news">
-								<ul class="c-grid c-grid--gap c-grid--4columns c-grid--reset">
+								<ul class="c-grid c-grid--sm12--md6--lg3 c-grid--gap c-grid--reset">
 									<li class="c-grid__item">
 										<article class="c-card c-card--horizontalGap c-card--noLink c-card--hasImage c-card--hasContent">
 											<header class="c-card__header">
@@ -195,140 +394,8 @@
 								</ul>
 							</div>
 						</section>
-						<section class="content no2ne">
-							<h2>Musterinhalt</h2>
-							<figure class="fig--alignright"><img src="img/musterbild_16zu9.jpg" alt=""></figure>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-							<div class="c-grid c-grid--gap c-grid--columnTest c-grid--color">
-								<div class="c-grid__item c-grid__item--xxl" style="grid-column: span 12"></div>
-								<div class="c-grid__item c-grid__item--xl" style="grid-column: span 6"></div>
-								<div class="c-grid__item c-grid__item--xl" style="grid-column: span 6"></div>
-								<div class="c-grid__item c-grid__item--lg" style="grid-column: span 4"></div>
-								<div class="c-grid__item c-grid__item--lg" style="grid-column: span 4"></div>
-								<div class="c-grid__item c-grid__item--lg" style="grid-column: span 4"></div>
-								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3"></div>
-								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3"></div>
-								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3"></div>
-								<div class="c-grid__item c-grid__item--md" style="grid-column: span 3"></div>
-								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
-								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
-								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
-								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
-								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
-								<div class="c-grid__item c-grid__item--sm" style="grid-column: span 2"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-								<div class="c-grid__item c-grid__item--xs" style="grid-column: span 1"></div>
-							</div>
-							<p><button id="showDialog">Dialogfeld anzeigen</button></p>
-							<dialog class="c-dialog" id="favDialog">
-								<div class="c-dialog__content">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi impedit vitae quisquam? Aspernatur, alias laboriosam. Perspiciatis eveniet perferendis sunt.</p>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi impedit vitae quisquam? Aspernatur, alias laboriosam. Perspiciatis eveniet perferendis sunt.</p>
-								</div>
-								<div class="c-dialog__controls">
-									<button id="hideDialog" value="cancel">Close</button>
-								</div>
-							</dialog>
-							<script>
-								const showButton = document.getElementById('showDialog');
-								const closeButton = document.getElementById('hideDialog');
-								const favDialog = document.getElementById('favDialog');
-
-								// "Update details" button opens the <dialog> modally
-								showButton.addEventListener('click', () => {
-								    favDialog.showModal();
-								});
-								closeButton.addEventListener('click', () => {
-								    favDialog.close();
-								});
-							</script>
-							<ul class="c-list">
-								<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nulla saepe quas.</li>
-								<li>Neque culpa nihil quam ad, optio incidunt. Praesentium et, dolores animi soluta.</li>
-								<li>Provident, explicabo. Voluptates impedit quisquam temporibus neque. Cumque rem placeat id nemo.</li>
-								<li>Assumenda animi odit dicta deleniti ex fugiat accusantium voluptas impedit blanditiis, delectus.</li>
-								<li>Fugiat est aliquam in sit, nam harum ad? Perferendis, possimus omnis deserunt?</li>
-								<li>Incidunt et quia itaque aliquid dignissimos assumenda dolor! Itaque, veniam asperiores delectus.</li>
-								<li>Exercitationem impedit illum voluptates rem animi magnam fugit libero illo voluptate inventore.</li>
-								<li>Recusandae repudiandae dolorem itaque minima suscipit vel sit enim repellat, soluta eius?</li>
-							</ul>
-							<h2>Heading 2</h2>
-							<h3>Heading 3</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-							<div class="c-horizontalScroll">
-								<div class="table-responsive nmb c-horizontalScroll__scrollArea" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
-									<table class="c-table--hoverEf2fect c-table--zebraEffect c-table--gridEf2fect">
-										<caption>Different continents</caption>
-										<thead>
-											<tr>
-												<th>Continent</th>
-												<th>Countries</th>
-												<th>Highest Point</th>
-												<th>Population</th>
-												<th>Area</th>
-												<th>Comment</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th>Europe</th>
-												<td>50</td>
-												<td>4800&nbsp;m.ü.M</td>
-												<td>800'000'000</td>
-												<td>1'200'000&nbsp;km<sup>2</sup></td>
-												<td>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Molestiae enim iure provident distinctio unde tempora, quae ab ut id numquam.</td>
-											</tr>
-											<tr>
-												<th>Asia</th>
-												<td>40</td>
-												<td>8848&nbsp;m.ü.M</td>
-												<td>3'800'000'000</td>
-												<td>1'200'000&nbsp;km<sup>2</sup></td>
-												<td>–</td>
-											</tr>
-											<tr>
-												<th>Africa</th>
-												<td>55</td>
-												<td>5900&nbsp;m.ü.M</td>
-												<td>800'000'000</td>
-												<td>1'200'000&nbsp;km<sup>2</sup></td>
-												<td>–</td>
-											</tr>
-											<tr>
-												<th>North America</th>
-												<td>50</td>
-												<td>5600&nbsp;m.ü.M</td>
-												<td>1'200'000'000</td>
-												<td>1'200'000&nbsp;km<sup>2</sup></td>
-												<td>–</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<h3>Heading 3</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-							<figure>
-								<img src="img/musterbild_16zu9.jpg" alt="">
-							</figure>
-							<h4>Heading 4</h4>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-							<h3>Heading 3</h3>
-							<h4>Heading 4</h4>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
-						</section>
-						<section class="form none">
+						
+						<section class="form no2ne">
 							<h2 class="">Formular</h2>
 							<form action="#" class="c-form">
 								<fieldset class="c-form__fieldset">
@@ -512,7 +579,7 @@
 			<h1 class="footer__title visuallyhidden" id="footer__title">Footer</h1>
 			<div class="wrapper wrapper--footer">
 				<div class="c-grid c-grid--gap c-grid--footer">
-					<div class="c-grid__item c-grid__item--first">
+					<div class="c-grid__item c-grid__item--one">
 						<h2>Kontakt</h2>
 						<address>
 							<p>backslash AG<br>Zürcherstrasse 300<br>8500 Frauenfeld</p>
@@ -523,11 +590,11 @@
 							</p>
 						</address>
 					</div>
-					<div class="c-grid__item c-grid__item--second">
+					<div class="c-grid__item c-grid__item--two">
 						<h2>Titel</h2>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quis voluptatum sit dicta dolorum tempore fugit aperiam numquam incidunt fuga?</p>
 					</div>
-					<div class="c-grid__item c-grid__item--third">
+					<div class="c-grid__item c-grid__item--three">
 						<h2>Titel</h2>
 						<ul class="c-list c-list--reset">
 							<li><a href="">Lorem, ipsum.</a></li>
@@ -538,6 +605,11 @@
 						<p class="c-created">
 							<a class="c-created__link c-created__link--govis" href="https://www.govis.ch" title="GOViS &ndash; The Swiss eGovernment Content Management System" target="_blank">GOViS</a> by <a class="c-created__link c-created__link--backslash" title="Internetagentur backslash AG" href="https://www.backslash.ch" target="_blank">backslash</a>
 						</p>
+					</div>
+					<div class="c-grid__item c-grid__item--four">
+						<h2>Logos</h2>
+						<p>Logo</p>
+						<p>Logo</p>
 					</div>
 				</div>
 			</div>

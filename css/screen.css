@@ -5,9 +5,9 @@ Author		: guggenbuehlk
 Purpose		: Framework-Entwicklung
 
 *********************************************************************************** */
-@import url(variables.css); 
-@import url(basics.css); 
-@import url(components.css);
-@import url(modules.css);
-@import url(layout.css);
-@import url(https://ext.cdn-backslash.ch/lib/font-awesome6/6.2.0/fontawesome-light.css);
+@import url(settings.css) layer(settings); 
+@import url(basics.css) layer(basics); 
+@import url(components.css) layer(components);
+@import url(modules.css) layer(modules);
+@import url(layout.css) layer(layout);
+@import url(https://ext.cdn-backslash.ch/lib/font-awesome6/6.2.0/fontawesome-light.css) layer(fontawesome);
