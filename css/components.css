@@ -82,7 +82,17 @@
 	container-type: inline-size;
   	container-name: c-grid__item;
 }
-
+:where([class*="--sm2"]) > .c-grid__item { grid-column: span 2; }
+:where([class*="--sm3"]) > .c-grid__item { grid-column: span 3; }
+:where([class*="--sm4"]) > .c-grid__item { grid-column: span 4; }
+:where([class*="--sm5"]) > .c-grid__item { grid-column: span 5; }
+:where([class*="--sm6"]) > .c-grid__item { grid-column: span 6; }
+:where([class*="--sm7"]) > .c-grid__item { grid-column: span 7; }
+:where([class*="--sm8"]) > .c-grid__item { grid-column: span 8; }
+:where([class*="--sm9"]) > .c-grid__item { grid-column: span 9; }
+:where([class*="--sm10"]) > .c-grid__item { grid-column: span 10; }
+:where([class*="--sm11"]) > .c-grid__item { grid-column: span 11; }
+:where([class*="--sm12"]) > .c-grid__item { grid-column: span 12; }
 
 /* ––––––– =FLEX= ––––––– */
 /* –––––––––––––––––––––– */
@@ -111,10 +121,6 @@
 :where(.c-card--hasImage) .c-card__fig {
 	grid-row: 1;
 }
-
-
-
-
 
 
 /* ––––––– =TABLE= –––––– */
@@ -226,10 +232,6 @@ tr {
 
 
 
-
-
-
-
 /* –––––– =SEARCH= –––––– */
 /* –––––––––––––––––––––– */
 .c-search {
@@ -316,7 +318,6 @@ tr {
 }
 
 
-
 /* – =HORIZONZAL SCROLL= – */
 /* ––––––––––––––––––––––– */
 .c-horizontalScroll {
@@ -345,6 +346,6 @@ tr {
 	background: linear-gradient(to right, var(--colorBackground) 0%,transparent 20px);
 }
 .c-horizontalScroll--shadowLeftVisible.c-horizontalScroll--shadowRightVisible::after {
-	background: linear-gradient(to right, var(--colorBackground) 0%,transparent 20px,transparent calc(100% - 20px),var(--backgroundColor) 100%);
+	background: linear-gradient(to right, var(--colorBackground) 0%,transparent 20px,transparent calc(100% - 20px),var(--colorBackground) 100%);
 }
 

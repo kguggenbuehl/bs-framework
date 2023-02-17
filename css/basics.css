@@ -11,6 +11,10 @@ body {
 	background-color: var(--colorBackground);
 	accent-color: var(--primaryColor);
 }
+.main {
+	container-type: inline-size;
+  container-name: main;
+}
 
 
 /* ––––––– =FONTS= –––––– */
@@ -73,17 +77,6 @@ b,
 }
 
 
-
-
-.fig--alignright {
-	float: right;
-	width: calc(3 * var(--pageColumnWidth) + 2 * var(--pageColumnGap));
-	width: 24.0625%; /* 462/1920 */
-	margin: 0 0 var(--marginBase) var(--pageColumnGap);
-}
-
-
-
 /* ––––––– =LINKS= –––––– */
 /* –––––––––––––––––––––– */
 a {
@@ -107,6 +100,37 @@ a:focus, a:hover, a:active {
 
 /* To be done */
 
+
+
+/* ––––––– =MEDIA= –––––– */
+/* –––––––––––––––––––––– */
+:where(.media:has(.media__caption)) video {
+	margin: 0;
+}
+.media__caption {
+	padding: 0.5em 0 0;
+	font-size: var(--fontSizeSmall);
+	font-style: italic;
+}
+
+	p:has(>[class*="--floatLeft"]),
+	p:has(>[class*="--floatRight"]) {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, .5fr));
+		gap: var(--pageColumnGap);
+	}
+	p:has(>[class*="--floatRight"]) {
+		direction: rtl;
+	}
+.media--floatRight {
+	display: inline-block;
+	width: 48.666667%; 
+}
+@container main (min-width: 30em) {
+	.media--floatRight {
+		width: 31%;
+	}
+} 
 
 
 /* –––––– =BUTTON= –––––– */
@@ -177,7 +201,6 @@ a:focus, a:hover, a:active {
 	color: var(--colorPrimary90);
 	background-color: var(--colorPrimary);
 }
-
 .skiplinks__link:focus,
 .skiplinks__link:active {
 	top: 1.5em;

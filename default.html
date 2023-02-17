@@ -44,7 +44,7 @@
 							<form class="c-search__form" id="c-search__form" role="search" method="post" action="#">
 								<label class="c-search__label visuallyhidden" for="c-search__input">Suche</label>
 								<input class="c-search__input" type="search" id="c-search__input" placeholder="Suchbegriff" required />
-								<button class="c-search__submit c-search__btn" type="submit">
+								<button class="c-search__submit c-btn" type="submit">
 									<i class="fa-regular fa-magnifying-glass"></i>
 									<span class="visuallyhidden">suchen</span>
 								</button>
@@ -206,12 +206,37 @@
 								<li>Exercitationem impedit illum voluptates rem animi magnam fugit libero illo voluptate inventore.</li>
 								<li>Recusandae repudiandae dolorem itaque minima suscipit vel sit enim repellat, soluta eius?</li>
 							</ul>
-							<h2><a id="Farben"></a>Bilder</h2>
-							<figure>
-								<img src="img/musterbild_16zu9.jpg" alt="">
+							<h2><a id="Farben"></a>Medien</h2>
+							<figure class="media">
+								<img class="media__img" src="img/musterbild_16zu9_2.jpg" alt="">
+								<figcaption class="media__caption">Das ist eine Legende</figcaption>
 							</figure>
-							<figure class="fig--alignright"><img src="img/musterbild_16zu9.jpg" alt=""></figure>
+							<h3>Bilder gefloated links</h3>
+							<p>
+								<img class="media__img media__img--floatLeft" src="img/musterbild_3zu4.jpg" alt="">
+								<img class="media__img media__img--floatLeft" src="img/musterbild_3zu4.jpg" alt="">
+								<img class="media__img media__img--floatLeft" src="img/musterbild_16zu9_2.jpg" alt="">
+								<img class="media__img media__img--floatLeft" src="img/musterbild_16zu9_2.jpg" alt="">
+							</p>
+							<h3>Bild gefloated rechts</h3>
+							<p>
+								
+							<figure class="media media--floatRight">
+								<img class="media__img" src="img/musterbild_16zu9_2.jpg" alt="">
+								<figcaption class="media__caption">Das ist eine Legende</figcaption>
+							</figure>
+							<figure class="media media--floatRight">
+								<img class="media__img" src="img/musterbild_16zu9_2.jpg" alt="">
+								<figcaption class="media__caption">Das ist eine Legende</figcaption>
+							</figure>
+							</p>
 							<p>Lorem ipsum dolor sit amet <a href="#">consectetur</a> adipisicing elit. Ex error iusto illo soluta sapiente esse quibusdam, culpa accusamus in a eos dolores incidunt temporibus laboriosam consequuntur vitae asperiores earum tempora mollitia harum atque odio labore, ut! Dolores, sapiente modi voluptatibus.</p>
+							<h3>Video</h3>
+							<figure class="media media--floatRight">
+								<video class="media__video " controls="controls" controlslist="nodownload" src="https://dev-intellio-kaspar.backslash.ch/public/upload/assets/202/IMG_1441.mp4?fp=1">Ihr Browser kann dieses Video nicht wiedergeben.</video>
+								<figcaption class="media__caption">Das ist eine Legende</figcaption>
+							</figure>
+
 							<h2><a id="Buttons"></a>Buttons</h2>
 							<p>
 								<button class="c-btn">Standard</button>

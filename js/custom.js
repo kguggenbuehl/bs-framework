@@ -1,7 +1,6 @@
 $(document).ready(function() {
-	console.log('ready');
 
-	    // ************************************
+    // ************************************
     // mobile-navigation
 
     // toggles menu
@@ -73,47 +72,54 @@ $(document).ready(function() {
         }
     });
 
-	function checkShadow(scrollContainer){
-		const scrollArea = $(scrollContainer).find('.c-horizontalScroll__scrollArea');
-		const scrollAreaContentWidth = scrollArea[0].scrollWidth;
-		const scrollPosition = scrollArea.scrollLeft();
 
-		
-		if (scrollPosition > 5) {
-			scrollContainer.addClass('c-horizontalScroll--shadowLeftVisible');
+	function checkShadow(scrollContainer){
+		const scrollArea = $(scrollContainer).find(scrollAreaClass).first();
+		const scrollAreaContentWidth = scrollArea[0].scrollWidth;
+		const scrollPositionLeft = scrollArea.scrollLeft();
+        const scrollPositionRight = scrollAreaContentWidth - scrollContainer.width() - scrollPositionLeft;
+
+		if (scrollPositionLeft > 5) {
+			scrollContainer.addClass(shadowLeftVisibleClass);
 		} else {
-			scrollContainer.removeClass('c-horizontalScroll--shadowLeftVisible');
+			scrollContainer.removeClass(shadowLeftVisibleClass);
 		}
-		if (scrollAreaContentWidth - scrollPosition - 5 > scrollContainer.width()) {
-			scrollContainer.addClass('c-horizontalScroll--shadowRightVisible');
+		if (scrollPositionRight > 5) {
+			scrollContainer.addClass(shadowRightVisibleClass);
 		} else {
-			scrollContainer.removeClass('c-horizontalScroll--shadowRightVisible');
+			scrollContainer.removeClass(shadowRightVisibleClass);
 		}
 	}
 
 	const improveResponsiveTables = function() {
 		
-		scrollContainer.each(function(i) {
-
-			checkShadow($(this));
-
-			scrollContainer.find('.c-horizontalScroll__scrollArea').scroll(function(event) {
-				const parent = $(event.target).closest('.c-horizontalScroll');
-				checkShadow(parent);
-			}); 
-		});
+		
 	};
 
 
+    // check all scrollcontainer on too large scroll areas
+    // add shadow if necessary
+    // add scroll-listener to all scroll areas
+	const scrollContainerClass = '.c-horizontalScroll';
+    const scrollAreaClass = '.c-horizontalScroll__scrollArea';
+    const shadowLeftVisibleClass = 'c-horizontalScroll--shadowLeftVisible';
+    const shadowRightVisibleClass = 'c-horizontalScroll--shadowRightVisible';
 
-	const scrollContainer = $('.c-horizontalScroll');
+	$(scrollContainerClass).each(function(i) {
 
+        checkShadow($(this));
+
+        $(this).find(scrollAreaClass).scroll(function(event) {
+            const parent = $(event.target).closest(scrollContainerClass);
+            checkShadow(parent);
+        }); 
+    });
+
+    // add listener to check shadows on resize
 	$(window).resize(function(event) {
-		scrollContainer.each(function(index) {
+		$(scrollContainerClass).each(function(index) {
 			checkShadow($(this));
 		});
 	});
-
-	improveResponsiveTables();
 
 });
