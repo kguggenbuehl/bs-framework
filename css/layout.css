@@ -4,57 +4,6 @@
 	margin: 0 auto;
 }
 
-@container c-grid (min-width: 48em) {
-	:where([class*="--md1"]) > .c-grid__item { grid-column: span 2; }
-	:where([class*="--md2"]) > .c-grid__item { grid-column: span 3; }
-	:where([class*="--md3"]) > .c-grid__item { grid-column: span 3; }
-	:where([class*="--md4"]) > .c-grid__item { grid-column: span 4; }
-	:where([class*="--md5"]) > .c-grid__item { grid-column: span 5; }
-	:where([class*="--md6"]) > .c-grid__item { grid-column: span 6; }
-	:where([class*="--md7"]) > .c-grid__item { grid-column: span 7; }
-	:where([class*="--md8"]) > .c-grid__item { grid-column: span 8; }
-	:where([class*="--md9"]) > .c-grid__item { grid-column: span 9; }
-	:where([class*="--md10"]) > .c-grid__item { grid-column: span 10; }
-	:where([class*="--md11"]) > .c-grid__item { grid-column: span 11; }
-	:where([class*="--md12"]) > .c-grid__item { grid-column: span 12; }
-}
-@container c-grid (min-width: 60em) {
-	:where([class*="--lg1"]) > .c-grid__item { grid-column: span 2; }
-	:where([class*="--lg2"]) > .c-grid__item { grid-column: span 3; }
-	:where([class*="--lg3"]) > .c-grid__item { grid-column: span 3; }
-	:where([class*="--lg4"]) > .c-grid__item { grid-column: span 4; }
-	:where([class*="--lg5"]) > .c-grid__item { grid-column: span 5; }
-	:where([class*="--lg6"]) > .c-grid__item { grid-column: span 6; }
-	:where([class*="--lg7"]) > .c-grid__item { grid-column: span 7; }
-	:where([class*="--lg8"]) > .c-grid__item { grid-column: span 8; }
-	:where([class*="--lg9"]) > .c-grid__item { grid-column: span 9; }
-	:where([class*="--lg10"]) > .c-grid__item { grid-column: span 10; }
-	:where([class*="--lg11"]) > .c-grid__item { grid-column: span 11; }
-	:where([class*="--lg12"]) > .c-grid__item { grid-column: span 12; }
-} 
-
-@container c-grid__item (min-width: 48em) {
-	.c-card>* {
-		grid-column: span 3;
-	}
-	.c-card__fig {
-		grid-column: 1;
-		grid-row: 1 / -1;
-	}
-	.c-card:has(:nth-child(3)) {
-		grid-template-rows: auto 1fr;
-	}
-	.c-card:has(:nth-child(4)) {
-		grid-template-rows: repeat(2, auto) 1fr;
-	}
-	.c-card:has(:nth-child(5)) {
-		grid-template-rows: repeat(3, auto) 1fr;
-	}
-	.c-card:has(:nth-child(6)) {
-		grid-template-rows: repeat(4, auto) 1fr;
-	}
-}
-
 /* –––––– HEADER –––––– */
 /* –––––––––––––––––––– */
 .c-grid__item--logo {
@@ -94,6 +43,11 @@
 /* Metavav */
 .metanav {
 	font-size: var(--fontSizeSmall);
+
+	& .c-nav__list {
+		display: flex;
+		justify-content: flex-end;
+	}
 }
 
 /* Search */
@@ -115,44 +69,49 @@
 
 /* ––– NAVIGATIONEN ––– */
 /* –––––––––––––––––––– */
-.c-mainnav {
+.mainnav {
 	display: none;
 	border-top: 1px solid var(--colorPrimary);
-}
-.c-mainnav__list--level-1>li>a {
-	padding: 0.75em 1em;
-	font-size: var(--fontSizeMedium);
-} 
-.c-mainnav__list--level-2 {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	background-color: var(--colorPrimary50);
-} 
-.c-mainnav__list--level-1>li:hover .c-mainnav__list--level-2   {
-	display: block
-} 
-@media screen and (min-width: 48em) {
-	.c-mainnav {
-		display: block;
+
+	& .c-nav__list--level-1 {
+		display: flex;
+
+		& .c-nav__item>a {
+			padding: 0.75em 1em;
+			font-size: var(--fontSizeMedium);
+		}
+		& .c-nav__item:hover .c-nav__list--level-2 {
+			display: block;
+		}
 	}
-	.c-mobilenav {
+
+	& .c-nav__list--level-2 {
 		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: var(--colorPrimary50);
 	}
 }
-.c-subnav {
+
+.subnav {
 	display: none;
+
+	& .c-nav__list--level-1>li {
+		border-top: 1px solid var(--colorSecondary);
+	}
+	& .c-nav__list--level-1>li>a {
+		padding: 0.25em 0;
+	}
 }
-.c-subnav__list--level-1>li {
-	border-top: 1px solid var(--colorSecondary);
-}
-.c-subnav__list--level-1>li>a {
-	padding: 0.25em 0;
-}
+
 @media screen and (min-width: 48em) {
-	.c-subnav {
+	.mainnav,
+	.subnav {
 		display: block;
+	}
+	.mobilenav {
+		display: none;
 	}
 }
 
@@ -164,6 +123,9 @@
 }
 .c-grid__item--main {
 	grid-area: main;
+}
+.c-grid__item--subnav {
+	grid-area: nav;
 }
 .c-grid--content {
 	grid-template-areas: 
@@ -207,7 +169,6 @@
 	"four";
 }
 @media screen and (min-width: 48em) {
-
 	.c-grid--footer {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-areas: 

@@ -1,39 +1,12 @@
-# bs-framework
-## Zum Besprechen
-* Wieviel Gestaltung, zB. m-breadcrumb
-* Wieviele Gestaltungs-Optionen und wo werden diese mitgegeben?
-* Was übernehmen von altem Framework?
-* Tabelle mit Schatten wenn Scrollbalken per JS
-* HSL-Farben?
-* Darkmode?
-* CamelCase :-) 
-* [class*=…] oder einfach --modifier
+# Zum Besprechen
+## Vorgehen
+* zu theoretisch, praktische Ausgabe, Comet-Installation? 
+ * Erstellen eines Testauftritts, danacht schrittweise Integration und Anpassung der Komponenten
+ * Dokumentation zu jeder Komponente, was geändert wurde
+ * Erarbeitung eines `components.css`, welches alle von den `.hbs`-Templates enthaltenen Klassen beinhaltet
 
 
-
-
-* Bilder weiterhin gefloatet oder komplett neuer Ansatz?
-* Live validation forms
-* zu theoretisch, praktische Ausgabe, Framework-Installation? 
-
-
-
-
-
-## Grid
-* grid-raster. ausgehend von container, ausgehend von item, grössen per breakpoint, immer area …
-
-### Anwendungsbereich
-* Grundsätzliches Layout (Header, Footer, Main)
-* Bildergalerien
-* Listen (News, Navigation)
-* Cards
-
-
-###Anforderungen an Grid
-* Spalten immer gleich breit -> clamp
-* ungleiche Spaltenverteilung -> Children müssen Klassen erhalten, nicht Container
-* ändern bei breakpoints
-* mehrzeilig
-
-
+## Zur Diskussion
+ * Was musste in Vergangenheit öfters angepasst werden in den Auftritten und sollte zwingend vom Master kommen? zB. FontAwesome-Link-Pseudos.
+ * Macht das Ausrichten von Bildern (float) weiterhin Sinn? Komplett neuer Ansatz? Editor? Zwei/Drei Bilder nebeneinander?
+ * Hoizontales Scrollen mit Verlauf links und rechts? (Benötigt zusätzlichen Container und JS)

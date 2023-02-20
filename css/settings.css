@@ -17,7 +17,9 @@
  	--fontSizeMedium: clamp(16px, 1.25vw, 24px); /* h3: 24/1920 */
  	--fontSizeLarge: clamp(19px, 1.5625vw, 30px); /* h2: 30/1920 */
  	--fontSizeXLarge: clamp(28px, 2.5vw, 48px); /* h1: 48/1920 */
+
  	--fontSizeForms: clamp(16px, 0.9375vw, 18px); /* forms: 18/1920, mind. 16px */
+ 	--fontSizeTable: var(--fontSizeSmall);
 
  	--fontLineHeight: 1.4;
 
@@ -39,12 +41,14 @@
 	--colorLink: var(--colorPrimary);
 	--colorLinkVisited: var(--colorPrimary80);
 	--colorLinkHover: var(--colorPrimary150);
+	--colorZebraBackground:  var(--colorPrimary10);
+	--colorHoverBackground:  var(--colorPrimary30);
 	--colorNeutral: hsl(0, 0%, 50%);
 	--colorWarning: hsl(30, 90%, 50%);
 	--colorSuccess: hsl(150, 70%, 50%);
 	--colorError: hsl(0, 80%, 50%);
 
-	--colorPrimary10: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 90%);
+	/* --colorPrimary10: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 90%);
 	--colorPrimary20: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 80%);
 	--colorPrimary30: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 70%);
 	--colorPrimary40: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 60%);
@@ -62,7 +66,7 @@
 	--colorSecondary60: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 40%);
 	--colorSecondary70: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 30%);
 	--colorSecondary80: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 20%);
-	--colorSecondary90: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 10%);
+	--colorSecondary90: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 10%); */
 
 	/* If color-mix already is a thing */
 	--colorPrimary10: color-mix(in oklab, var(--colorPrimary) 10%, var(--colorBackground));

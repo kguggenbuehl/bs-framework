@@ -136,7 +136,7 @@ a:focus, a:hover, a:active {
 /* –––––– =BUTTON= –––––– */
 /* –––––––––––––––––––––– */
 .c-btn {
-	display: inline-block;
+	display: inline-flex;
 	padding: .75em 1em;
 	color: #fff;
 	text-decoration: none;
@@ -154,6 +154,12 @@ a:focus, a:hover, a:active {
 }
 .c-btn:active {
 	box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+}
+.c-btn:has(.btn__icon:first-child) .btn__text {
+	margin-left: 1em;
+}
+.c-btn:has(.btn__icon:last-child) .btn__text {
+	margin-right: 1em;
 }
 .c-btn--secondary {
 	background-color: var(--colorSecondary);
