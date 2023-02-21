@@ -10,3 +10,4 @@
  * Was musste in Vergangenheit öfters angepasst werden in den Auftritten und sollte zwingend vom Master kommen? zB. FontAwesome-Link-Pseudos.
  * Macht das Ausrichten von Bildern (float) weiterhin Sinn? Komplett neuer Ansatz? Editor? Zwei/Drei Bilder nebeneinander?
  * Hoizontales Scrollen mit Verlauf links und rechts? (Benötigt zusätzlichen Container und JS)
+ * Weg zum neuen DMS? (Design, Funktionalität)

@@ -135,7 +135,7 @@ a:focus, a:hover, a:active {
 
 /* –––––– =BUTTON= –––––– */
 /* –––––––––––––––––––––– */
-.c-btn {
+.cButton {
 	display: inline-flex;
 	padding: .75em 1em;
 	color: #fff;
@@ -148,48 +148,48 @@ a:focus, a:hover, a:active {
 	border-radius: var(--borderRadius);
 	cursor: pointer;
 }
-.c-btn:hover,
-.c-btn:focus {
+.cButton:hover,
+.cButton:focus {
 	background-image: linear-gradient(0, hsla(150, 0%, 0%, 20%), hsla(150, 0%, 0%, 20%));
 }
-.c-btn:active {
+.cButton:active {
 	box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
 }
-.c-btn:has(.btn__icon:first-child) .btn__text {
+.cButton:has(.btn__icon:first-child) .btn__text {
 	margin-left: 1em;
 }
-.c-btn:has(.btn__icon:last-child) .btn__text {
+.cButton:has(.btn__icon:last-child) .btn__text {
 	margin-right: 1em;
 }
-.c-btn--secondary {
+.cButton--secondary {
 	background-color: var(--colorSecondary);
 }
-.c-btn--neutral {
+.cButton--neutral {
 	background-color: var(--colorNeutral);
 }
-.c-btn--invis,
-.c-btn--ghost {
+.cButton--invis,
+.cButton--ghost {
 	color: var(--colorForeground);
 	background-color: transparent;
 	background-image: none;
 }
-.c-btn--invis:hover,
-.c-btn--invis:focus {
+.cButton--invis:hover,
+.cButton--invis:focus {
 	border: 1px solid var(--colorPrimary);
 	background-image: none;
 }
-.c-btn--ghost {
+.cButton--ghost {
 	border: 1px solid var(--colorPrimary);
 }
-.c-btn--ghost:hover,
-.c-btn--ghost:focus {
+.cButton--ghost:hover,
+.cButton--ghost:focus {
 	background-color: var(--colorPrimary20);
 	background-image: none;
 }
-.c-btn--reject {
+.cButton--reject {
 	background-color: var(--colorError);
 }
-.c-btn--accept {
+.cButton--accept {
 	background-color: var(--colorSuccess);
 }
 

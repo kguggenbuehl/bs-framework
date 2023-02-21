@@ -6,19 +6,19 @@
 
 /* –––––– HEADER –––––– */
 /* –––––––––––––––––––– */
-.c-grid__item--logo {
+.cGrid__item--logo {
 	grid-area: logo;
 }
-.c-grid__item--nav {
+.cGrid__item--nav {
 	grid-area: nav;
 }
-.c-grid__item--search {
+.cGrid__item--search {
 	grid-area: search;
 }
-.c-grid__item--metanav {
+.cGrid__item--metanav {
 	grid-area: metanav;
 }
-.c-grid--header {
+.cGrid--header {
 	grid-template-columns: 32.5% 1fr 55px;
     grid-template-areas:
         "logo metanav metanav"
@@ -28,7 +28,7 @@
 	padding: 1em 0;
 }
 @media screen and (min-width: 48em) {
-	.c-grid--header {
+	.cGrid--header {
 		grid-template-columns: inherit;
 		grid-template-areas: 
 		"logo logo logo logo . . metanav metanav metanav metanav metanav metanav"
@@ -44,25 +44,25 @@
 .metanav {
 	font-size: var(--fontSizeSmall);
 
-	& .c-nav__list {
+	& .cNav__list {
 		display: flex;
 		justify-content: flex-end;
 	}
 }
 
 /* Search */
-.c-search {
+.cSearch {
 	min-height: 44px;
 }
-.c-search__form {
+.cSearch__form {
 	border: 1px solid var(--colorPrimary);
 }
-.c-search__input {
+.cSearch__input {
 	padding: .2em 1em;
 }
 
 /* Headimage */
-.c-headimage {
+.cHeadimage {
 	height: 20vw;
 }
 
@@ -73,19 +73,19 @@
 	display: none;
 	border-top: 1px solid var(--colorPrimary);
 
-	& .c-nav__list--level-1 {
+	& .cNav__list--level-1 {
 		display: flex;
 
-		& .c-nav__item>a {
+		& .cNav__item>a {
 			padding: 0.75em 1em;
 			font-size: var(--fontSizeMedium);
 		}
-		& .c-nav__item:hover .c-nav__list--level-2 {
+		& .cNav__item:hover .cNav__list--level-2 {
 			display: block;
 		}
 	}
 
-	& .c-nav__list--level-2 {
+	& .cNav__list--level-2 {
 		display: none;
 		position: absolute;
 		top: 100%;
@@ -97,10 +97,10 @@
 .subnav {
 	display: none;
 
-	& .c-nav__list--level-1>li {
+	& .cNav__list--level-1>li {
 		border-top: 1px solid var(--colorSecondary);
 	}
-	& .c-nav__list--level-1>li>a {
+	& .cNav__list--level-1>li>a {
 		padding: 0.25em 0;
 	}
 }
@@ -118,23 +118,23 @@
 
 /* ––––– =CONTENT= ––––– */
 /* –––––––––––––––––––– */
-.c-grid__item--breadcrumb {
+.cGrid__item--breadcrumb {
 	grid-area: breadcrumb;
 }
-.c-grid__item--main {
+.cGrid__item--main {
 	grid-area: main;
 }
-.c-grid__item--subnav {
+.cGrid__item--subnav {
 	grid-area: nav;
 }
-.c-grid--content {
+.cGrid--content {
 	grid-template-areas: 
 	"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb"
 	"main main main main main main main main main main main main";
 }
 
 @media screen and (min-width: 48em) {
-	.c-grid--content {
+	.cGrid--content {
 		grid-template-areas: 
 		"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb"
 		"nav nav nav . main main main main main main main main";
@@ -148,19 +148,19 @@
 	padding: 1em 0;
 	background-color: var(--colorPrimary30);
 }
-.c-grid__item--one {
+.cGrid__item--one {
 	grid-area: one;
 }
-.c-grid__item--two {
+.cGrid__item--two {
 	grid-area: two;
 }
-.c-grid__item--three {
+.cGrid__item--three {
 	grid-area: three;
 }
-.c-grid__item--four {
+.cGrid__item--four {
 	grid-area: four;
 }
-.c-grid--footer {
+.cGrid--footer {
 	grid-template-columns: 100%;
 	grid-template-areas: 
 	"one"
@@ -169,14 +169,14 @@
 	"four";
 }
 @media screen and (min-width: 48em) {
-	.c-grid--footer {
+	.cGrid--footer {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-areas: 
 		"one two three"
 		". . four";
 	}
 }
-.c-created__link {
+.cCreated__link {
 	color: inherit;
 	text-decoration: none;
 }

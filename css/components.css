@@ -1,86 +1,117 @@
 /* ––––––– =LIST= ––––––– */
 /* –––––––––––––––––––––– */
-.c-list {
+.cList {
 	container-type: inline-size;
-  	container-name: c-list;
+  	container-name: cList;
 }
-.c-list__item {
+.cList__item {
 	container-type: inline-size;
-  	container-name: c-list__item;
+  	container-name: cList__item;
+}
+.cList--table {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(1px,1fr));
+	grid-template-rows: repeat(100, auto);
+	font-size: var(--fontSizeSmall);
+	border: var(--colorPrimary) solid;
+	border-width: 1px 1px 0 1px;
+}
+.cList--table>li {
+	display: grid;
+	grid-template-rows: subgrid;
+	grid-row: 1 / -1;
+	padding: 1em;
+	font-weight: bold;
+	border-bottom: 1px solid var(--colorPrimary);
+	border-bottom: 1px solid black;
+	background-color: var(--colorPrimary50);
+}
+.cList--table>li>ul {
+	grid-row: span 100;
+	display: grid;
+	grid-template-rows: subgrid;
+	margin: 0;
+	margin: 1em -1em -1em -1em;
+	font-weight: normal;
+	background-color: var(--colorBackground);
+}
+.cList--table>li>ul>li {
+	padding: 1em ;
+	border-top: 1px solid black;
 }
 
 /* ––––––– =FLEX= ––––––– */
 /* –––––––––––––––––––––– */
-.c-flex {
+.cFlex {
 	display: flex;
 	container-type: inline-size;
-  	container-name: c-flex;
+  	container-name: cFlex;
 }
-.c-flex__item {
+.cFlex__item {
 	flex: 1 0 auto;
 	container-type: inline-size;
-  	container-name: c-flex__item;
+  	container-name: cFlex__item;
 }
 
 /* ––––––– =GRID= ––––––– */
 /* –––––––––––––––––––––– */
-.c-grid {
+.cGrid {
 	display: grid;
 	grid-template-columns: repeat(var(--pageColumns), 1fr);
 	grid-template-rows: auto;
   	container-type: inline-size;
-  	container-name: c-grid;
+  	container-name: cGrid;
 }
-.c-grid__item {
+.cGrid__item {
 	container-type: inline-size;
-  	container-name: c-grid__item;
+  	container-name: cGrid__item;
 }
-:where([class*="--sm2"]) > .c-grid__item { grid-column: span 2; }
-:where([class*="--sm3"]) > .c-grid__item { grid-column: span 3; }
-:where([class*="--sm4"]) > .c-grid__item { grid-column: span 4; }
-:where([class*="--sm5"]) > .c-grid__item { grid-column: span 5; }
-:where([class*="--sm6"]) > .c-grid__item { grid-column: span 6; }
-:where([class*="--sm7"]) > .c-grid__item { grid-column: span 7; }
-:where([class*="--sm8"]) > .c-grid__item { grid-column: span 8; }
-:where([class*="--sm9"]) > .c-grid__item { grid-column: span 9; }
-:where([class*="--sm10"]) > .c-grid__item { grid-column: span 10; }
-:where([class*="--sm11"]) > .c-grid__item { grid-column: span 11; }
-:where([class*="--sm12"]) > .c-grid__item { grid-column: span 12; }
+:where([class*="--sm2"]) > .cGrid__item { grid-column: span 2; }
+:where([class*="--sm3"]) > .cGrid__item { grid-column: span 3; }
+:where([class*="--sm4"]) > .cGrid__item { grid-column: span 4; }
+:where([class*="--sm5"]) > .cGrid__item { grid-column: span 5; }
+:where([class*="--sm6"]) > .cGrid__item { grid-column: span 6; }
+:where([class*="--sm7"]) > .cGrid__item { grid-column: span 7; }
+:where([class*="--sm8"]) > .cGrid__item { grid-column: span 8; }
+:where([class*="--sm9"]) > .cGrid__item { grid-column: span 9; }
+:where([class*="--sm10"]) > .cGrid__item { grid-column: span 10; }
+:where([class*="--sm11"]) > .cGrid__item { grid-column: span 11; }
+:where([class*="--sm12"]) > .cGrid__item { grid-column: span 12; }
 
 
 /* ––––––– =CARD= ––––––– */
 /* –––––––––––––––––––––– */
-.c-card {
+.cCard {
 	display: grid;
 	container-type: inline-size;
 	container-name: card;
 }
-:where(.c-card:has(img)) .c-card__fig {
+:where(.cCard:has(img)) .cCard__fig {
 	grid-row: 1;
 }
 
 
 /* –––––– =SEARCH= –––––– */
 /* –––––––––––––––––––––– */
-.c-search {
+.cSearch {
 	height: 100%;
 }
-.c-search__form {
+.cSearch__form {
 	display: flex;
 	height: 100%;
 }
-.c-search__input {
+.cSearch__input {
 	flex: 1 1 auto;
 	min-width: 0;
 	font-size: var(--fontSizeForms);
 }
-.c-search__input:focus-visible {
+.cSearch__input:focus-visible {
 	outline: 0;
 }
-.c-search__form:has( :focus-visible) {
+.cSearch__form:has( :focus-visible) {
 	box-shadow: 0 0 0 2px var(--colorPrimary);
 }
-body:has(.c-search__input:focus-visible) {
+body:has(.cSearch__input:focus-visible) {
 	background-color: color-mix(in oklab, var(--colorForeground) 10%, var(--colorBackground));
 }
 
@@ -120,46 +151,46 @@ tr {
 }
 
 /* Table-Styling */
-:where(.c-table--zebraEffect) tr:nth-of-type(even) {
+:where(.cTable--zebraEffect) tr:nth-of-type(even) {
     background-color: var(--colorZebraBackground);
 }
-:where(.c-table--zebraEffect) thead {
+:where(.cTable--zebraEffect) thead {
 	color: var(--colorPrimary20);
     background-color: var(--colorPrimary120);
 }
-:where(.c-table--zebraEffect thead) tr {
+:where(.cTable--zebraEffect thead) tr {
     border: 0;
 }
-:where(.c-table--gridEffect) th,
-:where(.c-table--gridEffect) td {
+:where(.cTable--gridEffect) th,
+:where(.cTable--gridEffect) td {
 	border-right: 1px solid var(--colorPrimary);
 }
-:where(.c-table--gridEffect tbody) th:first-child,
-:where(.c-table--gridEffect) td:first-child {
+:where(.cTable--gridEffect tbody) th:first-child,
+:where(.cTable--gridEffect) td:first-child {
 	border-left: 1px solid var(--colorPrimary);
 }
-:where(.c-table--gridEffect.c-table--zebraEffect tr:nth-of-type(even)) td:not(:last-child),
-:where(.c-table--gridEffect.c-table--zebraEffect tr:nth-of-type(even)) th:not(:last-child) {
+:where(.cTable--gridEffect.cTable--zebraEffect tr:nth-of-type(even)) td:not(:last-child),
+:where(.cTable--gridEffect.cTable--zebraEffect tr:nth-of-type(even)) th:not(:last-child) {
 	border-right: 1px solid white;
 }
 
 /* ––––––– =FORM= ––––––– */
 /* –––––––––––––––––––––– */
-.c-form__fieldset {
+.cForm__fieldset {
 	padding: 1.5em;
     background: #fbfbfb;
 }
-.c-form__section {
+.cForm__section {
 	margin: 0 0 calc(var(--marginBase) * 0.75) 0;
 }
-.c-form__labelContainer {
+.cForm__labelContainer {
 	margin: 0 0 calc(var(--marginBase) / 6) 0;
 }
-.c-form__inputContainer {
+.cForm__inputContainer {
 	position: relative;
 }
-.c-form__input,
-.c-form__textarea {
+.cForm__input,
+.cForm__textarea {
 	position: relative;
 	z-index: 2;
 	width: 100%;
@@ -167,28 +198,28 @@ tr {
 	border: 1px solid var(--colorPrimary);
 	font-size: var(--fontSizeForms);
 }
-:where(.c-form__inputContainer:has(.c-form__error)) .c-form__input {
+:where(.cForm__inputContainer:has(.cForm__error)) .cForm__input {
 	border-color: var(--errorColor);
 }
-.c-form__input:focus,
-.c-form__textarea:focus {
+.cForm__input:focus,
+.cForm__textarea:focus {
 	outline: 0;
 	box-shadow: 0 0 0 3px var(--colorPrimary);
 }
-:where(.c-form__inputContainer:has(.c-form__error)) .c-form__input:focus {
+:where(.cForm__inputContainer:has(.cForm__error)) .cForm__input:focus {
 	border-color: var(--primaryColor);
 }
-.c-form__error,
-.c-form__hint {
+.cForm__error,
+.cForm__hint {
 	display: inline-block;
     padding: 0.45em 0.6em 0.3em;
 	font-size: var(--fontSizeSmall);
 }
-.c-form__error {
+.cForm__error {
 	background: var(--colorError);
     color: white;
 }
-.c-flex__item:has(.c-form__input--sm) {
+.cFlex__item:has(.cForm__input--sm) {
 	flex: 0 0 max(6em, 20%);
 }
 
@@ -199,26 +230,26 @@ tr {
 
 /* –––––– =DIALOG= –––––– */
 /* –––––––––––––––––––––– */
-.c-dialog {
+.cDialog {
 	max-width: 600px;
 }
-.c-dialog::backdrop {
+.cDialog::backdrop {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 
 /* –––– =BREADCRUMB= –––– */
 /* –––––––––––––––––––––– */
-.c-breadcrumb__list {
+.cBreadcrumb__list {
 	display: flex;
 	padding: 0.5em 0;
 }
-.c-breadcrumb__item {
+.cBreadcrumb__item {
 	display: flex;
 	padding: 0.5em 0;
 	white-space: nowrap;
 }
-.c-breadcrumb__item:not(:first-child)::before {
+.cBreadcrumb__item:not(:first-child)::before {
 	content: "\f105";
 	position: static;
 	display: inline-block;
@@ -227,9 +258,38 @@ tr {
 }
 
 
+/* –––––– =TABLIST= ––––– */
+/* –––––––––––––––––––––– */
+.cTablist__controls {
+	display: flex;
+	padding: 0;
+	margin: 0 0 -1px;
+}
+.cTablist__label {
+	display: block;
+	padding: 0.5em;
+	border: solid var(--colorForeground);
+	border-width: 1px 0 1px 1px;
+}
+.cTablist__control:last-child .cTablist__label {
+	border-right-width: 1px;
+}
+.cTablist__item {
+	padding: 1em;
+	border: solid var(--colorForeground) 1px;
+}
+input[type="radio"]:checked + label,
+.cTablist__item {
+  background-color: var(--colorPrimary20);
+}
+input[type="radio"]:checked + label {
+  border-bottom-color: var(--colorPrimary20);
+}
+
+
 /* ––––– =ACCORDION= ––––– */
 /* ––––––––––––––––––––––– */
-.c-accordion__header {
+.cAccordion__header {
 	list-style: none;
 	font-weight: bold;
 	display: flex;
@@ -237,11 +297,11 @@ tr {
 	cursor: pointer;
 	overflow: hidden;
 }
-.c-accordion__header::-webkit-details-marker,
-.c-accordion__header::marker {
+.cAccordion__header::-webkit-details-marker,
+.cAccordion__header::marker {
 	display: none;
 }
-.c-accordion__header::before {
+.cAccordion__header::before {
 	content: "";
 	position: relative;
 	flex: 0 0 auto;
@@ -256,25 +316,25 @@ tr {
 	transform: rotate(-90deg);
 	transition: transform .2s;
 }
-.c-accordion__item[open] .c-accordion__header::before,
-.c-accordion__item:has([aria-expanded="true"]) .c-accordion__header::before {
+.cAccordion__item[open] .cAccordion__header::before,
+.cAccordion__item:has([aria-expanded="true"]) .cAccordion__header::before {
 	transform: rotate(0);
 }
-.c-accordion__item:has([aria-expanded="false"]) .c-accordion__body {
+.cAccordion__item:has([aria-expanded="false"]) .cAccordion__body {
 	display: none;
 }
-.c-accordion__header > * {
+.cAccordion__header > * {
 	display: inline;
 	margin-bottom: 0;
 }
-.c-accordion__header + * {
+.cAccordion__header + * {
 	margin-top: 1.5em;
 }
 
 
 /* ––––– =HAMBURGER= ––––– */
 /* ––––––––––––––––––––––– */
-.c-hamburger__button {
+.cHamburger__button {
 	display: block;
 	position: relative;
 	z-index: 4;
@@ -288,7 +348,7 @@ tr {
 	background-color: var(--colorLink);
 	transition: background-color .5s;
 }
-.c-hamburger__bar {
+.cHamburger__bar {
 	content: '';
 	display: block;
 	position: absolute;
@@ -301,31 +361,31 @@ tr {
 	transform: rotate(0deg);
 	transition: .25s ease-in-out;
 }
-.c-hamburger__bar:nth-child(1) {
+.cHamburger__bar:nth-child(1) {
 	top: 11px;
 }
-.c-hamburger__bar:nth-child(2),
-.c-hamburger__bar:nth-child(3) {
+.cHamburger__bar:nth-child(2),
+.cHamburger__bar:nth-child(3) {
 	top: 21px;
 }
-.c-hamburger__bar:nth-child(4) {
+.cHamburger__bar:nth-child(4) {
 	top: 31px;
 }
-.c-hamburger__button--active {
+.cHamburger__button--active {
 	background-color: var(--colorLinkHover);
 }
-:where(.c-hamburger__button--active) .c-hamburger__bar:nth-child(1) {
+:where(.cHamburger__button--active) .cHamburger__bar:nth-child(1) {
 	top: 20px;
 	width: 0%;
 	left: 50%;
 }
-:where(.c-hamburger__button--active) .c-hamburger__bar:nth-child(2) {
+:where(.cHamburger__button--active) .cHamburger__bar:nth-child(2) {
 	transform: rotate(45deg);
 }
-:where(.c-hamburger__button--active) .c-hamburger__bar:nth-child(3) {
+:where(.cHamburger__button--active) .cHamburger__bar:nth-child(3) {
 	transform: rotate(-45deg);
 }
-:where(.c-hamburger__button--active) .c-hamburger__bar:nth-child(4) {
+:where(.cHamburger__button--active) .cHamburger__bar:nth-child(4) {
 	top: 20px;
 	width: 0%;
 	left: 50%;
@@ -334,15 +394,15 @@ tr {
 
 /* – =HORIZONZAL SCROLL= – */
 /* ––––––––––––––––––––––– */
-.c-horizontalScroll {
+.cHorizontalScroll {
 	position: relative;
 }
-.c-horizontalScroll__scrollArea {
+.cHorizontalScroll__scrollArea {
 	overflow-y: hidden;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 }
-.c-horizontalScroll::after {
+.cHorizontalScroll::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -353,13 +413,13 @@ tr {
 	pointer-events: none;
 	transition: background .5s;
 }
-.c-horizontalScroll--shadowRightVisible::after {
+.cHorizontalScroll--shadowRightVisible::after {
 	background: linear-gradient(to right, transparent calc(100% - 20px),var(--colorBackground) 100%);
 }
-.c-horizontalScroll--shadowLeftVisible::after {
+.cHorizontalScroll--shadowLeftVisible::after {
 	background: linear-gradient(to right, var(--colorBackground) 0%,transparent 20px);
 }
-.c-horizontalScroll--shadowLeftVisible.c-horizontalScroll--shadowRightVisible::after {
+.cHorizontalScroll--shadowLeftVisible.cHorizontalScroll--shadowRightVisible::after {
 	background: linear-gradient(to right, var(--colorBackground) 0%,transparent 20px,transparent calc(100% - 20px),var(--colorBackground) 100%);
 }
 
@@ -382,11 +442,14 @@ tr {
 	z-index: 1;
 	inset: 0;
 }
-[class*="--reset"]{
+[class*="--reset"],
+[class*="--resetAll"],
+[class*="--resetAll"] ul {
     list-style: none;
     padding: 0;
 }
-:where([class*="--reset"])>li {
+:where([class*="--reset"])>li,
+[class*="--resetAll"] li {
     margin-left: 0;
 }
 [class*="--gap"] {

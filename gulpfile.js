@@ -16,7 +16,7 @@ gulp.task('serve', function() {
         server: true,
         files: ["css/*.css", "js/*.js", "*.html"],
         index: "default.html",
-        browser: "google chrome",
+        browser: "google chrome canary",
         notify: false,
         injectChanges: false,
     });

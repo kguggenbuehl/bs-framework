@@ -3,6 +3,7 @@
 1. [Grundsätze](#1-grundsätze)
 2. [CSS-Files-Struktur](#css-files-struktur)
 3. [Komponenten und ihre Modifier](##3.-Komponenten-und-ihre-Modifier)
+4. [Aufbau einer Seite](##4.-aufbau-einer-seite)
 
 
 ## 1. Grundsätze
@@ -11,8 +12,8 @@
  * Grid-Areas für Layout
 * Spezifität möglichst tief halten (0 1 0). Dazu kann z.B. `:where()` verwendet werden
 * (Modifier werden mit camelCase geschrieben)
-* Klassen werden mit einem Prefix ausgestattet: `c-` für Komponenten, `js-` für im JS benötigte Klassen
-* BEM (Block - Element - Modifier) wo immer möglich verwenden. Keine verschachtelten Elemente in Klassen (`nav__list__item__link`). Da gäbe es dann die Klassen `nav__list`, `nav__item` und `nav__link`. 
+* Klassen werden mit einem Prefix ausgestattet: `c` für Komponenten, `js` für im JS benötigte Klassen
+* BEM (Block - Element - Modifier) wo immer möglich verwenden. Keine verschachtelten Elemente in Klassen (`nav__list__item__link`). Da gäbe es dann die Klassen `cNav__list`, `cNav__item` und `cNav__link`. 
 * Eine Liste `__list` enthält grundsätzlich immer `__item` als Kindelemente.
 * Typische Klassen für einen Block sind:
  * `__header` für `__title`, `__subtitle` und `__meta`
@@ -36,25 +37,25 @@ Es gibt verschiedene Komponenten, welche universell an verschiedenen Orten einge
 Komponenten können mit Modifier ergänzt werden, welche überlicherweise auf alle Komponenten zugewiesen werden können.
 
 ### Komponentenliste
-* Liste: `c-list`
-* Grid: `c-grid`
-* Card: `c-card`
-* Flex: `c-flex`
-* Suche: `c-search`
-* LiveResultate: `c-liveResults`
-* Tabelle: `c-table`
-* Form: `c-form`
-* Hamburger: `c-hamburger`
-* Akkordeons: `c-accordion`
+* Liste: `cList`
+* Grid: `cGrid`
+* Card: `cCard`
+* Flex: `cFlex`
+* Suche: `cSearch`
+* LiveResultate: `cLiveResults`
+* Tabelle: `cTable`
+* Form: `cForm`
+* Hamburger: `cHamburger`
+* Akkordeons: `cAccordion`
 * Tabs
-* Button: `c-btn`
+* Button: `cButton`
 * Dropdowns
 * Modals
 * Bildergalerien
 * Slideshows
 * Navigationen
 * Kalender
-* Breadcrumb: `c-breadcrumb`
+* Breadcrumb: `cBreadcrumb`
 * Kommentare
 * Downloads
 * FAQ
@@ -68,32 +69,32 @@ Komponenten können mit Modifier ergänzt werden, welche überlicherweise auf al
 * `--verticalGap` setzt den vertikalen Gap auf den im variables.css festgelegten Wert
 * `--cover` setzt darin liegende Medien auf `object-fit: cover`
 
-## Aufbau Seite
+## 4. Aufbau einer Seite
 * page
  * header
      * wrapper wrapper--header
-         * c-grid c-grid--header
-             * c-grid__item
+         * cGrid cGrid--header
+             * cGrid__item
                  * c-component
-             * c-grid__item
+             * cGrid__item
                  * c-component
-             * c-grid__item
+             * cGrid__item
                  * c-component
  * content
      * wrapper wrapper--content
-         * c-grid c-grid--content
-             * c-grid__item
+         * cGrid cGrid--content
+             * cGrid__item
                  * c-component
-             * c-grid__item
+             * cGrid__item
                  * c-component
-             * c-grid__item
+             * cGrid__item
                  * c-component
  * footer
      * wrapper wrapper--footer
-         * c-grid c-grid--footer
-             * c-grid__item
+         * cGrid cGrid--footer
+             * cGrid__item
                  * c-component
-             * c-grid__item
+             * cGrid__item
                  * c-component
-             * c-grid__item
+             * cGrid__item
                  * c-component
