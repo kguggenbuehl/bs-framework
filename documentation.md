@@ -19,9 +19,9 @@
  * `__header` für `__title`, `__subtitle` und `__meta`
  * `__body` für `__content`, `__desc`, `__fig` usw.
  * `__footer` für `__link` usw. 
- * `__controls` für Buttons, Steuerungen
+ * `__controls` für `__control`, `cButton`
  * allenfalls `__fig` für Bilder
-* Typische Elemente sind: `__title`, `__subtitle`, `__meta`, `__content`, `__desc`, `__fig`, `__img`, `__button`, `__label`, `__input`, `__control`, `__link`, `__legend` usw.
+* Typische Klassen für Elemente sind: `__title`, `__subtitle`, `__meta`, `__content`, `__desc`, `__fig`, `__img`, `__button`, `__label`, `__input`, `__control`, `__link`, `__legend`, `__text`, `__icon` usw.
 
 ## 2. CSS-Files-Struktur
 1. settings.css - für alle Variablen, lokal, Editor
@@ -47,13 +47,13 @@ Komponenten können mit Modifier ergänzt werden, welche überlicherweise auf al
 * Form: `cForm`
 * Hamburger: `cHamburger`
 * Akkordeons: `cAccordion`
-* Tabs
+* Tablist: `cTablist`
 * Button: `cButton`
-* Dropdowns
-* Modals
+* Dropdowns: `cDropdown`
+* Dialog/Modal: `cDialog`
 * Bildergalerien
 * Slideshows
-* Navigationen
+* Navigationen: `cNav`
 * Kalender
 * Breadcrumb: `cBreadcrumb`
 * Kommentare

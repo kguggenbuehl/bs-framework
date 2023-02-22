@@ -258,6 +258,22 @@ tr {
 }
 
 
+/* –––––– =DROPDOWN= ––––– */
+/* ––––––––––––––––––––––– */
+.cDropdown {
+	position: relative;
+}
+:where(.cDropdown:has([aria-expanded="false"])) .cDropdown__list {
+	display: none
+}
+:where(.cDropdown:has([aria-expanded="true"])) .cButton__icon {
+	transform: rotate(180deg);
+}
+.cDropdown__list {
+	position: absolute;
+	background-color: var(--colorBackground);
+}
+
 /* –––––– =TABLIST= ––––– */
 /* –––––––––––––––––––––– */
 .cTablist__controls {

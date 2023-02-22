@@ -124,11 +124,11 @@
 	--marginBase: 1.5em;
 	--marginHeadingSmall: calc(var(--marginBase) / 3);
 	--marginHeadingLarge: calc(var(--marginBase) * 3);
-	--marginHeadingLevel2: calc(var(--marginBase) * 3);
-	--marginHeadingLevel3: calc(var(--marginBase) * 2.4);
-	--marginHeadingLevel4: calc(var(--marginBase) * 1.8);
-	--marginHeadingLevel5: calc(var(--marginBase) * 1.2);
-	--marginHeadingLevel6: calc(var(--marginBase) * 0.6);
+	--marginHeadingLevel2: calc(var(--marginBase) * 2.4);
+	--marginHeadingLevel3: calc(var(--marginBase) * 1.8);
+	--marginHeadingLevel4: calc(var(--marginBase) * 1.2);
+	--marginHeadingLevel5: calc(var(--marginBase) * 0.8);
+	--marginHeadingLevel6: calc(var(--marginBase) * 0.4);
 
 
 	/* –––– =ANIMATION= ––––– */

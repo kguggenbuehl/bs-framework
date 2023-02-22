@@ -265,15 +265,15 @@
 								<p>
 									<button class="cButton">Standard</button>
 									<button class="cButton">
-										<div class="btn__icon"><i class="fa-regular fa-magnifying-glass"></i></div>
+										<div class="cButton__icon"><i class="fa-regular fa-magnifying-glass"></i></div>
 									</button>
 									<button class="cButton">
-										<div class="btn__icon"><i class="fa-regular fa-magnifying-glass"></i></div>
-										<div class="btn__text">Suche</div>
+										<div class="cButton__icon"><i class="fa-regular fa-magnifying-glass"></i></div>
+										<div class="cButton__text">Suche</div>
 									</button>
 									<button class="cButton">
-										<div class="btn__text">mehr</div>
-										<div class="btn__icon"><i class="fa-regular fa-arrow-right"></i></div>
+										<div class="cButton__text">mehr</div>
+										<div class="cButton__icon"><i class="fa-regular fa-arrow-right"></i></div>
 									</button>
 									<button class="cButton cButton--small">--small</button><br><br>
 									<button class="cButton cButton--secondary">--secondary</button>
@@ -313,6 +313,25 @@
 									<div class="cGrid__item cGrid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
 									<div class="cGrid__item cGrid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
 									<div class="cGrid__item cGrid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
+								</div>
+								<h2><a id="Dropdown"></a>Dropdown</h2>
+								<div class="cDropdown jsDropdown" data-govis-a11y_dropdown-container=".jsDropdown" data-govis-a11y_dropdown-button=".jsDropdown__button" data-govis-a11y_dropdown-list=".jsDropdown__list">
+									<h3 class="cDropdown__title visuallyhidden">Häufig gesucht</h3>
+									<div class="cDropdown__controls">
+										<button type="button" class="cDropdown__button jsDropdown__button cButton" aria-expanded="false">
+											<span class="cButton__text">Dropdown</span>
+											<span class="cButton__icon"><i class="fa fa-angle-down fa-fw" aria-hidden="true"></i></span>
+										</button>
+									</div>
+									<div class="cDropdown__body">
+										<ul class="cDropdown__list jsDropdown__list cDropdown__list--reset cDropdown__list--linkList" id="cDropdown__list">
+											<li class="cDropdown__item"><a class="cDropdown__link" href="#">Link 1</a></li>
+											<li class="cDropdown__item"><a class="cDropdown__link" href="#">Link 2</a></li>
+											<li class="cDropdown__item"><a class="cDropdown__link" href="#">Link 3</a></li>
+											<li class="cDropdown__item"><a class="cDropdown__link" href="#">Link 4</a></li>
+											<li class="cDropdown__item"><a class="cDropdown__link" href="#">Link 5</a></li>
+										</ul>
+									</div>
 								</div>
 								<h2><a id="Dialogfeld"></a>Dialogfeld</h2>
 								<p><button class="cButton" id="showDialog">Dialogfeld anzeigen</button></p>
@@ -480,8 +499,20 @@
 							</section>
 							<section class="mb no2ne">
 								<h2>Newsmodul</h2>
-								<div class="m-news">
-									<ul class="cGrid cGrid--sm12--md6--lg3 cGrid--gap cGrid--reset">
+								<div class="mNews">
+									<div class="mNews__header">
+										<form class="form-builder js-mod-search" id="news-archive-search" method="POST"  action="https://govis-wauwil.backslash.ch/verwaltung/aktuelles-news/diverse.html/19/newsarchive/1">
+											<fieldset>
+												<legend>Suche</legend>
+												<p class="clearfix"><label for="news-archive-search-all">Suchbegriff</label> <input type="search" name="newsSearchParams.query" id="news-archive-search-all" value=""></p> <input type="hidden" name="newsSearchParams.category" value="5">
+												<p class="clearfix"><label for="news-archive-date-from">Zeitraum von</label> <input type="date" name="newsSearchParams.dateFrom" id="news-archive-date-from" value="" data-ddg-inputtype="unknown"></p>
+												<p class="clearfix"><label for="news-archive-date-to">Zeitraum bis</label> <input type="date" name="newsSearchParams.dateTo" id="news-archive-date-to" value="" data-ddg-inputtype="unknown"></p>
+												<p><button type="submit" class="btn">Suchen</button></p>
+											</fieldset>
+										</form>
+									</div>
+									<div class="mNews__body">
+										<ul class="cGrid cGrid--sm12--md6--lg3 cGrid--gap cGrid--reset">
 										<li class="cGrid__item">
 											<article class="cCard cCard--horizontalGap cCard--noLink cCard--hasImage cCard--hasContent">
 												<header class="cCard__header">
@@ -544,7 +575,8 @@
 												</div>
 											</article>
 										</li>
-									</ul>
+										</ul>
+									</div>
 								</div>
 							</section>
 							<section class="form no2ne">
