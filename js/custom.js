@@ -73,53 +73,58 @@ $(document).ready(function() {
     });
 
 
-	function checkShadow(scrollContainer){
-		const scrollArea = $(scrollContainer).find(scrollAreaClass).first();
-		const scrollAreaContentWidth = scrollArea[0].scrollWidth;
-		const scrollPositionLeft = scrollArea.scrollLeft();
-        const scrollPositionRight = scrollAreaContentWidth - scrollContainer.width() - scrollPositionLeft;
+    // ************************************
+    // horizontal scroll
 
-		if (scrollPositionLeft > 5) {
-			scrollContainer.addClass(shadowLeftVisibleClass);
-		} else {
-			scrollContainer.removeClass(shadowLeftVisibleClass);
-		}
-		if (scrollPositionRight > 5) {
-			scrollContainer.addClass(shadowRightVisibleClass);
-		} else {
-			scrollContainer.removeClass(shadowRightVisibleClass);
-		}
-	}
+    const scrollAreaClass = '.jsHorizontalScroll';
+    const scrollWrapperClass = 'jsHorizontalScroll__wrapper';
+    const shadowStartVisibleClass = 'jsHorizontalScroll__wrapper--shadowStartVisible';
+    const shadowEndVisibleClass = 'jsHorizontalScroll__wrapper--shadowEndVisible';
 
-	const improveResponsiveTables = function() {
-		
-		
-	};
-
-
-    // check all scrollcontainer on too large scroll areas
-    // add shadow if necessary
-    // add scroll-listener to all scroll areas
-	const scrollContainerClass = '.c-horizontalScroll';
-    const scrollAreaClass = '.c-horizontalScroll__scrollArea';
-    const shadowLeftVisibleClass = 'c-horizontalScroll--shadowLeftVisible';
-    const shadowRightVisibleClass = 'c-horizontalScroll--shadowRightVisible';
-
-	$(scrollContainerClass).each(function(i) {
-
-        checkShadow($(this));
-
-        $(this).find(scrollAreaClass).scroll(function(event) {
-            const parent = $(event.target).closest(scrollContainerClass);
-            checkShadow(parent);
-        }); 
+    // Observer for checking sizes of scroll wrappers
+    const resizeObserver = new ResizeObserver( elements => {
+        for (element of elements) {
+            addOverflowShadow(element.target);
+        }
     });
 
-    // add listener to check shadows on resize
-	$(window).resize(function(event) {
-		$(scrollContainerClass).each(function(index) {
-			checkShadow($(this));
-		});
-	});
+    // get scroll position left and right
+    // toggle class when more than 5 pixel scrolled
+    function addOverflowShadow(scrollArea){
+        const scrollAreaContentWidth = scrollArea.scrollWidth;
+        const scrollWrapper = $(scrollArea).parent();
+        const scrollPositionStart = $(scrollArea).scrollLeft();
+        const scrollPositionEnd = scrollAreaContentWidth - scrollWrapper.width() + scrollPositionStart;
+
+        if (scrollPositionStart > 5 || scrollPositionStart < -5) {
+            scrollWrapper.addClass(shadowStartVisibleClass);
+        } else {
+            scrollWrapper.removeClass(shadowStartVisibleClass);
+        }
+        if (scrollAreaContentWidth - scrollWrapper.width() + scrollPositionStart > 5 && scrollAreaContentWidth - scrollWrapper.width() - scrollPositionStart > 5 ){
+            scrollWrapper.addClass(shadowEndVisibleClass);
+        } else {
+            scrollWrapper.removeClass(shadowEndVisibleClass);
+        }
+    }
+
+    // check all scroll areas in document
+    $(scrollAreaClass).each(function(i) {
+
+        // add wrapper to scroll area
+        $(this).wrap("<div class='"+scrollWrapperClass+"'></div>");
+
+        // add listener to scroll => check shadow
+        $(this).scroll(function(event) {
+            addOverflowShadow(this);
+        });
+
+        // observe wrapper size => check shadow
+        // will be triggered at page load as well
+        resizeObserver.observe(this);
+
+    });
 
 });
+
+

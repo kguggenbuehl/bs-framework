@@ -55,3 +55,10 @@
 		grid-template-rows: repeat(4, auto) 1fr;
 	}
 }
+
+
+/* ––––– =DROPDOWN= ––––– */
+/* –––––––––––––––––––––– */
+.cDropdown__body {
+	width: 300px;
+}

@@ -44,6 +44,7 @@ Komponenten können mit Modifier ergänzt werden, welche überlicherweise auf al
 * Suche: `cSearch`
 * LiveResultate: `cLiveResults`
 * Tabelle: `cTable`
+* Tabelle aus Div's: `cFakeTable`
 * Form: `cForm`
 * Hamburger: `cHamburger`
 * Akkordeons: `cAccordion`
@@ -59,6 +60,9 @@ Komponenten können mit Modifier ergänzt werden, welche überlicherweise auf al
 * Kommentare
 * Downloads
 * FAQ
+* Table of Content: `cToc` und `cTocTarget`
+* Horizontale Scrollbar bei Overflow: `jsHorizontalScroll
+
 
 ### Modifier
 * `--linkList` kann für Listen, Navigationen usw. verwendet werden. Der Link wird `display: block` gesetzt, `text-decoration`und Schriftfarbe werden zurückgesetzt.

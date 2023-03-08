@@ -9,6 +9,7 @@
 ## Zur Diskussion
 * Was musste in Vergangenheit öfters angepasst werden in den Auftritten und sollte zwingend vom Master kommen? zB. FontAwesome-Link-Pseudos. 
 * Macht das Ausrichten von Bildern (float) weiterhin Sinn? Komplett neuer Ansatz? Editor? Zwei/Drei Bilder nebeneinander?
-* Hoizontales Scrollen mit Verlauf links und rechts? (Benötigt zusätzlichen Container und JS)
+* Hoizontales Scrollen mit Verlauf links und rechts? => Script in custom.js einfügen oder helper?
 * Weg zum neuen DMS? (Design, Funktionalität)
 * State als data-Attribute? Resp. vorhandene Attribute wie aria-expanded benutzen?
+* Navigation: Angabenfeld für Level als Dropdown => a11y-nav. Feld für Dropdown per Klick => Einfügen des Dropdowns

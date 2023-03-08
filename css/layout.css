@@ -8,6 +8,7 @@
 /* –––––––––––––––––––– */
 .cGrid__item--logo {
 	grid-area: logo;
+	display: flex;
 }
 .cGrid__item--nav {
 	grid-area: nav;
@@ -95,7 +96,6 @@
 }
 
 .subnav {
-	display: none;
 
 	& .cNav__list--level-1>li {
 		border-top: 1px solid var(--colorSecondary);
@@ -106,8 +106,7 @@
 }
 
 @media screen and (min-width: 48em) {
-	.mainnav,
-	.subnav {
+	.mainnav {
 		display: block;
 	}
 	.mobilenav {
@@ -120,12 +119,15 @@
 /* –––––––––––––––––––– */
 .cGrid__item--breadcrumb {
 	grid-area: breadcrumb;
+	z-index: 2;
+	position: relative;
 }
 .cGrid__item--main {
 	grid-area: main;
 }
 .cGrid__item--subnav {
 	grid-area: nav;
+	display: none;
 }
 .cGrid--content {
 	grid-template-areas: 
@@ -134,6 +136,9 @@
 }
 
 @media screen and (min-width: 48em) {
+	.cGrid__item--subnav {
+		display: block;
+	}
 	.cGrid--content {
 		grid-template-areas: 
 		"breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb"

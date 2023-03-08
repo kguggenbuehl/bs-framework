@@ -1,12 +1,74 @@
+/* ––––– =MODIFIER= ––––– */
+/* –––––––––––––––––––––– */
+:where([class*="--linklist"]) li {
+	position: relative;
+}
+:where([class*="--linklist"]) a {
+	display: flex;
+    width: 100%;
+	text-decoration: none;
+}
+[class*="--linkExpanded"] {
+	position: relative;
+}
+:where([class*="--linkExpanded"]) a::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	inset: 0;
+}
+[class*="--reset"],
+[class*="--resetAllLevels"],
+[class*="--resetAllLevels"] ul {
+    list-style: none;
+    padding: 0;
+}
+:where([class*="--reset"])>li,
+[class*="--resetAllLevels"] li {
+    margin-left: 0;
+}
+[class*="--gap"],
+:where([class*="--gap"]) .cList,
+:where([class*="--gap"]) .cFlex {
+	gap: var(--pageColumnGap);
+}
+[class*="--horizontalGap"],
+:where([class*="--horizontalGap"]) .cList,
+:where([class*="--horizontalGap"]) .cFlex {
+	gap: 0 var(--pageColumnGap);
+}
+[class*="--verticalGap"],
+:where([class*="--verticalGap"]) .cList,
+:where([class*="--verticalGap"]) .cFlex {
+	gap: var(--pageColumnGap) 0;
+}
+:where([class*="--hoverEffect"]) li:hover,
+:where([class*="--hoverEffect"]) .grid__item:hover,
+:where([class*="--hoverEffect"]) .list__item:hover,
+:where([class*="--hoverEffect"] tbody) tr:hover {
+	background-color: var(--colorHoverBackground);
+}
+[class*="--cover"] {
+	overflow: hidden;
+}
+[class*="--cover"] * {
+	height:100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
 /* ––––––– =LIST= ––––––– */
 /* –––––––––––––––––––––– */
 .cList {
 	container-type: inline-size;
   	container-name: cList;
+  	margin: 0;
 }
 .cList__item {
-	container-type: inline-size;
-  	container-name: cList__item;
+	/*container-type: inline-size;
+  	container-name: cList__item;*/
+  	/*width: 100%;*/
 }
 .cList--table {
 	display: grid;
@@ -44,13 +106,12 @@
 /* –––––––––––––––––––––– */
 .cFlex {
 	display: flex;
-	container-type: inline-size;
-  	container-name: cFlex;
+}
+.cFlex--wrap {
+	flex-wrap: wrap;
 }
 .cFlex__item {
 	flex: 1 0 auto;
-	container-type: inline-size;
-  	container-name: cFlex__item;
 }
 
 /* ––––––– =GRID= ––––––– */
@@ -86,8 +147,40 @@
 	container-type: inline-size;
 	container-name: card;
 }
-:where(.cCard:has(img)) .cCard__fig {
+:where(.cCard) .cCard__fig,
+:where(.cCard) .cCard__img {
 	grid-row: 1;
+}
+
+
+/* ––––––– =TOC= ––––––– */
+/* –––––––––––––––––––––– */
+.cToc__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+}
+.cToc__item {
+	border-right: 1px solid var(--colorPrimary);
+}
+.cToc__item:first-child {
+	border-left: 1px solid var(--colorPrimary);
+}
+.cToc__link {
+	display: block;
+    padding: .5em;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bolder;
+}
+.cToc__link:hover,
+.cToc__link:focus {
+	background-color: var(--colorPrimary10);
+}
+.cTocTarget__title {
+	padding: .25em .5em;
+    margin-bottom: .5em;
+    background-color: var(--colorPrimary10)
 }
 
 
@@ -104,6 +197,7 @@
 	flex: 1 1 auto;
 	min-width: 0;
 	font-size: var(--fontSizeForms);
+	background: transparent;
 }
 .cSearch__input:focus-visible {
 	outline: 0;
@@ -111,8 +205,45 @@
 .cSearch__form:has( :focus-visible) {
 	box-shadow: 0 0 0 2px var(--colorPrimary);
 }
-body:has(.cSearch__input:focus-visible) {
-	background-color: color-mix(in oklab, var(--colorForeground) 10%, var(--colorBackground));
+
+/* ––––– =FAKETABLE= –––– */
+/* –––––––––––––––––––––– */
+.cFakeTable__body {
+	display: grid;
+	gap: var(--pageColumnGap);
+}
+.cFakeTable__row {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: minmax(auto, 200px);
+	grid-template-columns: clamp(100px, 33%, 300px);
+	grid-auto-columns: 1fr;
+	gap: var(--pageColumnGap);
+}
+.cFakeTable__row>*>*:first-child {
+	margin-top: 0;
+}
+.cFakeTable__titleColumn>* {
+    font-size: 1em;
+}
+
+
+/* ––––– =FILELIST= ––––– */
+/* –––––––––––––––––––––– */
+.cFilelist__list {
+	display: flex;
+}
+
+
+/* ––––––– =LABEL= –––––– */
+/* –––––––––––––––––––––– */
+.cLabel {
+	display: inline-flex;
+	margin: 0 .5em .5em 0;
+	padding: .25em .75em;
+	color: var(--colorBackground);
+	background-color: var(--colorPrimary);
+	border-radius: 5em;
 }
 
 
@@ -151,6 +282,10 @@ tr {
 }
 
 /* Table-Styling */
+
+.cTable--fullWidth {
+    width: 100%;
+}
 :where(.cTable--zebraEffect) tr:nth-of-type(even) {
     background-color: var(--colorZebraBackground);
 }
@@ -174,6 +309,31 @@ tr {
 	border-right: 1px solid white;
 }
 
+
+/* ––––––– =TREE= ––––––– */
+/* –––––––––––––––––––––– */
+.cTable__row--folderOpen {
+	border-color: var(--colorPrimary30);
+}
+.cTable__row--file {
+	border-color: var(--colorPrimary20);
+}
+:where(.cTable__row--file) .cTable__cell--name {
+	padding-left: 2.5em;
+}
+.cTable__cell--name {
+	width: 50%;
+}
+.cTable__cell--size {
+	text-align: right;
+}
+.cTable__cell--size,
+.cTable__cell--changeDate,
+.cTable__cell--actions {
+/* 	max-width: 20%; */
+}
+
+
 /* ––––––– =FORM= ––––––– */
 /* –––––––––––––––––––––– */
 .cForm__fieldset {
@@ -181,7 +341,7 @@ tr {
     background: #fbfbfb;
 }
 .cForm__section {
-	margin: 0 0 calc(var(--marginBase) * 0.75) 0;
+	margin: 0 0 calc(var(--marginBase) * .75) 0;
 }
 .cForm__labelContainer {
 	margin: 0 0 calc(var(--marginBase) / 6) 0;
@@ -212,7 +372,7 @@ tr {
 .cForm__error,
 .cForm__hint {
 	display: inline-block;
-    padding: 0.45em 0.6em 0.3em;
+    padding: .45em .6em .3em;
 	font-size: var(--fontSizeSmall);
 }
 .cForm__error {
@@ -223,30 +383,35 @@ tr {
 	flex: 0 0 max(6em, 20%);
 }
 
-
-
-
-
-
 /* –––––– =DIALOG= –––––– */
 /* –––––––––––––––––––––– */
 .cDialog {
 	max-width: 600px;
 }
 .cDialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, .8);
 }
 
 
 /* –––– =BREADCRUMB= –––– */
 /* –––––––––––––––––––––– */
+.cBreadcrumb-wrapper {
+	display: flex;
+}
+.cBreadcrumb {
+	direction: rtl;
+	flex: 0 1 auto;
+    min-width: 0px;
+}
 .cBreadcrumb__list {
 	display: flex;
-	padding: 0.5em 0;
+	direction: ltr;
+	width: max-content;
+	padding: .5em 0;
 }
 .cBreadcrumb__item {
 	display: flex;
-	padding: 0.5em 0;
+	padding: .5em 0;
 	white-space: nowrap;
 }
 .cBreadcrumb__item:not(:first-child)::before {
@@ -256,22 +421,25 @@ tr {
 	margin: 0 .4em;
 	font-family: FontAwesome;
 }
-
+.cBreadcrumb__item .cButton__icon {
+	left: .5em;
+}
 
 /* –––––– =DROPDOWN= ––––– */
 /* ––––––––––––––––––––––– */
 .cDropdown {
-	position: relative;
+/* 	position: relative; */
 }
-:where(.cDropdown:has([aria-expanded="false"])) .cDropdown__list {
+:where(.cDropdown:has([aria-expanded="false"])) .cDropdown__body {
 	display: none
 }
-:where(.cDropdown:has([aria-expanded="true"])) .cButton__icon {
+:where(.cDropdown:has([aria-expanded="true"])) .cButton__icon--rotate180 {
 	transform: rotate(180deg);
 }
-.cDropdown__list {
+.cDropdown__body {
 	position: absolute;
 	background-color: var(--colorBackground);
+	box-shadow: var(--shadowMedium);
 }
 
 /* –––––– =TABLIST= ––––– */
@@ -283,7 +451,7 @@ tr {
 }
 .cTablist__label {
 	display: block;
-	padding: 0.5em;
+	padding: .5em;
 	border: solid var(--colorForeground);
 	border-width: 1px 0 1px 1px;
 }
@@ -321,10 +489,10 @@ input[type="radio"]:checked + label {
 	content: "";
 	position: relative;
 	flex: 0 0 auto;
-	top: 0.15em;
+	top: .15em;
 	width: 1em;
 	height: 1em;
-	margin-right: 0.5em;
+	margin-right: .5em;
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik00NDEuOSAxNjcuM2wtMTkuOC0xOS44Yy00LjctNC43LTEyLjMtNC43LTE3IDBMMjI0IDMyOC4yIDQyLjkgMTQ3LjVjLTQuNy00LjctMTIuMy00LjctMTcgMEw2LjEgMTY3LjNjLTQuNyA0LjctNC43IDEyLjMgMCAxN2wyMDkuNCAyMDkuNGM0LjcgNC43IDEyLjMgNC43IDE3IDBsMjA5LjQtMjA5LjRjNC43LTQuNyA0LjctMTIuMyAwLTE3eiI+PC9wYXRoPjwvc3ZnPg==');
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -410,15 +578,15 @@ input[type="radio"]:checked + label {
 
 /* – =HORIZONZAL SCROLL= – */
 /* ––––––––––––––––––––––– */
-.cHorizontalScroll {
+.jsHorizontalScroll__wrapper {
 	position: relative;
 }
-.cHorizontalScroll__scrollArea {
+.jsHorizontalScroll {
 	overflow-y: hidden;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 }
-.cHorizontalScroll::after {
+.jsHorizontalScroll__wrapper::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -429,66 +597,21 @@ input[type="radio"]:checked + label {
 	pointer-events: none;
 	transition: background .5s;
 }
-.cHorizontalScroll--shadowRightVisible::after {
+.jsHorizontalScroll__wrapper--shadowEndVisible::after,
+.cBreadcrumb .jsHorizontalScroll__wrapper--shadowStartVisible::after {
 	background: linear-gradient(to right, transparent calc(100% - 20px),var(--colorBackground) 100%);
 }
-.cHorizontalScroll--shadowLeftVisible::after {
+.jsHorizontalScroll__wrapper--shadowStartVisible::after ,
+.cBreadcrumb .jsHorizontalScroll__wrapper--shadowEndVisible::after{
 	background: linear-gradient(to right, var(--colorBackground) 0%,transparent 20px);
 }
-.cHorizontalScroll--shadowLeftVisible.cHorizontalScroll--shadowRightVisible::after {
+.jsHorizontalScroll__wrapper--shadowStartVisible.jsHorizontalScroll__wrapper--shadowEndVisible::after {
 	background: linear-gradient(to right, var(--colorBackground) 0%,transparent 20px,transparent calc(100% - 20px),var(--colorBackground) 100%);
 }
 
-/* ––––– =MODIFIER= ––––– */
-/* –––––––––––––––––––––– */
-:where([class*="--linkList"]) li {
-	position: relative;
-}
-:where([class*="--linkList"]) a {
-	display: block;
-	text-decoration: none;
-	color: inherit;
-}
-[class*="--linkExpanded"] {
-	position: relative;
-}
-:where([class*="--linkExpanded"]) a::after {
-	content: "";
-	position: absolute;
-	z-index: 1;
-	inset: 0;
-}
-[class*="--reset"],
-[class*="--resetAll"],
-[class*="--resetAll"] ul {
-    list-style: none;
-    padding: 0;
-}
-:where([class*="--reset"])>li,
-[class*="--resetAll"] li {
-    margin-left: 0;
-}
-[class*="--gap"] {
-	gap: var(--pageColumnGap);
-}
-[class*="--horizontalGap"] {
-	gap: 0 var(--pageColumnGap);
-}
-[class*="--verticalGap"] {
-	gap: var(--pageColumnGap) 0;
-}
-:where([class*="--hoverEffect"]) li:hover,
-:where([class*="--hoverEffect"]) .grid__item:hover,
-:where([class*="--hoverEffect"]) .list__item:hover,
-:where([class*="--hoverEffect"] tbody) tr:hover {
-	background-color: var(--colorHoverBackground);
-}
-[class*="--cover"] {
-	overflow: hidden;
-}
-[class*="--cover"] * {
-	height:100%;
-	width: 100%;
-	object-fit: cover;
-	object-position: center center;
-}
+
+
+
+
+
+

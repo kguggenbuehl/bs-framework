@@ -48,28 +48,48 @@
 	--colorSuccess: hsl(150, 70%, 50%);
 	--colorError: hsl(0, 80%, 50%);
 
-	/* --colorPrimary10: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 90%);
-	--colorPrimary20: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 80%);
-	--colorPrimary30: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 70%);
-	--colorPrimary40: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 60%);
-	--colorPrimary50: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 50%);
-	--colorPrimary60: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 40%);
-	--colorPrimary70: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 30%);
-	--colorPrimary80: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 20%);
-	--colorPrimary90: hsl(var(--colorPrimaryH), var(--colorPrimaryS), 10%);
+	--colorPrimary10: hsl(var(--colorPrimaryH), calc(var(--colorPrimaryS) * .5), calc(var(--colorPrimaryL) * 0.1 + 90%)); 
+	--colorPrimary20: hsl(var(--colorPrimaryH), calc(var(--colorPrimaryS) * .5), calc(var(--colorPrimaryL) * 0.2 + 80%)); 
+	--colorPrimary30: hsl(var(--colorPrimaryH), calc(var(--colorPrimaryS) * .5), calc(var(--colorPrimaryL) * 0.3 + 70%)); 
+	--colorPrimary40: hsl(var(--colorPrimaryH), calc(var(--colorPrimaryS) * .5), calc(var(--colorPrimaryL) * 0.4 + 60%)); 
+	--colorPrimary50: hsl(var(--colorPrimaryH), calc(var(--colorPrimaryS) * .5), calc(var(--colorPrimaryL) * 0.5 + 50%)); 
+	--colorPrimary60: hsl(var(--colorPrimaryH), calc(var(--colorPrimaryS) * .5), calc(var(--colorPrimaryL) * 0.6 + 40%)); 
+	--colorPrimary70: hsl(var(--colorPrimaryH), calc(var(--colorPrimaryS) * .5), calc(var(--colorPrimaryL) * 0.7 + 30%)); 
+	--colorPrimary80: hsl(var(--colorPrimaryH), calc(var(--colorPrimaryS) * .5), calc(var(--colorPrimaryL) * 0.8 + 20%)); 
+	--colorPrimary90: hsl(var(--colorPrimaryH), calc(var(--colorPrimaryS) * .5), calc(var(--colorPrimaryL) * 0.9 + 10%)); 
 
-	--colorSecondary10: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 90%);
-	--colorSecondary20: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 80%);
-	--colorSecondary30: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 70%);
-	--colorSecondary40: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 60%);
-	--colorSecondary50: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 50%);
-	--colorSecondary60: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 40%);
-	--colorSecondary70: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 30%);
-	--colorSecondary80: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 20%);
-	--colorSecondary90: hsl(var(--colorSecondaryH), var(--colorSecondaryS), 10%); */
+	--colorPrimary110: hsl(var(--colorPrimaryH), var(--colorPrimaryS), calc(var(--colorPrimaryL) * 0.9));
+	--colorPrimary120: hsl(var(--colorPrimaryH), var(--colorPrimaryS), calc(var(--colorPrimaryL) * 0.8));
+	--colorPrimary130: hsl(var(--colorPrimaryH), var(--colorPrimaryS), calc(var(--colorPrimaryL) * 0.7));
+	--colorPrimary140: hsl(var(--colorPrimaryH), var(--colorPrimaryS), calc(var(--colorPrimaryL) * 0.6));
+	--colorPrimary150: hsl(var(--colorPrimaryH), var(--colorPrimaryS), calc(var(--colorPrimaryL) * 0.5));
+	--colorPrimary160: hsl(var(--colorPrimaryH), var(--colorPrimaryS), calc(var(--colorPrimaryL) * 0.4));
+	--colorPrimary170: hsl(var(--colorPrimaryH), var(--colorPrimaryS), calc(var(--colorPrimaryL) * 0.3));
+	--colorPrimary180: hsl(var(--colorPrimaryH), var(--colorPrimaryS), calc(var(--colorPrimaryL) * 0.2));
+	--colorPrimary190: hsl(var(--colorPrimaryH), var(--colorPrimaryS), calc(var(--colorPrimaryL) * 0.1));
+
+	--colorSecondary10: hsl(var(--colorSecondaryH), calc(var(--colorSecondaryS) * .5), calc(var(--colorSecondaryL) * 0.1 + 90%)); 
+	--colorSecondary20: hsl(var(--colorSecondaryH), calc(var(--colorSecondaryS) * .5), calc(var(--colorSecondaryL) * 0.2 + 80%)); 
+	--colorSecondary30: hsl(var(--colorSecondaryH), calc(var(--colorSecondaryS) * .5), calc(var(--colorSecondaryL) * 0.3 + 70%)); 
+	--colorSecondary40: hsl(var(--colorSecondaryH), calc(var(--colorSecondaryS) * .5), calc(var(--colorSecondaryL) * 0.4 + 60%)); 
+	--colorSecondary50: hsl(var(--colorSecondaryH), calc(var(--colorSecondaryS) * .5), calc(var(--colorSecondaryL) * 0.5 + 50%)); 
+	--colorSecondary60: hsl(var(--colorSecondaryH), calc(var(--colorSecondaryS) * .5), calc(var(--colorSecondaryL) * 0.6 + 40%)); 
+	--colorSecondary70: hsl(var(--colorSecondaryH), calc(var(--colorSecondaryS) * .5), calc(var(--colorSecondaryL) * 0.7 + 30%)); 
+	--colorSecondary80: hsl(var(--colorSecondaryH), calc(var(--colorSecondaryS) * .5), calc(var(--colorSecondaryL) * 0.8 + 20%)); 
+	--colorSecondary90: hsl(var(--colorSecondaryH), calc(var(--colorSecondaryS) * .5), calc(var(--colorSecondaryL) * 0.9 + 10%)); 
+
+	--colorSecondary110: hsl(var(--colorSecondaryH), var(--colorSecondaryS), calc(var(--colorSecondaryL) * 0.9));
+	--colorSecondary120: hsl(var(--colorSecondaryH), var(--colorSecondaryS), calc(var(--colorSecondaryL) * 0.8));
+	--colorSecondary130: hsl(var(--colorSecondaryH), var(--colorSecondaryS), calc(var(--colorSecondaryL) * 0.7));
+	--colorSecondary140: hsl(var(--colorSecondaryH), var(--colorSecondaryS), calc(var(--colorSecondaryL) * 0.6));
+	--colorSecondary150: hsl(var(--colorSecondaryH), var(--colorSecondaryS), calc(var(--colorSecondaryL) * 0.5));
+	--colorSecondary160: hsl(var(--colorSecondaryH), var(--colorSecondaryS), calc(var(--colorSecondaryL) * 0.4));
+	--colorSecondary170: hsl(var(--colorSecondaryH), var(--colorSecondaryS), calc(var(--colorSecondaryL) * 0.3));
+	--colorSecondary180: hsl(var(--colorSecondaryH), var(--colorSecondaryS), calc(var(--colorSecondaryL) * 0.2));
+	--colorSecondary190: hsl(var(--colorSecondaryH), var(--colorSecondaryS), calc(var(--colorSecondaryL) * 0.1));
 
 	/* If color-mix already is a thing */
-	--colorPrimary10: color-mix(in oklab, var(--colorPrimary) 10%, var(--colorBackground));
+	/* --colorPrimary10: color-mix(in oklab, var(--colorPrimary) 10%, var(--colorBackground));
 	--colorPrimary20: color-mix(in oklab, var(--colorPrimary) 20%, var(--colorBackground));
 	--colorPrimary30: color-mix(in oklab, var(--colorPrimary) 30%, var(--colorBackground));
 	--colorPrimary40: color-mix(in oklab, var(--colorPrimary) 40%, var(--colorBackground));
@@ -107,7 +127,7 @@
 	--colorSecondary160: color-mix(in oklab, var(--colorSecondary) 40%, var(--colorForeground));
 	--colorSecondary170: color-mix(in oklab, var(--colorSecondary) 30%, var(--colorForeground));
 	--colorSecondary180: color-mix(in oklab, var(--colorSecondary) 20%, var(--colorForeground));
-	--colorSecondary190: color-mix(in oklab, var(--colorSecondary) 10%, var(--colorForeground));
+	--colorSecondary190: color-mix(in oklab, var(--colorSecondary) 10%, var(--colorForeground)); */
 
 
 	/* –––––– =SHADOW= –––––– */

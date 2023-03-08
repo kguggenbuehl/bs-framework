@@ -46,8 +46,8 @@
 								<label class="cSearch__label visuallyhidden" for="cSearch__input">Suche</label>
 								<input class="cSearch__input" type="search" id="cSearch__input" placeholder="Suchbegriff" required />
 								<button class="cSearch__submit cButton" type="submit">
-									<div class="cButton__icon"><i class="fa-regular fa-magnifying-glass"></i></div>
-									<div class="cButton__text"><span class="visuallyhidden">suchen</span></div>
+									<span class="cButton__icon"><i class="fa-regular fa-magnifying-glass"></i></span>
+									<span class="cButton__text visuallyhidden">suchen</span>
 								</button>
 							</form>
 						</div>
@@ -55,7 +55,7 @@
 					<div class="cGrid__item cGrid__item--nav">
 						<nav class="cNav mainnav" id="mainnav" aria-labelledby="mainnav-title">
 							<h2 class="cNav__title visuallyhidden" id="mainnav-title">Hauptnavigation</h2>
-							<ul class="cNav__list cNav__list--level-1 cNav__list--reset cNav__list--linkList nmb">
+							<ul class="cNav__list cNav__list--level-1 cNav__list--reset cNav__list--linklist nmb">
 								<li class="cNav__item"><a href="">Europa</a>
 									<ul class="cNav__list cNav__list--level-2 cNav__list--reset">
 										<li><a href="">Norwegen</a></li>
@@ -94,31 +94,33 @@
 		<div class="content">
 			<div class="wrapper wrapper--content">
 				<div class="cGrid cGrid--gap cGrid--content">
-					<div class="cGrid__item cGrid__item--breadcrumb">
-						<nav class="cBreadcrumb cHorizontalScroll" aria-labelledby="cBreadcrumb__title">
+					<div class="cGrid__item cGrid__item--breadcrumb cBreadcrumb-wrapper">
+						<nav class="cBreadcrumb" aria-labelledby="cBreadcrumb__title">
 							<h2 class="cBreadcrumb__title visuallyhidden" id="cBreadcrumb__title">Breadcrumb</h2>
-							<ol class="cBreadcrumb__list cBreadcrumb--reset cHorizontalScroll__scrollArea">
-								<li class="cBreadcrumb__item">
-									<a class="cBreadcrumb__link" href="/">
-										<i class="fa-regular fa-house fa-fw"></i><span class="visuallyhidden">Home</span></a>
-								</li>
-								<li class="cBreadcrumb__item">
-									<a class="cBreadcrumb__link" href="/"><span>Verwaltung</span></a>
-								</li>
-								<li class="cBreadcrumb__item">
-									<a class="cBreadcrumb__link" href="/"><span>Kommissionen</span></a>
-								</li>
-								<li class="cBreadcrumb__item">
-									<a class="cBreadcrumb__link" href="/"><span>Rechnungsprüfungskommission</span></a>
-								</li>
-								<li class="cBreadcrumb__item"><span>Zuständigkeiten</span></li>
-							</ol>
+							<div class="jsHorizontalScroll">
+								<ol class="cBreadcrumb__list cBreadcrumb--reset">
+									<li class="cBreadcrumb__item">
+										<a class="cBreadcrumb__link" href="/">
+											<i class="fa-regular fa-house fa-fw"></i><span class="visuallyhidden">Home</span></a>
+									</li>
+									<li class="cBreadcrumb__item">
+										<a class="cBreadcrumb__link" href="/"><span>Verwaltung</span></a>
+									</li>
+									<li class="cBreadcrumb__item">
+										<a class="cBreadcrumb__link" href="/"><span>Kommissionen</span></a>
+									</li>
+									<li class="cBreadcrumb__item">
+										<a class="cBreadcrumb__link" href="/"><span>Rechnungsprüfungskommission</span></a>
+									</li>
+									<li class="cBreadcrumb__item"><span>Zuständigkeiten</span></li>
+								</ol>
+							</div>
 						</nav>
 					</div>
 					<div class="cGrid__item cGrid__item--subnav">
 						<nav class="cNav subnav" id="subnav" aria-labelledby="subnav-title">
 							<h2 class="cNav__title visuallyhidden" id="subnav-title">Subnavigation</h2>
-							<ul class="cNav__list cNav__list--level-1 cNav--reset cNav--linkList nmb">
+							<ul class="cNav__list cNav__list--level-1 cNav--reset cNav--linklist nmb">
 								<li><a href="#Farben">Farben</a></li>
 								<li><a href="#Schriften">Schriften</a></li>
 								<li><a href="#Listen">Listen</a></li>
@@ -208,8 +210,8 @@
 									<li>Exercitationem impedit illum voluptates rem animi magnam fugit libero illo voluptate inventore.</li>
 									<li>Recusandae repudiandae dolorem itaque minima suscipit vel sit enim repellat, soluta eius?</li>
 								</ul>
-								<h3>Liste als Tabelle</h3>
-								<ul class="cList--table cList--resetAll">
+								<h3>Liste als Tabelle (Subgrid)</h3>
+								<ul class="cList--table cList--resetAllLevels">
 									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, molestias!
 										<ul>
 											<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, molestias!</li>
@@ -232,6 +234,45 @@
 										</ul>
 									</li>
 								</ul>
+								<div class="cFakeTable">
+									<div class="cFakeTable__header">
+										<h3>Tabelle aus div's</h3>
+									</div>
+									<div class="cFakeTable__body">
+										<div class="cFakeTable__row">
+											<div class="cFakeTable__titleColumn">
+												<h4>Beschreibung des Textes, welcher auch lang sein kann</h4>
+											</div>
+											<div class="cFakeTable__contentColumn">
+												<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Et modi nobis quo in labore veritatis sapiente aspernatur, tempore magnam quidem!</p>
+											</div>
+											<div class="cFakeTable__contentColumn">
+												<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Et modi nobis quo in labore veritatis sapiente aspernatur, tempore magnam quidem!</p>
+											</div>
+										</div>
+										<div class="cFakeTable__row">
+											<div class="cFakeTable__titleColumn">
+												<h4>Label</h4>
+											</div>
+											<div class="cFakeTable__contentColumn">
+												<ul>
+													<li>Lorem</li>
+													<li>ipsum</li>
+													<li>dolor</li>
+													<li>blablabla</li>
+												</ul>
+											</div>
+										</div>
+										<div class="cFakeTable__row">
+											<div class="cFakeTable__titleColumn">
+												<h4>Grösse</h4>
+											</div>
+											<div class="cFakeTable__contentColumn">
+												<p>352kB</p>
+											</div>
+										</div>
+									</div>
+								</div>
 								<h2><a id="Farben"></a>Medien</h2>
 								<figure class="media">
 									<img class="media__img" src="img/musterbild_16zu9_2.jpg" alt="">
@@ -275,14 +316,24 @@
 										<div class="cButton__text">mehr</div>
 										<div class="cButton__icon"><i class="fa-regular fa-arrow-right"></i></div>
 									</button>
-									<button class="cButton cButton--small">--small</button><br><br>
+									<button class="cButton cButton--small">--small</button>
+									<button class="cButton cButton--link">--link</button>
+									<br><br>
 									<button class="cButton cButton--secondary">--secondary</button>
 									<button class="cButton cButton--neutral">--neutral</button>
 									<button class="cButton cButton--invis">--invis</button>
 									<button class="cButton cButton--ghost">--ghost</button>
+									<button class="cButton cButton--border">--border</button>
 									<button class="cButton cButton--reject">--reject</button>
 									<button class="cButton cButton--accept">--accept</button>
 								</p>
+								<h2>Label / Tags</h2>
+								<ul class="cFlex cFlex--reset cFlex--wrap">
+					               <li><span class="cLabel" >Lorem</span></li>
+					               <li><span class="cLabel" >Lorem</span></li>
+					               <li><span class="cLabel" >Lorem</span></li>
+					               <li><span class="cLabel" >Lorem</span></li>
+					              </ul>
 								<h2><a id="Grid"></a>Grid</h2>
 								<div class="cGrid cGrid--gap cGrid--columnTest cGrid--color">
 									<div class="cGrid__item cGrid__item--xxl" style="grid-column: span 12;height: 1em;background: var(--colorPrimary50)"></div>
@@ -315,21 +366,41 @@
 									<div class="cGrid__item cGrid__item--xs" style="grid-column: span 1;height: 1em;background: var(--colorPrimary50"></div>
 								</div>
 								<h2><a id="Dropdown"></a>Dropdown</h2>
-								<div class="cDropdown jsDropdown" data-govis-a11y_dropdown-container=".jsDropdown" data-govis-a11y_dropdown-button=".jsDropdown__button" data-govis-a11y_dropdown-list=".jsDropdown__list">
+								<div class="cDropdown jsDropdown jsDropdown--toplinks" data-govis-a11y_dropdown-container=".jsDropdown--toplinks" data-govis-a11y_dropdown-button=".jsDropdown__button--toplinks" data-govis-a11y_dropdown-list=".jsDropdown__body--toplinks">
 									<h3 class="cDropdown__title visuallyhidden">Häufig gesucht</h3>
 									<div class="cDropdown__controls">
-										<button type="button" class="cDropdown__button jsDropdown__button cButton" aria-expanded="false">
+										<button type="button" class="cDropdown__button jsDropdown__button--toplinks cButton" aria-expanded="false">
 											<span class="cButton__text">Dropdown</span>
-											<span class="cButton__icon"><i class="fa fa-angle-down fa-fw" aria-hidden="true"></i></span>
+											<span class="cButton__icon cButton__icon--rotate180"><i class="fa fa-angle-down fa-fw" aria-hidden="true"></i></span>
 										</button>
 									</div>
-									<div class="cDropdown__body">
-										<ul class="cDropdown__list jsDropdown__list cDropdown__list--reset cDropdown__list--linkList" id="cDropdown__list">
-											<li class="cDropdown__item"><a class="cDropdown__link" href="#">Link 1</a></li>
-											<li class="cDropdown__item"><a class="cDropdown__link" href="#">Link 2</a></li>
-											<li class="cDropdown__item"><a class="cDropdown__link" href="#">Link 3</a></li>
-											<li class="cDropdown__item"><a class="cDropdown__link" href="#">Link 4</a></li>
-											<li class="cDropdown__item"><a class="cDropdown__link" href="#">Link 5</a></li>
+									<div class="cDropdown__body jsDropdown__body--toplinks">
+										<ul class="cList cList--reset cList--linklist">
+											<li class="cList__item">
+												<a class="cButton" href="#">
+													<span class="cButton__text">Icon rechts</span>
+													<span class="cButton__icon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+												</a>
+											</li>
+											<li class="cList__item">
+												<a class="cButton" href="#">
+													<span class="cButton__icon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+													<span class="cButton__text">Icon links</span>
+												</a>
+											</li>
+											<li class="cList__item"><a class="cButton" href="#">kein Icon</a></li>
+											<li class="cList__item">
+												<a class="cButton" href="#">
+													<span class="cButton__icon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+													<span class="cButton__text visuallyhidden">nur Icon</span>
+												</a>
+											</li>
+											<li class="cList__item">
+												<a class="cButton" href="#">
+													<span class="cButton__text visuallyhidden">nur Icon</span>
+													<span class="cButton__icon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+												</a>
+											</li>
 										</ul>
 									</div>
 								</div>
@@ -445,8 +516,7 @@
 									</div>
 								</div>
 								<h2><a id="Tabelle"></a>Tabelle</h2>
-								<div class="cHorizontalScroll">
-									<div class="table-responsive nmb cHorizontalScroll__scrollArea" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
+									<div class="table-responsive nmb jsHorizontalScroll" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
 										<table class="cTable--hoverEffect cTable--zebraEffect cTable--gridEf2fect">
 											<caption>Different continents</caption>
 											<thead>
@@ -495,13 +565,186 @@
 											</tbody>
 										</table>
 									</div>
+								<h2>Dateien im Ordnerbaum</h2>
+								<div class="cFilelist">
+									<div class="cFilelist__header">
+										<h3>Caption</h3>
+									</div>
+									<div class="cFilelist__body">
+											<div class="table-responsive nmb jsHorizontalScroll" tabindex="0" class="table-wrapper" role="group" aria-labelledby="caption">
+												<table class="cTable cTable--fullWidth">
+													<thead>
+														<tr class="cTable__row--heading">
+															<th class="cTable__cell--name">Name</th>
+															<th class="cTable__cell--size">Dateigrösse</th>
+															<th class="cTable__cell--changeDate">Zuletzt geändert</th>
+															<th class="cTable__cell--actions">Aktionen</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr class="cTable__row--folder cTable__row--folderOpen">
+															<td class="cTable__cell--name">
+																<a class="cButton cButton--link" href="">
+																	<span class="cButton__icon"><i class="fa-duotone fa-folder-open fa-fw fa-lg" aria-hidden="true"></i></span>
+																	<span class="cButton__text">Ordner</span>
+																</a>
+															</td>
+															<td class="cTable__cell--size">––</td>
+															<td class="cTable__cell--changeDate">31.12.2022</td>
+															<td class="cTable__cell--actions">
+																<ul class="cFlex cFlex--reset ">
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Neuer Unterordner">
+																			<span class="cButton__icon"><i class="fa-duotone fa-folder-plus fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Neuer Unterordner</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Ordner bearbeiten">
+																			<span class="cButton__icon"><i class="fa-duotone fa-folder-gear fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Ordner bearbeiten</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Upload">
+																			<span class="cButton__icon"><i class="fa-duotone fa-upload fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Upload</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Ordner löschen">
+																			<span class="cButton__icon"><i class="fa-duotone fa-folder-xmark fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Ordner löschen</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="download">
+																			<span class="cButton__icon"><i class="fa-duotone fa-download fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">download</span>
+																		</a>
+																	</li>	
+																</ul>
+															</td>
+														</tr>
+														<tr class="cTable__row--file">
+															<td class="cTable__cell--name">
+																<a class="cButton cButton--link" href="">
+																	<span class="cButton__icon"><i class="fa-light fa-file-pdf fa-fw fa-lg" aria-hidden="true"></i></span>
+																	<span class="cButton__text">shobidoo.pdf</span>
+																</a></td>
+															<td class="cTable__cell--size">64 kB</td>
+															<td class="cTable__cell--changeDate">02.01.2023</td>
+															<td class="cTable__cell--actions">
+																<ul class="cFlex cFlex--reset ">
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Datei bearbeiten">
+																			<span class="cButton__icon"><i class="fa-duotone fa-file-pen fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Datei bearbeiten</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="download">
+																			<span class="cButton__icon"><i class="fa-duotone fa-download fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">download</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Datei löschen">
+																			<span class="cButton__icon"><i class="fa-duotone fa-file-xmark fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Datei löschen</span>
+																		</a>
+																	</li>
+																		
+																</ul>
+															</td>
+														</tr>
+														<tr class="cTable__row--file">
+															<td class="cTable__cell--name">
+																<a class="cButton cButton--link" href="">
+																	<span class="cButton__icon"><i class="fa-light fa-file-pdf fa-fw fa-lg" aria-hidden="true"></i></span>
+																	<span class="cButton__text">nonsense.pdf</span>
+																</a></td>
+															<td class="cTable__cell--size">8 kB</td>
+															<td class="cTable__cell--changeDate">23.02.2023</td>
+															<td class="cTable__cell--actions">
+																<ul class="cFlex cFlex--reset ">
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Datei bearbeiten">
+																			<span class="cButton__icon"><i class="fa-duotone fa-file-pen fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Datei bearbeiten</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="download">
+																			<span class="cButton__icon"><i class="fa-duotone fa-download fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">download</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Datei löschen">
+																			<span class="cButton__icon"><i class="fa-duotone fa-file-xmark fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Datei löschen</span>
+																		</a>
+																	</li>
+																		
+																</ul>
+															</td>
+														</tr>
+														<tr class="cTable__row--folder cTable__row--folderClosed">
+															<td class="cTable__cell--name">
+																<a class="cButton cButton--link" href="">
+																	<span class="cButton__icon"><i class="fa-solid fa-folder fa-fw fa-lg" aria-hidden="true"></i></span>
+																	<span class="cButton__text">Zweiter Ordner</span>
+																</a>
+															</td>
+															<td class="cTable__cell--size">––</td>
+															<td class="cTable__cell--changeDate">31.12.2022</td>
+															<td class="cTable__cell--actions">
+																<ul class="cFlex cFlex--reset ">
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Neuer Unterordner">
+																			<span class="cButton__icon"><i class="fa-duotone fa-folder-plus fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Neuer Unterordner</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Ordner bearbeiten">
+																			<span class="cButton__icon"><i class="fa-duotone fa-folder-gear fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Ordner bearbeiten</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Upload">
+																			<span class="cButton__icon"><i class="fa-duotone fa-upload fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Upload</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="Ordner löschen">
+																			<span class="cButton__icon"><i class="fa-duotone fa-folder-xmark fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">Ordner löschen</span>
+																		</a>
+																	</li>
+																	<li>
+																		<a class="cButton cButton--link" href="" title="download">
+																			<span class="cButton__icon"><i class="fa-duotone fa-download fa-fw fa-lg" aria-hidden="true"></i></span>
+																			<span class="cButton__text visuallyhidden">download</span>
+																		</a>
+																	</li>	
+																</ul>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+									</div>
 								</div>
 							</section>
 							<section class="mb no2ne">
 								<h2>Newsmodul</h2>
 								<div class="mNews">
 									<div class="mNews__header">
-										<form class="form-builder js-mod-search" id="news-archive-search" method="POST"  action="https://govis-wauwil.backslash.ch/verwaltung/aktuelles-news/diverse.html/19/newsarchive/1">
+										<form class="form-builder js-mod-search" id="news-archive-search" method="POST" action="https://govis-wauwil.backslash.ch/verwaltung/aktuelles-news/diverse.html/19/newsarchive/1">
 											<fieldset>
 												<legend>Suche</legend>
 												<p class="clearfix"><label for="news-archive-search-all">Suchbegriff</label> <input type="search" name="newsSearchParams.query" id="news-archive-search-all" value=""></p> <input type="hidden" name="newsSearchParams.category" value="5">
@@ -513,68 +756,68 @@
 									</div>
 									<div class="mNews__body">
 										<ul class="cGrid cGrid--sm12--md6--lg3 cGrid--gap cGrid--reset">
-										<li class="cGrid__item">
-											<article class="cCard cCard--horizontalGap cCard--noLink cCard--hasImage cCard--hasContent">
-												<header class="cCard__header">
-													<h3 class="cCard__title">Titel</h3>
-													<div class="cCard__meta">
-														<p>
-															<span class="event-time-from">
-																<time datetime="2023-01-25" class="dtstart">25. Januar 2023</time>
-															</span><span class="event-time-to"></span>
-														</p>
+											<li class="cGrid__item">
+												<article class="cCard cCard--horizontalGap cCard--noLink cCard--hasImage cCard--hasContent">
+													<header class="cCard__header">
+														<h3 class="cCard__title">Titel</h3>
+														<div class="cCard__meta">
+															<p>
+																<span class="event-time-from">
+																	<time datetime="2023-01-25" class="dtstart">25. Januar 2023</time>
+																</span><span class="event-time-to"></span>
+															</p>
+														</div>
+													</header>
+													<figure class="cCard__fig nmb">
+														<img class="cCard__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+													</figure>
+													<div class="cCard__body">
+														<div class="cCard__content">
+															<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+														</div>
 													</div>
-												</header>
-												<figure class="cCard__fig nmb">
-													<img class="cCard__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
-												</figure>
-												<div class="cCard__body">
-													<div class="cCard__content">
-														<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+												</article>
+											</li>
+											<li class="cGrid__item">
+												<article class="cCard cCard--horizontalGap cCard--linkExpanded cCard--hasImage cCard--hasContent cCard--hasLink">
+													<header class="cCard__header">
+														<h3 class="cCard__title">Titel</h3>
+													</header>
+													<figure class="cCard__fig nmb">
+														<img class="cCard__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+													</figure>
+													<div class="cCard__body">
+														<div class="cCard__content">
+															<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+														</div>
 													</div>
-												</div>
-											</article>
-										</li>
-										<li class="cGrid__item">
-											<article class="cCard cCard--horizontalGap cCard--linkExpanded cCard--hasImage cCard--hasContent cCard--hasLink">
-												<header class="cCard__header">
-													<h3 class="cCard__title">Titel</h3>
-												</header>
-												<figure class="cCard__fig nmb">
-													<img class="cCard__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
-												</figure>
-												<div class="cCard__body">
-													<div class="cCard__content">
-														<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+													<div class="cCard__link">
+														<a href="#">Mehr erfahren</a>
 													</div>
-												</div>
-												<div class="cCard__link">
-													<a href="#">Mehr erfahren</a>
-												</div>
-											</article>
-										</li>
-										<li class="cGrid__item">
-											<article class="cCard cCard--noLink cCard--hasImage cCard--horizontalGap">
-												<header class="cCard__header">
-													<h3 class="cCard__title">Titel</h3>
-												</header>
-												<figure class="cCard__fig nmb">
-													<img class="cCard__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
-												</figure>
-											</article>
-										</li>
-										<li class="cGrid__item">
-											<article class="cCard cCard--noLink cCard--hasContent">
-												<header class="cCard__header">
-													<h3 class="cCard__title">Titel</h3>
-												</header>
-												<div class="cCard__body">
-													<div class="cCard__content">
-														<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+												</article>
+											</li>
+											<li class="cGrid__item">
+												<article class="cCard cCard--noLink cCard--hasImage cCard--horizontalGap">
+													<header class="cCard__header">
+														<h3 class="cCard__title">Titel</h3>
+													</header>
+													<figure class="cCard__fig nmb">
+														<img class="cCard__img" src="img/musterbild_16zu9.jpg" alt="Musterbild">
+													</figure>
+												</article>
+											</li>
+											<li class="cGrid__item">
+												<article class="cCard cCard--noLink cCard--hasContent">
+													<header class="cCard__header">
+														<h3 class="cCard__title">Titel</h3>
+													</header>
+													<div class="cCard__body">
+														<div class="cCard__content">
+															<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui ad consequatur aperiam.</p>
+														</div>
 													</div>
-												</div>
-											</article>
-										</li>
+												</article>
+											</li>
 										</ul>
 									</div>
 								</div>

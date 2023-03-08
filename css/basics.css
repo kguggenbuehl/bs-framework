@@ -69,11 +69,8 @@ h1, h2, h3, h4, h5, h6, caption,
 	margin: 0 0 var(--marginHeadingSmall);
 } */
 p, ul, ol, dl, blockquote, pre, fieldset, figure, address, table, details, iframe, video, audio,
-.p, .box, .table-responsive, .media-responsive, .mb, .mod-wrapper, .accordion, [data-oembed-url] {
+.p, .box, .table-responsive, .media-responsive, .mb, .mod-wrapper, .accordion, .cCard__body, [data-oembed-url] {
 	margin: var(--marginHeadingSmall) 0 0 ;
-}
-h1, .h1 {
-	margin: 0 0 1em;
 }
 h2, .h2 {
 	margin: var(--marginHeadingLevel2) 0 0;
@@ -95,10 +92,20 @@ h2 + h3,
 h3 + h4
 h4 + h5
 h5 + h6,
-h1 + * h2:first-child,
-h2 + * h3:first-child,
-h3 + * h4:first-child {
+h1 + * > h2:first-child,
+h1 + * > * > h2:first-child,
+h2 + * > h3:first-child,
+h2 + * > * > h3:first-child,
+h3 + * > h4:first-child,
+h3 + * > * > h4:first-child{
 	margin-top: var(--marginHeadingSmall);
+}
+h1,
+:where(.cCard  .cCard__header) h2,
+td *:first-child,
+th *:first-child,
+.nmt {
+    margin-top: 0
 }
 strong,
 b,
@@ -116,10 +123,12 @@ a {
 	color: var(--colorLink);
 	transition: color var(--animationDuration);
 }
-a:visited {
+:where(a):visited {
 	color: var(--colorLinkVisited);
 }
-a:focus, a:hover, a:active {
+:where(a):focus,
+:where(a):hover, 
+:where(a):active {
 	color: var(--colorLinkHover);
 }
 :focus:not(:focus-visible) {
@@ -170,10 +179,10 @@ a:focus, a:hover, a:active {
 /* –––––––––––––––––––––– */
 .cButton {
 	display: inline-flex;
+	align-items: center;
 	padding: .75em 1em;
 	color: #fff;
 	text-decoration: none;
-	text-align: center;
 	line-height: 1;
 	background-color: var(--colorPrimary);
 	background-image: linear-gradient(0, hsla(150, 0%, 0%, 0), hsla(150, 0%, 0%, 0) );
@@ -182,17 +191,11 @@ a:focus, a:hover, a:active {
 	cursor: pointer;
 }
 .cButton:hover,
-.cButton:focus {
+.cButton:focus,
+.cButton--active,
+.cButton[aria-current="page"],
+.cButton[data-state="active"] {
 	background-image: linear-gradient(0, hsla(150, 0%, 0%, 20%), hsla(150, 0%, 0%, 20%));
-}
-.cButton:active {
-	box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
-}
-.cButton:has(.cButton__icon:first-child) .cButton__text {
-	margin-left: 1em;
-}
-.cButton:has(.cButton__icon:last-child) .cButton__text {
-	margin-right: 1em;
 }
 .cButton--secondary {
 	background-color: var(--colorSecondary);
@@ -201,22 +204,34 @@ a:focus, a:hover, a:active {
 	background-color: var(--colorNeutral);
 }
 .cButton--invis,
-.cButton--ghost {
+.cButton--invis:hover,
+.cButton--invis:focus,
+.cButton--ghost,
+.cButton--border {
 	color: var(--colorForeground);
 	background-color: transparent;
 	background-image: none;
 }
-.cButton--invis:hover,
-.cButton--invis:focus {
-	border: 1px solid var(--colorPrimary);
-	background-image: none;
-}
-.cButton--ghost {
+.cButton--border {
 	border: 1px solid var(--colorPrimary);
 }
+.cButton--border:hover,
+.cButton--border:focus,
 .cButton--ghost:hover,
 .cButton--ghost:focus {
 	background-color: var(--colorPrimary20);
+	background-image: none;
+}
+.cButton--link {
+	padding: 0;
+	color: var(--colorLink);
+	background-color: transparent;
+	background-image: none;
+}
+.cButton--link:hover,
+.cButton--link:focus {
+	color: var(--colorLinkHover);
+	background-color: transparent;
 	background-image: none;
 }
 .cButton--reject {
@@ -225,8 +240,26 @@ a:focus, a:hover, a:active {
 .cButton--accept {
 	background-color: var(--colorSuccess);
 }
+.cButton--noRadius {
+	border-radius: 0;
+}
 .cButton__icon {
-	transition: var(--animationDuration);
+	transition: transform var(--animationDuration);
+}
+.cButton__icon:last-child {
+	margin-left: auto;
+}
+.cButton:has(.cButton__icon:first-child) .cButton__text {
+	margin-left: 1em;
+}
+.cButton:has(.cButton__icon:last-child) .cButton__text {
+	margin-right: 1em;
+}
+.cButton--link:has(.cButton__icon:first-child) .cButton__text {
+	margin-left: .5em;
+}
+.cButton--link:has(.cButton__icon:last-child) .cButton__text {
+	margin-right: .5em;
 }
 
 
